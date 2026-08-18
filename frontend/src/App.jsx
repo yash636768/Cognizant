@@ -35,7 +35,7 @@ import {
   Filter
 } from 'lucide-react';
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "/api";
 
 const PRESET_SKILLS = [
   "Python Programming",
@@ -63,7 +63,7 @@ const CAREER_TRACKS = [
 ];
 
 export default function App() {
-  const [page, setPage] = useState('landing'); // 'landing' | 'input' | 'results' | 'evaluation'
+  const [page, setPage] = useState('landing'); // 'landing' | 'input' | 'results' | 'evaluation' | 'profile'
   const [stats, setStats] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
   
@@ -261,61 +261,94 @@ export default function App() {
 
   return (
     <div>
-      {/* NAVBAR */}
+      {/* =========================
+          PREMIUM NAVBAR
+          ========================= */}
       <header className="navbar">
         <div className="container nav-content">
-          <div className="brand-logo" onClick={() => setPage('landing')}>
-            <div className="brand-icon">CP</div>
+          <button
+            type="button"
+            className="brand-logo"
+            onClick={() => setPage('landing')}
+            aria-label="Go to CareerPilot AI overview"
+          >
+            <span className="brand-icon">CP</span>
             <span className="brand-name">CareerPilot AI</span>
-            <span className="brand-tag">Dataset Grounded</span>
-          </div>
+            <span className="brand-tag">AI Career Advisor</span>
+          </button>
 
-          <nav className="nav-menu">
-            <button 
-              onClick={() => setPage('landing')} 
+          <nav className="nav-menu" aria-label="Main navigation">
+            <button
+              type="button"
+              onClick={() => setPage('landing')}
               className={`nav-link ${page === 'landing' ? 'active' : ''}`}
             >
+              <Compass size={14} />
               Overview
             </button>
-            <button 
-              onClick={() => navigateToAssessment()} 
+
+            <button
+              type="button"
+              onClick={() => navigateToAssessment()}
               className={`nav-link ${page === 'input' ? 'active' : ''}`}
             >
+              <Target size={14} />
               Skill Assessment
             </button>
+
             {results && (
-              <button 
-                onClick={() => setPage('results')} 
+              <button
+                type="button"
+                onClick={() => setPage('results')}
                 className={`nav-link ${page === 'results' ? 'active' : ''}`}
               >
-                Paths & Courses
+                <BookOpen size={14} />
+                Learning Paths
               </button>
             )}
-            <button 
-              onClick={() => setPage('evaluation')} 
+
+            <button
+              type="button"
+              onClick={() => setPage('evaluation')}
               className={`nav-link ${page === 'evaluation' ? 'active' : ''}`}
             >
-              System Performance
+              <BarChart2 size={14} />
+              Performance
             </button>
           </nav>
 
-          {/* AUTH STATUS / BUTTON */}
-          <div>
+          <div className="navbar-actions">
             {currentUser ? (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div className="user-avatar-badge">
+              <div className="profile-nav-area">
+                <button
+                  type="button"
+                  className="user-avatar-badge profile-trigger"
+                  onClick={() => setPage('profile')}
+                  title="Open your profile"
+                  aria-label="Open your profile"
+                >
                   <div className="avatar-circle">
-                    {currentUser.name.charAt(0).toUpperCase()}
+                    {currentUser.name?.charAt(0).toUpperCase() || 'U'}
                   </div>
-                  <span>{currentUser.name.split(' ')[0]}</span>
-                </div>
-                <button onClick={handleLogout} className="btn btn-ghost btn-sm" title="Sign Out">
-                  <LogOut size={14} />
+
+                  <span>
+                    {currentUser.name?.split(' ')[0] || 'Profile'}
+                  </span>
+
+                  <ChevronDown size={13} />
                 </button>
               </div>
             ) : (
-              <button onClick={() => { setAuthError(''); setAuthModalOpen(true); }} className="btn btn-primary btn-sm">
-                <LogIn size={14} /> Sign In
+              <button
+                type="button"
+                onClick={() => {
+                  setAuthError('');
+                  setAuthModalOpen(true);
+                }}
+                className="btn btn-primary btn-sm"
+              >
+                <LogIn size={14} />
+                Sign In
               </button>
             )}
           </div>
@@ -323,41 +356,476 @@ export default function App() {
       </header>
 
       <main className="container section">
-        
         {/* ========================================================================= */}
+        {/* ========================================================================= */}
+        {/* PAGE: USER PROFILE */}
+        {/* ========================================================================= */}
+        {page === 'profile' && currentUser && (
+          <div className="animate-fade-in">
+            <div className="profile-page">
+
+              {/* PROFILE HERO */}
+              <section className="profile-hero">
+                <div className="profile-identity">
+                  <div className="profile-avatar-large">
+                    {currentUser.name?.charAt(0).toUpperCase() || 'U'}
+                  </div>
+
+                  <div>
+                    <div className="profile-eyebrow">
+                      <User size={13} />
+                      Personal Career Profile
+                    </div>
+
+                    <h1 className="profile-name">
+                      {currentUser.name || 'CareerPilot User'}
+                    </h1>
+
+                    <p className="profile-email">
+                      {currentUser.email || 'Registered CareerPilot account'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="profile-actions">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => navigateToAssessment()}
+                  >
+                    <Target size={14} />
+                    Update Assessment
+                  </button>
+
+                  <button
+                    type="button"
+                    className="btn btn-ghost"
+                    onClick={handleLogout}
+                  >
+                    <LogOut size={14} />
+                    Sign Out
+                  </button>
+                </div>
+              </section>
+
+              {/* PROFILE OVERVIEW */}
+              <div className="profile-grid">
+
+                {/* CAREER GOAL */}
+                <section className="profile-card profile-career-card">
+                  <div className="profile-card-header">
+                    <div className="profile-card-icon">
+                      <Target size={17} />
+                    </div>
+                    <div>
+                      <h2>Career Goal</h2>
+                      <p>Your current target direction</p>
+                    </div>
+                  </div>
+
+                  <div className="profile-career-value">
+                    {targetCareer || 'Not selected yet'}
+                  </div>
+
+                  <div className="profile-status">
+                    <span className="profile-status-dot" />
+                    {results ? 'Assessment completed' : 'Assessment not completed'}
+                  </div>
+                </section>
+
+                {/* PROFILE STATS */}
+                <section className="profile-card">
+                  <div className="profile-card-header">
+                    <div className="profile-card-icon">
+                      <BarChart2 size={17} />
+                    </div>
+                    <div>
+                      <h2>Career Snapshot</h2>
+                      <p>Your current CareerPilot data</p>
+                    </div>
+                  </div>
+
+                  <div className="profile-mini-stats">
+                    <div>
+                      <strong>{currentSkills.length}</strong>
+                      <span>Skills</span>
+                    </div>
+
+                    <div>
+                      <strong>
+                        {results?.recommendations?.length || 0}
+                      </strong>
+                      <span>Courses</span>
+                    </div>
+
+                    <div>
+                      <strong>
+                        {results?.selected_career?.match_percentage
+                          ? `${results.selected_career.match_percentage}%`
+                          : '—'}
+                      </strong>
+                      <span>Career Match</span>
+                    </div>
+                  </div>
+                </section>
+
+              </div>
+
+              {/* SKILLS + PREFERENCES */}
+              <div className="profile-grid profile-grid-two">
+
+                <section className="profile-card">
+                  <div className="profile-card-header">
+                    <div className="profile-card-icon">
+                      <Layers size={17} />
+                    </div>
+                    <div>
+                      <h2>Your Skills</h2>
+                      <p>Skills used for career matching</p>
+                    </div>
+                  </div>
+
+                  <div className="profile-tags">
+                    {currentSkills.length > 0 ? (
+                      currentSkills.map((skill) => (
+                        <span
+                          className="tag tag-brand"
+                          key={skill}
+                        >
+                          {skill}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="profile-empty">
+                        No skills added yet.
+                      </span>
+                    )}
+                  </div>
+                </section>
+
+                <section className="profile-card">
+                  <div className="profile-card-header">
+                    <div className="profile-card-icon">
+                      <Sliders size={17} />
+                    </div>
+                    <div>
+                      <h2>Learning Preferences</h2>
+                      <p>Your current course preferences</p>
+                    </div>
+                  </div>
+
+                  <div className="profile-preferences">
+                    <div>
+                      <span>Difficulty</span>
+                      <strong>{difficulty}</strong>
+                    </div>
+
+                    <div>
+                      <span>Duration</span>
+                      <strong>{duration}</strong>
+                    </div>
+
+                    <div>
+                      <span>Course Type</span>
+                      <strong>{courseType}</strong>
+                    </div>
+                  </div>
+                </section>
+
+              </div>
+
+              {/* PERSONAL GOAL */}
+              <section className="profile-card profile-goal-card">
+                <div className="profile-card-header">
+                  <div className="profile-card-icon">
+                    <Sparkles size={17} />
+                  </div>
+                  <div>
+                    <h2>Career Goal / Query</h2>
+                    <p>Your personal learning direction</p>
+                  </div>
+                </div>
+
+                <p className="profile-goal-text">
+                  {userQuery?.trim()
+                    ? userQuery
+                    : 'No specific career goal has been added yet. Update your assessment to add one.'}
+                </p>
+              </section>
+
+              {/* RECOMMENDED COURSES */}
+              <section className="profile-card">
+                <div className="profile-section-header">
+                  <div className="profile-card-header">
+                    <div className="profile-card-icon">
+                      <BookOpen size={17} />
+                    </div>
+                    <div>
+                      <h2>My Recommended Courses</h2>
+                      <p>
+                        Courses selected for your current career path
+                      </p>
+                    </div>
+                  </div>
+
+                  {results?.recommendations?.length > 0 && (
+                    <button
+                      type="button"
+                      className="btn btn-ghost btn-sm"
+                      onClick={() => setPage('results')}
+                    >
+                      View All
+                      <ArrowRight size={13} />
+                    </button>
+                  )}
+                </div>
+
+                {results?.recommendations?.length > 0 ? (
+                  <div className="profile-course-list">
+                    {results.recommendations.slice(0, 5).map((rec, index) => (
+                      <div
+                        className="profile-course-item"
+                        key={rec.id || rec.course_id || index}
+                      >
+                        <div className="profile-course-number">
+                          {String(index + 1).padStart(2, '0')}
+                        </div>
+
+                        <div className="profile-course-info">
+                          <h3>
+                            {rec.course_name ||
+                              rec.title ||
+                              rec.name ||
+                              'Recommended Course'}
+                          </h3>
+
+                          <p>
+                            {rec.organization ||
+                              rec.provider ||
+                              'Recommended for your career path'}
+                          </p>
+                        </div>
+
+                        <div className="profile-course-score">
+                          {rec.match_score != null
+                            ? `${Math.round(rec.match_score)}%`
+                            : rec.match_percentage != null
+                              ? `${Math.round(rec.match_percentage)}%`
+                              : 'Recommended'}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="profile-empty-state">
+                    <BookOpen size={22} />
+                    <h3>No recommendations yet</h3>
+                    <p>
+                      Complete the skill assessment to generate your
+                      personalized course roadmap.
+                    </p>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => navigateToAssessment()}
+                    >
+                      Start Assessment
+                      <ArrowRight size={14} />
+                    </button>
+                  </div>
+                )}
+              </section>
+
+              {/* MATCHED + MISSING SKILLS */}
+              {results?.selected_career && (
+                <div className="profile-grid profile-grid-two">
+
+                  <section className="profile-card">
+                    <div className="profile-card-header">
+                      <div className="profile-card-icon profile-icon-success">
+                        <CheckCircle size={17} />
+                      </div>
+                      <div>
+                        <h2>Matched Skills</h2>
+                        <p>Skills aligned with your target role</p>
+                      </div>
+                    </div>
+
+                    <div className="profile-tags">
+                      {results.selected_career.matched_core_skills?.length > 0 ? (
+                        results.selected_career.matched_core_skills.map((skill) => (
+                          <span
+                            className="tag tag-success"
+                            key={skill}
+                          >
+                            <Check size={12} />
+                            {skill}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="profile-empty">
+                          No matched skills available.
+                        </span>
+                      )}
+                    </div>
+                  </section>
+
+                  <section className="profile-card">
+                    <div className="profile-card-header">
+                      <div className="profile-card-icon profile-icon-warning">
+                        <AlertCircle size={17} />
+                      </div>
+                      <div>
+                        <h2>Skills to Improve</h2>
+                        <p>Recommended areas for your next step</p>
+                      </div>
+                    </div>
+
+                    <div className="profile-tags">
+                      {results.selected_career.missing_core_skills?.length > 0 ? (
+                        results.selected_career.missing_core_skills.map((skill) => (
+                          <span
+                            className="tag tag-warning"
+                            key={skill}
+                          >
+                            {skill}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="profile-empty">
+                          No skill gaps identified.
+                        </span>
+                      )}
+                    </div>
+                  </section>
+
+                </div>
+              )}
+
+            </div>
+          </div>
+        )}
+
         {/* PAGE 1: OVERVIEW / LANDING */}
         {/* ========================================================================= */}
         {page === 'landing' && (
           <div className="animate-fade-in">
             {/* HERO SECTION */}
-            <div className="panel" style={{ padding: '44px 36px', marginBottom: '32px' }}>
-              <div style={{ maxWidth: '820px' }}>
-                <span className="tag tag-brand" style={{ marginBottom: '16px' }}>
-                  Coursera Dataset Intelligence Engine
+            <section
+              className="hero-section panel"
+              style={{
+                padding: '52px 42px',
+                marginBottom: '42px',
+                overflow: 'hidden',
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  width: '320px',
+                  height: '320px',
+                  borderRadius: '50%',
+                  background: 'rgba(99, 102, 241, 0.08)',
+                  filter: 'blur(10px)',
+                  top: '-150px',
+                  right: '-80px',
+                  pointerEvents: 'none',
+                }}
+              />
+
+              <div style={{ maxWidth: '820px', position: 'relative' }}>
+                <span
+                  className="tag tag-brand"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    marginBottom: '18px',
+                  }}
+                >
+                  <Sparkles size={13} />
+                  AI-Powered Career Guidance
                 </span>
-                <h1 style={{ fontSize: '36px', fontWeight: 700, marginBottom: '14px', lineHeight: 1.2 }}>
-                  Your career shouldn't be a guess.
+
+                <h1
+                  style={{
+                    fontSize: 'clamp(36px, 5vw, 58px)',
+                    fontWeight: 800,
+                    letterSpacing: '-0.04em',
+                    marginBottom: '18px',
+                    lineHeight: 1.08,
+                    maxWidth: '760px',
+                  }}
+                >
+                  Your career shouldn't be a{' '}
+                  <span
+                    style={{
+                      background: 'linear-gradient(90deg, #4f46e5, #7c3aed)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    guess.
+                  </span>
                 </h1>
-                <p style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '28px', lineHeight: 1.6, maxWidth: '720px' }}>
+
+                <p
+                  style={{
+                    fontSize: '15px',
+                    color: 'var(--text-muted)',
+                    marginBottom: '28px',
+                    lineHeight: 1.7,
+                    maxWidth: '720px',
+                  }}
+                >
                   CareerPilot AI understands your skills, interests, and target roles to help you discover the right career path and pinpoint exactly what to learn next — grounded directly in <strong>623 Coursera offerings</strong>.
                 </p>
 
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-                  <button onClick={() => navigateToAssessment()} className="btn btn-primary">
-                    Discover My Career <ArrowRight size={15} />
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '12px',
+                    flexWrap: 'wrap',
+                    alignItems: 'center',
+                  }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => navigateToAssessment()}
+                    className="btn btn-primary"
+                  >
+                    <Sparkles size={15} />
+                    Discover My Career
+                    <ArrowRight size={15} />
                   </button>
-                  <button onClick={() => setPage('evaluation')} className="btn btn-secondary">
+
+                  <button
+                    type="button"
+                    onClick={() => setPage('evaluation')}
+                    className="btn btn-secondary"
+                  >
+                    <BarChart2 size={15} />
                     See How It Works
                   </button>
                 </div>
 
-                <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginTop: '16px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div
+                  style={{
+                    fontSize: '12px',
+                    color: 'var(--text-subtle)',
+                    marginTop: '18px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '7px',
+                  }}
+                >
                   <CheckCircle size={13} color="var(--status-success-text)" />
                   Built using the provided Coursera Courses & Skills dataset (623 courses, 115 educational providers).
                 </div>
               </div>
 
-              {/* PIPELINE STEPPER VISUALIZATION */}
+              {/* PIPELINE */}
               <div className="pipeline-stepper">
                 <div className="stepper-card">
                   <div className="stepper-num" style={{ color: 'var(--color-brand)' }}>STEP 01</div>
@@ -375,14 +843,22 @@ export default function App() {
                   <div className="stepper-desc">Pinpoints exact missing core and supporting competencies needed for promotion.</div>
                 </div>
                 <div className="stepper-card">
-                  <div className="stepper-num" style={{ color: '#a5b4fc' }}>STEP 04</div>
+                  <div className="stepper-num" style={{ color: '#7c3aed' }}>STEP 04</div>
                   <div className="stepper-title">Learning Path</div>
                   <div className="stepper-desc">SentenceTransformer vector search ranks courses with transparent RAG explanations.</div>
                 </div>
               </div>
 
-              {/* DATASET METRICS GRID */}
-              <div className="metrics-row" style={{ marginTop: '32px', marginBottom: 0, paddingTop: '24px', borderTop: '1px solid var(--border-default)' }}>
+              {/* DATASET METRICS */}
+              <div
+                className="metrics-row"
+                style={{
+                  marginTop: '32px',
+                  marginBottom: 0,
+                  paddingTop: '26px',
+                  borderTop: '1px solid var(--border-default)',
+                }}
+              >
                 <div className="metric-card">
                   <div className="metric-label">Courses Analyzed</div>
                   <div className="metric-value">{stats ? stats.total_courses : 623}</div>
@@ -404,50 +880,98 @@ export default function App() {
                   <div className="metric-sub">Verified Student Reviews</div>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* FEATURED CAREER TRACKS */}
-            <div style={{ marginBottom: '32px' }}>
-              <div style={{ marginBottom: '18px' }}>
-                <h2 style={{ fontSize: '20px' }}>Explore Target Career Paths</h2>
+            <section style={{ marginBottom: '32px' }}>
+              <div style={{ marginBottom: '20px' }}>
+                <h2 style={{ fontSize: '22px', fontWeight: 750, marginBottom: '7px' }}>
+                  Explore Target Career Paths
+                </h2>
                 <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                   Select a role below to assess your current readiness and discover your custom course roadmap.
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '16px' }}>
-                {CAREER_TRACKS.map(track => {
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                  gap: '18px',
+                }}
+              >
+                {CAREER_TRACKS.map((track) => {
                   const IconComp = track.icon;
                   return (
-                    <div 
-                      key={track.id} 
-                      className="panel" 
-                      style={{ cursor: 'pointer', padding: '22px', transition: 'all 0.15s ease' }}
+                    <div
+                      key={track.id}
+                      className="panel"
+                      style={{
+                        cursor: 'pointer',
+                        padding: '22px',
+                        transition: 'all 0.2s ease',
+                      }}
                       onClick={() => handleSelectCareerFromLanding(track.title)}
                     >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-                        <div style={{ padding: '8px', background: 'var(--bg-surface-raised)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)' }}>
-                          <IconComp size={18} color="#a5b4fc" />
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'flex-start',
+                          marginBottom: '16px',
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: '42px',
+                            height: '42px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            background: 'var(--bg-surface-raised)',
+                            borderRadius: '12px',
+                            border: '1px solid var(--border-default)',
+                          }}
+                        >
+                          <IconComp size={19} color="var(--color-brand)" />
                         </div>
-                        <span className="tag">{track.count}</span>
+                        <span className="tag tag-brand">{track.count}</span>
                       </div>
 
-                      <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>{track.title}</h3>
-                      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5 }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: 700, marginBottom: '7px' }}>
+                        {track.title}
+                      </h3>
+                      <p
+                        style={{
+                          fontSize: '13px',
+                          color: 'var(--text-muted)',
+                          marginBottom: '18px',
+                          lineHeight: 1.6,
+                        }}
+                      >
                         {track.desc}
                       </p>
 
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--color-brand)', fontWeight: 500, fontSize: '12px' }}>
-                        Assess Skill Readiness <ArrowRight size={13} />
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          color: 'var(--color-brand)',
+                          fontWeight: 600,
+                          fontSize: '12px',
+                        }}
+                      >
+                        Assess Skill Readiness
+                        <ArrowRight size={13} />
                       </div>
                     </div>
                   );
                 })}
               </div>
-            </div>
+            </section>
           </div>
         )}
-
         {/* ========================================================================= */}
         {/* PAGE 2: PROGRESSIVE SKILL ASSESSMENT FORM (AUTH PROTECTED) */}
         {/* ========================================================================= */}
@@ -1001,9 +1525,83 @@ export default function App() {
       )}
 
       {/* FOOTER */}
-      <footer style={{ borderTop: '1px solid var(--border-default)', padding: '28px 0', marginTop: '48px', color: 'var(--text-subtle)', fontSize: '12px', textAlign: 'center' }}>
+      <footer
+        style={{
+          borderTop: '1px solid var(--border-default)',
+          marginTop: '56px',
+          padding: '42px 0 24px',
+          background: 'var(--bg-surface)',
+        }}
+      >
         <div className="container">
-          CareerPilot AI Engine • Grounded on <code>coursera_course_dataset_v3.csv</code> (623 courses, 12 attributes)
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(240px, 1.6fr) repeat(3, minmax(120px, 1fr))',
+              gap: '32px',
+              paddingBottom: '30px',
+            }}
+          >
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                <span className="brand-icon">CP</span>
+                <strong style={{ fontSize: '16px', color: 'var(--text-heading)' }}>CareerPilot AI</strong>
+              </div>
+              <p style={{ maxWidth: '360px', fontSize: '12px', lineHeight: 1.7, color: 'var(--text-muted)', margin: 0 }}>
+                An AI-powered career guidance engine that connects your skills and goals with practical learning paths.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Platform</strong>
+              <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
+                <button type="button" style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }} onClick={() => setPage('landing')}>Overview</button>
+                <button type="button" style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }} onClick={() => navigateToAssessment()}>Skill Assessment</button>
+                <button type="button" className="footer-link" onClick={() => setPage('evaluation')}>Performance</button>
+              </div>
+            </div>
+
+            <div>
+              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Career Tracks</strong>
+              <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
+                {CAREER_TRACKS.slice(0, 3).map((track) => (
+                  <button
+                    type="button"
+                    key={track.id}
+                    style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }}
+                    onClick={() => handleSelectCareerFromLanding(track.title)}
+                  >
+                    {track.title}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Dataset</strong>
+              <div style={{ display: 'grid', gap: '8px', marginTop: '12px', fontSize: '12px', color: 'var(--text-muted)' }}>
+                <span>623 Courses</span>
+                <span>319 Skills</span>
+                <span>115 Providers</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              borderTop: '1px solid var(--border-default)',
+              paddingTop: '18px',
+              display: 'flex',
+              justifyContent: 'space-between',
+              gap: '16px',
+              flexWrap: 'wrap',
+              color: 'var(--text-subtle)',
+              fontSize: '11px',
+            }}
+          >
+            <span>© {new Date().getFullYear()} CareerPilot AI. All rights reserved.</span>
+            <span>Grounded on <code>coursera_course_dataset_v3.csv</code></span>
+          </div>
         </div>
       </footer>
     </div>
