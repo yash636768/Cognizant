@@ -1,0 +1,11 @@
+[
+  {
+    "id": "user_1787048892407_84ba4518",
+    "name": "Alex Dev",
+    "email": "alex@example.com",
+    "salt": "da06821f3468c9f8649e910484aa270c",
+    "passwordHash": "da0e920bc2affb7c17e4bdf3dcfba92f539aba90568ef3d218e75721834f35e2",
+    "token": "dXNlcl8xNzg3MDQ4ODkyNDA3Xzg0YmE0NTE4OjE3ODcwNDg4OTQ0NDg6MGE4YjgzNDM3NDA1YmRlMmQ3MzU4MDY1MDY1YTMyMzU=",
+    "createdAt": "2026-08-18T10:28:12.407Z"
+  }
+]

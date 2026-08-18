@@ -25,7 +25,12 @@ import {
   Globe,
   Code,
   Check,
-  Info
+  Info,
+  User,
+  LogIn,
+  LogOut,
+  Lock,
+  Mail
 } from 'lucide-react';
 
 const API_BASE = "http://localhost:5000/api";
@@ -60,6 +65,15 @@ export default function App() {
   const [stats, setStats] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
   
+  // Auth State
+  const [currentUser, setCurrentUser] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('pathfinder_token') || '');
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authTab, setAuthTab] = useState('login'); // 'login' | 'register'
+  const [authForm, setAuthForm] = useState({ name: '', email: '', password: '' });
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
+
   // User Inputs
   const [currentSkills, setCurrentSkills] = useState(["Python Programming", "Databases & SQL"]);
   const [skillInput, setSkillInput] = useState("");
@@ -90,6 +104,9 @@ export default function App() {
   useEffect(() => {
     fetchStats();
     fetchEvaluation();
+    if (token) {
+      fetchCurrentUser(token);
+    }
   }, []);
 
   const fetchStats = async () => {
@@ -114,6 +131,65 @@ export default function App() {
     } catch (e) {
       console.error("Evaluation API error:", e);
     }
+  };
+
+  const fetchCurrentUser = async (authToken) => {
+    try {
+      const res = await fetch(`${API_BASE}/auth/me`, {
+        headers: { 'Authorization': `Bearer ${authToken}` }
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCurrentUser(data.user);
+      } else {
+        // Clear invalid token
+        localStorage.removeItem('pathfinder_token');
+        setToken('');
+        setCurrentUser(null);
+      }
+    } catch (e) {
+      console.error("Auth verify error:", e);
+    }
+  };
+
+  const handleAuthSubmit = async (e) => {
+    e.preventDefault();
+    setAuthError('');
+    setAuthLoading(true);
+
+    const endpoint = authTab === 'login' ? `${API_BASE}/auth/login` : `${API_BASE}/auth/register`;
+    const payload = authTab === 'login' 
+      ? { email: authForm.email, password: authForm.password }
+      : { name: authForm.name, email: authForm.email, password: authForm.password };
+
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Authentication failed.");
+      }
+
+      localStorage.setItem('pathfinder_token', data.token);
+      setToken(data.token);
+      setCurrentUser(data.user);
+      setAuthModalOpen(false);
+      setAuthForm({ name: '', email: '', password: '' });
+    } catch (err) {
+      setAuthError(err.message);
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('pathfinder_token');
+    setToken('');
+    setCurrentUser(null);
   };
 
   const handleAddSkill = (skillName) => {
@@ -206,6 +282,27 @@ export default function App() {
               System Evaluation
             </button>
           </nav>
+
+          {/* AUTH STATUS / BUTTON */}
+          <div>
+            {currentUser ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div className="user-avatar-badge">
+                  <div className="avatar-circle">
+                    {currentUser.name.charAt(0).toUpperCase()}
+                  </div>
+                  <span>{currentUser.name.split(' ')[0]}</span>
+                </div>
+                <button onClick={handleLogout} className="btn btn-ghost btn-sm" title="Sign Out">
+                  <LogOut size={14} />
+                </button>
+              </div>
+            ) : (
+              <button onClick={() => { setAuthError(''); setAuthModalOpen(true); }} className="btn btn-primary btn-sm">
+                <LogIn size={14} /> Sign In
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
@@ -562,7 +659,7 @@ export default function App() {
               {loading ? (
                 <div className="panel" style={{ padding: '48px', textAlign: 'center' }}>
                   <Sparkles className="animate-spin" size={28} color="var(--color-brand)" style={{ margin: '0 auto 12px' }} />
-                  <div style={{ color: 'var(--text-muted)' }}>Querying FAISS vector index & computing hybrid scores...</div>
+                  <div style={{ color: 'var(--text-muted)' }}>Computing hybrid recommendation scores & RAG explanations...</div>
                 </div>
               ) : results && results.recommendations ? (
                 <div>
@@ -710,6 +807,107 @@ export default function App() {
         )}
 
       </main>
+
+      {/* AUTH MODAL */}
+      {authModalOpen && (
+        <div className="modal-overlay" onClick={() => setAuthModalOpen(false)}>
+          <div className="modal-card" onClick={e => e.stopPropagation()}>
+            <button 
+              onClick={() => setAuthModalOpen(false)} 
+              style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}
+            >
+              <X size={18} />
+            </button>
+
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <div style={{ width: '40px', height: '40px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 10px' }}>
+                <User size={20} />
+              </div>
+              <h2 style={{ fontSize: '18px', fontWeight: 700 }}>
+                {authTab === 'login' ? "Welcome Back to PathFinder" : "Create Your Free Account"}
+              </h2>
+              <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
+                {authTab === 'login' ? "Sign in to save your target career paths and skill benchmarks." : "Get personalized course paths grounded in 623 Coursera offerings."}
+              </p>
+            </div>
+
+            <div className="auth-tabs">
+              <button 
+                className={`auth-tab ${authTab === 'login' ? 'active' : ''}`}
+                onClick={() => { setAuthTab('login'); setAuthError(''); }}
+              >
+                Sign In
+              </button>
+              <button 
+                className={`auth-tab ${authTab === 'register' ? 'active' : ''}`}
+                onClick={() => { setAuthTab('register'); setAuthError(''); }}
+              >
+                Create Account
+              </button>
+            </div>
+
+            {authError && (
+              <div className="auth-error">
+                <AlertCircle size={15} />
+                <span>{authError}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleAuthSubmit}>
+              {authTab === 'register' && (
+                <div className="form-group">
+                  <label className="form-label">Full Name</label>
+                  <input 
+                    type="text" 
+                    className="input"
+                    placeholder="e.g. Alex Morgan"
+                    required
+                    value={authForm.name}
+                    onChange={e => setAuthForm({ ...authForm, name: e.target.value })}
+                  />
+                </div>
+              )}
+
+              <div className="form-group">
+                <label className="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  className="input"
+                  placeholder="name@company.com"
+                  required
+                  value={authForm.email}
+                  onChange={e => setAuthForm({ ...authForm, email: e.target.value })}
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Password</label>
+                <input 
+                  type="password" 
+                  className="input"
+                  placeholder="••••••••"
+                  required
+                  minLength={6}
+                  value={authForm.password}
+                  onChange={e => setAuthForm({ ...authForm, password: e.target.value })}
+                />
+              </div>
+
+              <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '10px' }} disabled={authLoading}>
+                {authLoading ? "Processing..." : (authTab === 'login' ? "Sign In" : "Create Account")}
+              </button>
+            </form>
+
+            <div style={{ marginTop: '16px', textAlign: 'center', fontSize: '12px', color: 'var(--text-subtle)' }}>
+              {authTab === 'login' ? (
+                <span>Don't have an account? <button onClick={() => { setAuthTab('register'); setAuthError(''); }} style={{ background: 'none', border: 'none', color: 'var(--color-brand)', cursor: 'pointer', fontWeight: 500 }}>Sign up free</button></span>
+              ) : (
+                <span>Already have an account? <button onClick={() => { setAuthTab('login'); setAuthError(''); }} style={{ background: 'none', border: 'none', color: 'var(--color-brand)', cursor: 'pointer', fontWeight: 500 }}>Sign in</button></span>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* FOOTER */}
       <footer style={{ borderTop: '1px solid var(--border-default)', padding: '24px 0', marginTop: '40px', color: 'var(--text-subtle)', fontSize: '12px', textAlign: 'center' }}>

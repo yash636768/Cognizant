@@ -5,6 +5,7 @@ const path = require('path');
 
 const CareerModel = require('./careerModel');
 const HybridRecommender = require('./recommender');
+const { registerUser, loginUser, getUserByToken } = require('./auth');
 
 const app = express();
 app.use(cors());
@@ -166,6 +167,47 @@ app.post('/api/recommend', (req, res) => {
     console.error("Error in /api/recommend:", err);
     return res.status(500).json({ error: err.message });
   }
+});
+
+// AUTH ENDPOINTS
+
+// 5. POST /api/auth/register
+app.post('/api/auth/register', (req, res) => {
+  try {
+    const { name, email, password } = req.body || {};
+    const result = registerUser({ name, email, password });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(400).json({ error: err.message });
+  }
+});
+
+// 6. POST /api/auth/login
+app.post('/api/auth/login', (req, res) => {
+  try {
+    const { email, password } = req.body || {};
+    const result = loginUser({ email, password });
+    return res.json(result);
+  } catch (err) {
+    return res.status(401).json({ error: err.message });
+  }
+});
+
+// 7. GET /api/auth/me
+app.get('/api/auth/me', (req, res) => {
+  const authHeader = req.headers.authorization || '';
+  const token = authHeader.replace(/^Bearer\s+/i, '').trim();
+
+  if (!token) {
+    return res.status(401).json({ error: "No token provided." });
+  }
+
+  const user = getUserByToken(token);
+  if (!user) {
+    return res.status(401).json({ error: "Invalid or expired token." });
+  }
+
+  return res.json({ user });
 });
 
 const PORT = process.env.PORT || 5000;
