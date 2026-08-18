@@ -204,9 +204,20 @@ export default function App() {
     setCurrentSkills(currentSkills.filter(s => s !== skillName));
   };
 
+  const navigateToAssessment = (targetRole = null) => {
+    if (targetRole) {
+      setTargetCareer(targetRole);
+    }
+    if (!currentUser) {
+      setAuthError('Please sign in or create a free account to access Skill Assessment.');
+      setAuthModalOpen(true);
+    } else {
+      setPage('input');
+    }
+  };
+
   const handleSelectCareerFromLanding = (careerTitle) => {
-    setTargetCareer(careerTitle);
-    setPage('input');
+    navigateToAssessment(careerTitle);
   };
 
   const handleRunAdvisor = async () => {
@@ -262,7 +273,7 @@ export default function App() {
               Overview
             </button>
             <button 
-              onClick={() => setPage('input')} 
+              onClick={() => navigateToAssessment()} 
               className={`nav-link ${page === 'input' ? 'active' : ''}`}
             >
               Skill Assessment
@@ -327,7 +338,7 @@ export default function App() {
                 </p>
 
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                  <button onClick={() => setPage('input')} className="btn btn-primary">
+                  <button onClick={() => navigateToAssessment()} className="btn btn-primary">
                     Start Skill Assessment <ArrowRight size={15} />
                   </button>
                   <button onClick={() => setPage('evaluation')} className="btn btn-secondary">
@@ -436,16 +447,35 @@ export default function App() {
         {/* ========================================================================= */}
         {page === 'input' && (
           <div style={{ maxWidth: '680px', margin: '0 auto' }}>
-            <div className="panel">
-              <div className="panel-header">
-                <div>
-                  <h2 className="panel-title">Skill Assessment & Preferences</h2>
-                  <p className="panel-subtitle">Configure your current background and career targets.</p>
+            {!currentUser ? (
+              <div className="panel" style={{ padding: '48px 32px', textAlign: 'center' }}>
+                <div style={{ width: '52px', height: '52px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
+                  <Lock size={26} />
                 </div>
-                <button onClick={() => setPage('landing')} className="btn btn-ghost btn-sm">
-                  <ArrowLeft size={14} /> Back
-                </button>
+                <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '8px' }}>Sign In Required</h2>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px', maxWidth: '480px', margin: '0 auto 24px', lineHeight: 1.6 }}>
+                  Skill Assessment and personalized course recommendations are accessible only to registered users. Please sign in or create a free account to proceed.
+                </p>
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  <button onClick={() => { setAuthError(''); setAuthModalOpen(true); }} className="btn btn-primary">
+                    <LogIn size={15} /> Sign In / Create Free Account
+                  </button>
+                  <button onClick={() => setPage('landing')} className="btn btn-secondary">
+                    Return to Overview
+                  </button>
+                </div>
               </div>
+            ) : (
+              <div className="panel">
+                <div className="panel-header">
+                  <div>
+                    <h2 className="panel-title">Skill Assessment & Preferences</h2>
+                    <p className="panel-subtitle">Configure your current background and career targets.</p>
+                  </div>
+                  <button onClick={() => setPage('landing')} className="btn btn-ghost btn-sm">
+                    <ArrowLeft size={14} /> Back
+                  </button>
+                </div>
 
               {/* Skill Input */}
               <div className="form-group">
@@ -589,6 +619,7 @@ export default function App() {
                 Run Course Matcher <ArrowRight size={15} />
               </button>
             </div>
+            )}
           </div>
         )}
 
