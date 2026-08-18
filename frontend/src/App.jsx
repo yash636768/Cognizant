@@ -30,7 +30,9 @@ import {
   LogIn,
   LogOut,
   Lock,
-  Mail
+  Mail,
+  Zap,
+  Filter
 } from 'lucide-react';
 
 const API_BASE = "http://localhost:5000/api";
@@ -52,11 +54,11 @@ const PRESET_SKILLS = [
 ];
 
 const CAREER_TRACKS = [
-  { id: "Data Scientist", title: "Data Scientist", icon: TrendingUp, count: "340 Courses", desc: "Extract insights using statistics, ML algorithms, and Python data pipelines." },
-  { id: "AI / Machine Learning Engineer", title: "AI & ML Engineer", icon: Cpu, count: "280 Courses", desc: "Design neural networks, deep learning architectures, and production ML models." },
-  { id: "Cloud Solutions Architect", title: "Cloud Architect", icon: Globe, count: "290 Courses", desc: "Architect and manage cloud infrastructure across AWS, GCP, and Azure." },
-  { id: "Cybersecurity Engineer", title: "Cybersecurity Engineer", icon: Shield, count: "160 Courses", desc: "Protect systems, networks, and data infrastructure from security vulnerabilities." },
-  { id: "Full-Stack Web Developer", title: "Full-Stack Developer", icon: Code, count: "210 Courses", desc: "Build modern web applications, user interfaces, and backend server APIs." },
+  { id: "Data Scientist", title: "Data Scientist", icon: TrendingUp, count: "340 Courses", desc: "Extract actionable insights using statistics, ML algorithms, and data pipelines." },
+  { id: "AI / Machine Learning Engineer", title: "AI & ML Engineer", icon: Cpu, count: "280 Courses", desc: "Design neural networks, deep learning architectures, and scalable AI systems." },
+  { id: "Cloud Solutions Architect", title: "Cloud Architect", icon: Globe, count: "290 Courses", desc: "Architect and manage cloud infrastructure across AWS, GCP, and Microsoft Azure." },
+  { id: "Cybersecurity Engineer", title: "Cybersecurity Engineer", icon: Shield, count: "160 Courses", desc: "Protect systems, cloud networks, and data infrastructure from vulnerabilities." },
+  { id: "Full-Stack Web Developer", title: "Full-Stack Developer", icon: Code, count: "210 Courses", desc: "Build modern web applications, user interfaces, and server API backends." },
   { id: "Data & Business Analyst", title: "Data & Business Analyst", icon: Briefcase, count: "310 Courses", desc: "Translate complex datasets into executive dashboards and business strategy." }
 ];
 
@@ -73,6 +75,9 @@ export default function App() {
   const [authForm, setAuthForm] = useState({ name: '', email: '', password: '' });
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
+
+  // Assessment Form Progressive Step (1, 2, 3)
+  const [assessmentStep, setAssessmentStep] = useState(1);
 
   // User Inputs
   const [currentSkills, setCurrentSkills] = useState(["Python Programming", "Databases & SQL"]);
@@ -142,7 +147,6 @@ export default function App() {
         const data = await res.json();
         setCurrentUser(data.user);
       } else {
-        // Clear invalid token
         localStorage.removeItem('pathfinder_token');
         setToken('');
         setCurrentUser(null);
@@ -212,6 +216,7 @@ export default function App() {
       setAuthError('Please sign in or create a free account to access Skill Assessment.');
       setAuthModalOpen(true);
     } else {
+      setAssessmentStep(1);
       setPage('input');
     }
   };
@@ -260,8 +265,8 @@ export default function App() {
       <header className="navbar">
         <div className="container nav-content">
           <div className="brand-logo" onClick={() => setPage('landing')}>
-            <div className="brand-icon">P</div>
-            <span className="brand-name">PathFinder</span>
+            <div className="brand-icon">CP</div>
+            <span className="brand-name">CareerPilot AI</span>
             <span className="brand-tag">Dataset Grounded</span>
           </div>
 
@@ -283,14 +288,14 @@ export default function App() {
                 onClick={() => setPage('results')} 
                 className={`nav-link ${page === 'results' ? 'active' : ''}`}
               >
-                Recommendations
+                Paths & Courses
               </button>
             )}
             <button 
               onClick={() => setPage('evaluation')} 
               className={`nav-link ${page === 'evaluation' ? 'active' : ''}`}
             >
-              System Evaluation
+              System Performance
             </button>
           </nav>
 
@@ -323,27 +328,56 @@ export default function App() {
         {/* PAGE 1: OVERVIEW / LANDING */}
         {/* ========================================================================= */}
         {page === 'landing' && (
-          <div>
+          <div className="animate-fade-in">
             {/* HERO SECTION */}
-            <div className="panel" style={{ padding: '40px', marginBottom: '32px' }}>
-              <div style={{ maxWidth: '780px' }}>
-                <span className="tag tag-brand" style={{ marginBottom: '12px' }}>
+            <div className="panel" style={{ padding: '44px 36px', marginBottom: '32px' }}>
+              <div style={{ maxWidth: '820px' }}>
+                <span className="tag tag-brand" style={{ marginBottom: '16px' }}>
                   Coursera Dataset Intelligence Engine
                 </span>
-                <h1 style={{ fontSize: '32px', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>
-                  Identify Skill Gaps & Find Courses Grounded in Real Data
+                <h1 style={{ fontSize: '36px', fontWeight: 700, marginBottom: '14px', lineHeight: 1.2 }}>
+                  Your career shouldn't be a guess.
                 </h1>
-                <p style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '24px', lineHeight: 1.6 }}>
-                  Compare your technical background against target career roles, pinpoint missing competencies, and receive multi-factor course recommendations cataloged directly from <strong>623 Coursera offerings</strong>.
+                <p style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '28px', lineHeight: 1.6, maxWidth: '720px' }}>
+                  CareerPilot AI understands your skills, interests, and target roles to help you discover the right career path and pinpoint exactly what to learn next — grounded directly in <strong>623 Coursera offerings</strong>.
                 </p>
 
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
                   <button onClick={() => navigateToAssessment()} className="btn btn-primary">
-                    Start Skill Assessment <ArrowRight size={15} />
+                    Discover My Career <ArrowRight size={15} />
                   </button>
                   <button onClick={() => setPage('evaluation')} className="btn btn-secondary">
-                    View System Performance Metrics
+                    See How It Works
                   </button>
+                </div>
+
+                <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginTop: '16px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <CheckCircle size={13} color="var(--status-success-text)" />
+                  Built using the provided Coursera Courses & Skills dataset (623 courses, 115 educational providers).
+                </div>
+              </div>
+
+              {/* PIPELINE STEPPER VISUALIZATION */}
+              <div className="pipeline-stepper">
+                <div className="stepper-card">
+                  <div className="stepper-num" style={{ color: 'var(--color-brand)' }}>STEP 01</div>
+                  <div className="stepper-title">Student Profile</div>
+                  <div className="stepper-desc">Input your technical background normalized against our 319-skill taxonomy.</div>
+                </div>
+                <div className="stepper-card">
+                  <div className="stepper-num" style={{ color: 'var(--status-success-text)' }}>STEP 02</div>
+                  <div className="stepper-title">Career Direction</div>
+                  <div className="stepper-desc">Calculates match percentage across 7 target profiles to identify top role alignment.</div>
+                </div>
+                <div className="stepper-card">
+                  <div className="stepper-num" style={{ color: 'var(--status-warning-text)' }}>STEP 03</div>
+                  <div className="stepper-title">Skill Gap Analysis</div>
+                  <div className="stepper-desc">Pinpoints exact missing core and supporting competencies needed for promotion.</div>
+                </div>
+                <div className="stepper-card">
+                  <div className="stepper-num" style={{ color: '#a5b4fc' }}>STEP 04</div>
+                  <div className="stepper-title">Learning Path</div>
+                  <div className="stepper-desc">SentenceTransformer vector search ranks courses with transparent RAG explanations.</div>
                 </div>
               </div>
 
@@ -352,7 +386,7 @@ export default function App() {
                 <div className="metric-card">
                   <div className="metric-label">Courses Analyzed</div>
                   <div className="metric-value">{stats ? stats.total_courses : 623}</div>
-                  <div className="metric-sub">100% Real Coursera Data</div>
+                  <div className="metric-sub">Ground-Truth Coursera Dataset</div>
                 </div>
                 <div className="metric-card">
                   <div className="metric-label">Skills Extracted</div>
@@ -374,10 +408,10 @@ export default function App() {
 
             {/* FEATURED CAREER TRACKS */}
             <div style={{ marginBottom: '32px' }}>
-              <div style={{ marginBottom: '16px' }}>
-                <h2 style={{ fontSize: '18px' }}>Select a Target Role</h2>
+              <div style={{ marginBottom: '18px' }}>
+                <h2 style={{ fontSize: '20px' }}>Explore Target Career Paths</h2>
                 <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                  Click a role to assess your skill coverage and view recommended course roadmaps.
+                  Select a role below to assess your current readiness and discover your custom course roadmap.
                 </p>
               </div>
 
@@ -388,7 +422,7 @@ export default function App() {
                     <div 
                       key={track.id} 
                       className="panel" 
-                      style={{ cursor: 'pointer', padding: '20px', transition: 'border-color 0.15s ease' }}
+                      style={{ cursor: 'pointer', padding: '22px', transition: 'all 0.15s ease' }}
                       onClick={() => handleSelectCareerFromLanding(track.title)}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
@@ -398,8 +432,8 @@ export default function App() {
                         <span className="tag">{track.count}</span>
                       </div>
 
-                      <h3 style={{ fontSize: '15px', fontWeight: 600, marginBottom: '6px' }}>{track.title}</h3>
-                      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>{track.title}</h3>
+                      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5 }}>
                         {track.desc}
                       </p>
 
@@ -411,42 +445,14 @@ export default function App() {
                 })}
               </div>
             </div>
-
-            {/* HOW IT WORKS */}
-            <div className="panel">
-              <div className="panel-header" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
-                <div>
-                  <h2 className="panel-title">How Recommendation Intelligence Works</h2>
-                  <p className="panel-subtitle">Transparent, explainable recommendation pipeline grounded in vector space search.</p>
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', marginTop: '20px' }}>
-                <div style={{ background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--color-brand)', marginBottom: '6px' }}>STEP 01</div>
-                  <div style={{ fontWeight: 600, color: 'var(--text-heading)', marginBottom: '4px' }}>Skill Tag Selection</div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Input your technical competencies which are normalized against our 319-skill dataset taxonomy.</div>
-                </div>
-                <div style={{ background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--status-success-text)', marginBottom: '6px' }}>STEP 02</div>
-                  <div style={{ fontWeight: 600, color: 'var(--text-heading)', marginBottom: '4px' }}>Skill Gap Analysis</div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Calculates skill overlap against domain target profiles to pinpoint exact missing skills.</div>
-                </div>
-                <div style={{ background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: 'var(--status-warning-text)', marginBottom: '6px' }}>STEP 03</div>
-                  <div style={{ fontWeight: 600, color: 'var(--text-heading)', marginBottom: '4px' }}>FAISS Hybrid Scoring</div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Queries 384-dimensional SentenceTransformer embeddings and ranks courses with RAG explanations.</div>
-                </div>
-              </div>
-            </div>
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* PAGE 2: SKILL ASSESSMENT & INPUT FORM */}
+        {/* PAGE 2: PROGRESSIVE SKILL ASSESSMENT FORM (AUTH PROTECTED) */}
         {/* ========================================================================= */}
         {page === 'input' && (
-          <div style={{ maxWidth: '680px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '720px', margin: '0 auto' }} className="animate-fade-in">
             {!currentUser ? (
               <div className="panel" style={{ padding: '48px 32px', textAlign: 'center' }}>
                 <div style={{ width: '52px', height: '52px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
@@ -469,191 +475,245 @@ export default function App() {
               <div className="panel">
                 <div className="panel-header">
                   <div>
-                    <h2 className="panel-title">Skill Assessment & Preferences</h2>
-                    <p className="panel-subtitle">Configure your current background and career targets.</p>
+                    <h2 className="panel-title">Career Assessment & Preferences</h2>
+                    <p className="panel-subtitle">Step {assessmentStep} of 3 — Tell us about your background and targets.</p>
                   </div>
                   <button onClick={() => setPage('landing')} className="btn btn-ghost btn-sm">
-                    <ArrowLeft size={14} /> Back
+                    <ArrowLeft size={14} /> Cancel
                   </button>
                 </div>
 
-              {/* Skill Input */}
-              <div className="form-group">
-                <label className="form-label">Technical Skills You Currently Have</label>
-                
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '10px' }}>
-                  {currentSkills.map(s => (
-                    <span key={s} className="tag tag-brand">
-                      {s}
-                      <button onClick={() => handleRemoveSkill(s)} className="tag-remove"><X size={12} /></button>
-                    </span>
-                  ))}
+                {/* STEP TRACKER BADGE */}
+                <div className="step-tracker">
+                  <div className={`step-dot ${assessmentStep >= 1 ? 'active' : ''}`}>1</div>
+                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 1 ? 600 : 400, color: assessmentStep === 1 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Target Role</span>
+                  <span style={{ color: 'var(--border-default)' }}>•</span>
+                  <div className={`step-dot ${assessmentStep >= 2 ? 'active' : ''}`}>2</div>
+                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 2 ? 600 : 400, color: assessmentStep === 2 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Your Skills</span>
+                  <span style={{ color: 'var(--border-default)' }}>•</span>
+                  <div className={`step-dot ${assessmentStep >= 3 ? 'active' : ''}`}>3</div>
+                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 3 ? 600 : 400, color: assessmentStep === 3 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Preferences</span>
                 </div>
 
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '10px' }}>
-                  <input 
-                    type="text" 
-                    className="input" 
-                    placeholder="Type a skill name and press Enter..." 
-                    value={skillInput}
-                    onChange={e => setSkillInput(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && handleAddSkill(skillInput)}
-                  />
-                  <button onClick={() => handleAddSkill(skillInput)} className="btn btn-secondary">
-                    Add
-                  </button>
-                </div>
+                {/* STEP 1: TARGET ROLE & SPECIFIC FOCUS */}
+                {assessmentStep === 1 && (
+                  <div>
+                    <div className="form-group">
+                      <label className="form-label">Target Career Track</label>
+                      <select className="select" value={targetCareer} onChange={e => setTargetCareer(e.target.value)}>
+                        <option value="Data Scientist">Data Scientist</option>
+                        <option value="AI / Machine Learning Engineer">AI / Machine Learning Engineer</option>
+                        <option value="Cloud Solutions Architect">Cloud Solutions Architect</option>
+                        <option value="Cybersecurity Engineer">Cybersecurity Engineer</option>
+                        <option value="Full-Stack Web Developer">Full-Stack Web Developer</option>
+                        <option value="Data & Business Analyst">Data & Business Analyst</option>
+                        <option value="Product & Strategy Leader">Product & Strategy Leader</option>
+                      </select>
+                    </div>
 
-                <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '6px' }}>Suggested dataset skills:</div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-                  {PRESET_SKILLS.map(s => (
-                    <button 
-                      key={s} 
-                      onClick={() => handleAddSkill(s)}
-                      style={{ 
-                        background: 'transparent', 
-                        border: '1px solid var(--border-default)', 
-                        color: 'var(--text-muted)', 
-                        padding: '2px 8px', 
-                        borderRadius: '12px', 
-                        fontSize: '11px', 
-                        cursor: 'pointer' 
-                      }}
-                    >
-                      + {s}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Target Role Selector */}
-              <div className="form-group">
-                <label className="form-label">Target Career Goal</label>
-                <select className="select" value={targetCareer} onChange={e => setTargetCareer(e.target.value)}>
-                  <option value="Data Scientist">Data Scientist</option>
-                  <option value="AI / Machine Learning Engineer">AI / Machine Learning Engineer</option>
-                  <option value="Cloud Solutions Architect">Cloud Solutions Architect</option>
-                  <option value="Cybersecurity Engineer">Cybersecurity Engineer</option>
-                  <option value="Full-Stack Web Developer">Full-Stack Web Developer</option>
-                  <option value="Data & Business Analyst">Data & Business Analyst</option>
-                  <option value="Product & Strategy Leader">Product & Strategy Leader</option>
-                </select>
-              </div>
-
-              {/* Preferences */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-group">
-                <div>
-                  <label className="form-label">Course Difficulty</label>
-                  <select className="select" value={difficulty} onChange={e => setDifficulty(e.target.value)}>
-                    <option value="Any">Any Level</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="form-label">Time Commitment</label>
-                  <select className="select" value={duration} onChange={e => setDuration(e.target.value)}>
-                    <option value="Any">Any Duration</option>
-                    <option value="1 - 4 Weeks">1 - 4 Weeks</option>
-                    <option value="1 - 3 Months">1 - 3 Months</option>
-                    <option value="3 - 6 Months">3 - 6 Months</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Configurable Priority Weights */}
-              <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px', marginBottom: '20px' }}>
-                <button 
-                  onClick={() => setShowTuner(!showTuner)}
-                  className="btn btn-ghost btn-sm"
-                  style={{ color: 'var(--color-brand)' }}
-                >
-                  <Sliders size={13} /> {showTuner ? "Hide Weight Priorities" : "Customize Scoring Weight Priorities"}
-                </button>
-
-                {showTuner && (
-                  <div style={{ marginTop: '12px', background: 'var(--bg-app)', padding: '14px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)', fontSize: '12px' }}>
-                    <div style={{ marginBottom: '10px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2px' }}>
-                        <span>Semantic Vector Match</span>
-                        <strong>{Math.round(weights.semantic_skill_match * 100)}%</strong>
-                      </div>
+                    <div className="form-group">
+                      <label className="form-label">Specific Goal or Query (Optional)</label>
                       <input 
-                        type="range" min="0" max="0.8" step="0.05" 
-                        value={weights.semantic_skill_match}
-                        onChange={e => setWeights({...weights, semantic_skill_match: parseFloat(e.target.value)})}
-                        style={{ width: '100%' }}
+                        type="text" 
+                        className="input" 
+                        placeholder="e.g. I want to transition into MLOps and deep learning algorithms..."
+                        value={userQuery}
+                        onChange={e => setUserQuery(e.target.value)}
                       />
                     </div>
-                    <div style={{ marginBottom: '10px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2px' }}>
-                        <span>Missing Skill Gap Weight</span>
-                        <strong>{Math.round(weights.career_skill_gap_relevance * 100)}%</strong>
-                      </div>
-                      <input 
-                        type="range" min="0" max="0.5" step="0.05" 
-                        value={weights.career_skill_gap_relevance}
-                        onChange={e => setWeights({...weights, career_skill_gap_relevance: parseFloat(e.target.value)})}
-                        style={{ width: '100%' }}
-                      />
+
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '28px' }}>
+                      <button onClick={() => setAssessmentStep(2)} className="btn btn-primary">
+                        Next: Add Your Skills <ArrowRight size={15} />
+                      </button>
                     </div>
-                    <div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2px' }}>
-                        <span>Rating Quality Weight</span>
-                        <strong>{Math.round(weights.rating * 100)}%</strong>
+                  </div>
+                )}
+
+                {/* STEP 2: TECHNICAL SKILLS */}
+                {assessmentStep === 2 && (
+                  <div>
+                    <div className="form-group">
+                      <label className="form-label">Technical Skills You Currently Have</label>
+                      
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '12px' }}>
+                        {currentSkills.map(s => (
+                          <span key={s} className="tag tag-brand">
+                            {s}
+                            <button onClick={() => handleRemoveSkill(s)} className="tag-remove"><X size={12} /></button>
+                          </span>
+                        ))}
                       </div>
-                      <input 
-                        type="range" min="0" max="0.3" step="0.02" 
-                        value={weights.rating}
-                        onChange={e => setWeights({...weights, rating: parseFloat(e.target.value)})}
-                        style={{ width: '100%' }}
-                      />
+
+                      <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+                        <input 
+                          type="text" 
+                          className="input" 
+                          placeholder="Type a skill name and press Enter..." 
+                          value={skillInput}
+                          onChange={e => setSkillInput(e.target.value)}
+                          onKeyDown={e => e.key === 'Enter' && handleAddSkill(skillInput)}
+                        />
+                        <button onClick={() => handleAddSkill(skillInput)} className="btn btn-secondary">
+                          Add
+                        </button>
+                      </div>
+
+                      <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '8px' }}>Suggested dataset skills:</div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                        {PRESET_SKILLS.map(s => (
+                          <button 
+                            key={s} 
+                            onClick={() => handleAddSkill(s)}
+                            style={{ 
+                              background: 'transparent', 
+                              border: '1px solid var(--border-default)', 
+                              color: 'var(--text-muted)', 
+                              padding: '3px 10px', 
+                              borderRadius: '12px', 
+                              fontSize: '11px', 
+                              cursor: 'pointer' 
+                            }}
+                          >
+                            + {s}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '28px' }}>
+                      <button onClick={() => setAssessmentStep(1)} className="btn btn-secondary">
+                        <ArrowLeft size={14} /> Back
+                      </button>
+                      <button onClick={() => setAssessmentStep(3)} className="btn btn-primary">
+                        Next: Preferences & Weights <ArrowRight size={15} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 3: PREFERENCES & SCORING PRIORITY */}
+                {assessmentStep === 3 && (
+                  <div>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-group">
+                      <div>
+                        <label className="form-label">Preferred Difficulty Level</label>
+                        <select className="select" value={difficulty} onChange={e => setDifficulty(e.target.value)}>
+                          <option value="Any">Any Level</option>
+                          <option value="Beginner">Beginner</option>
+                          <option value="Intermediate">Intermediate</option>
+                          <option value="Advanced">Advanced</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="form-label">Time Commitment</label>
+                        <select className="select" value={duration} onChange={e => setDuration(e.target.value)}>
+                          <option value="Any">Any Duration</option>
+                          <option value="1 - 4 Weeks">1 - 4 Weeks</option>
+                          <option value="1 - 3 Months">1 - 3 Months</option>
+                          <option value="3 - 6 Months">3 - 6 Months</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Weight Priority Customization */}
+                    <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px', marginBottom: '24px' }}>
+                      <button 
+                        onClick={() => setShowTuner(!showTuner)}
+                        className="btn btn-ghost btn-sm"
+                        style={{ color: 'var(--color-brand)' }}
+                      >
+                        <Sliders size={13} /> {showTuner ? "Hide Weight Priorities" : "Customize Scoring Priority Weights"}
+                      </button>
+
+                      {showTuner && (
+                        <div style={{ marginTop: '12px', background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)', fontSize: '12px' }}>
+                          <div style={{ marginBottom: '12px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                              <span>Semantic Vector Similarity</span>
+                              <strong>{Math.round(weights.semantic_skill_match * 100)}%</strong>
+                            </div>
+                            <input 
+                              type="range" min="0" max="0.8" step="0.05" 
+                              value={weights.semantic_skill_match}
+                              onChange={e => setWeights({...weights, semantic_skill_match: parseFloat(e.target.value)})}
+                              style={{ width: '100%' }}
+                            />
+                          </div>
+                          <div style={{ marginBottom: '12px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                              <span>Skill Gap Resolution Weight</span>
+                              <strong>{Math.round(weights.career_skill_gap_relevance * 100)}%</strong>
+                            </div>
+                            <input 
+                              type="range" min="0" max="0.5" step="0.05" 
+                              value={weights.career_skill_gap_relevance}
+                              onChange={e => setWeights({...weights, career_skill_gap_relevance: parseFloat(e.target.value)})}
+                              style={{ width: '100%' }}
+                            />
+                          </div>
+                          <div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
+                              <span>Rating Quality Weight</span>
+                              <strong>{Math.round(weights.rating * 100)}%</strong>
+                            </div>
+                            <input 
+                              type="range" min="0" max="0.3" step="0.02" 
+                              value={weights.rating}
+                              onChange={e => setWeights({...weights, rating: parseFloat(e.target.value)})}
+                              style={{ width: '100%' }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <button onClick={() => setAssessmentStep(2)} className="btn btn-secondary">
+                        <ArrowLeft size={14} /> Back
+                      </button>
+                      <button onClick={handleRunAdvisor} className="btn btn-primary">
+                        Build My Learning Path <ArrowRight size={15} />
+                      </button>
                     </div>
                   </div>
                 )}
               </div>
-
-              {/* Action Button */}
-              <button onClick={handleRunAdvisor} className="btn btn-primary" style={{ width: '100%' }}>
-                Run Course Matcher <ArrowRight size={15} />
-              </button>
-            </div>
             )}
           </div>
         )}
 
         {/* ========================================================================= */}
-        {/* PAGE 3: COURSE RECOMMENDATIONS */}
+        {/* PAGE 3: CAREER MATCH & COURSE RECOMMENDATIONS */}
         {/* ========================================================================= */}
         {page === 'results' && (
-          <div>
+          <div className="animate-fade-in">
             {/* CAREER READINESS PANEL */}
             {results && results.selected_career && (
               <div className="panel" style={{ marginBottom: '24px' }}>
                 <div className="panel-header">
                   <div>
-                    <span className="tag tag-brand" style={{ marginBottom: '6px' }}>Target Profile</span>
-                    <h2 className="panel-title" style={{ fontSize: '18px' }}>{results.selected_career.title}</h2>
+                    <span className="tag tag-brand" style={{ marginBottom: '6px' }}>Your Target Path</span>
+                    <h2 className="panel-title" style={{ fontSize: '20px' }}>{results.selected_career.title}</h2>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: '22px', fontWeight: 700, color: 'var(--color-brand)' }}>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: 'var(--color-brand)' }}>
                       {results.selected_career.match_percentage}%
                     </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Readiness Score</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Match Score</div>
                   </div>
                 </div>
 
-                <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '16px' }}>
+                <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.6 }}>
                   {results.selected_career.description}
                 </p>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', background: 'var(--bg-app)', padding: '18px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)' }}>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--status-success-text)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Check size={14} /> Skills You Possess ({results.selected_career.matched_core_skills.length})
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--status-success-text)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Check size={15} /> Skills You Possess ({results.selected_career.matched_core_skills.length})
                     </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                       {results.selected_career.matched_core_skills.length > 0 ? (
                         results.selected_career.matched_core_skills.map(s => (
                           <span key={s} className="tag tag-success">{s}</span>
@@ -663,10 +723,10 @@ export default function App() {
                   </div>
 
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--status-warning-text)', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <AlertCircle size={14} /> Key Skill Gaps to Target ({results.selected_career.missing_core_skills.length})
+                    <div style={{ fontSize: '12px', fontWeight: 600, color: 'var(--status-warning-text)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <AlertCircle size={15} /> What You Need Next ({results.selected_career.missing_core_skills.length})
                     </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                       {results.selected_career.missing_core_skills.map(s => (
                         <span key={s} className="tag tag-warning">{s}</span>
                       ))}
@@ -678,9 +738,9 @@ export default function App() {
 
             {/* RECOMMENDED COURSES CATALOG */}
             <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-heading)' }}>
-                  Recommended Courses ({results ? results.recommendations.length : 0})
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-heading)' }}>
+                  Courses Picked for Your Next Step ({results ? results.recommendations.length : 0})
                 </h3>
                 <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
                   Grounded on <strong style={{ color: 'var(--text-heading)' }}>coursera_course_dataset_v3.csv</strong>
@@ -688,9 +748,9 @@ export default function App() {
               </div>
 
               {loading ? (
-                <div className="panel" style={{ padding: '48px', textAlign: 'center' }}>
-                  <Sparkles className="animate-spin" size={28} color="var(--color-brand)" style={{ margin: '0 auto 12px' }} />
-                  <div style={{ color: 'var(--text-muted)' }}>Computing hybrid recommendation scores & RAG explanations...</div>
+                <div className="panel" style={{ padding: '52px', textAlign: 'center' }}>
+                  <Sparkles className="animate-spin" size={30} color="var(--color-brand)" style={{ margin: '0 auto 14px' }} />
+                  <div style={{ color: 'var(--text-muted)' }}>Calculating vector matches & RAG explanations...</div>
                 </div>
               ) : results && results.recommendations ? (
                 <div>
@@ -698,7 +758,7 @@ export default function App() {
                     <div key={rec.course_id} className="course-card">
                       <div className="course-header">
                         <div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                             <span className="tag" style={{ fontSize: '11px' }}>Row #{rec.course_id + 1}</span>
                             <span className="tag tag-brand">{rec.organization}</span>
                             <span className="tag tag-success">{rec.type}</span>
@@ -718,9 +778,9 @@ export default function App() {
                         <div>Enrolled: <strong style={{ color: 'var(--text-heading)' }}>{rec.enrolled_count.toLocaleString()}</strong></div>
                       </div>
 
-                      <div style={{ marginBottom: '14px' }}>
-                        <div style={{ fontSize: '11px', color: 'var(--text-subtle)', marginBottom: '4px' }}>Skills Covered:</div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                      <div style={{ marginBottom: '16px' }}>
+                        <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '6px' }}>Skills Covered:</div>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                           {rec.skills.split(',').map(s => {
                             const trimmed = s.trim();
                             const isGap = rec.matched_gap_skills.includes(trimmed);
@@ -733,13 +793,13 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '12px', borderTop: '1px solid var(--border-default)' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '14px', borderTop: '1px solid var(--border-default)' }}>
                         <button 
                           onClick={() => toggleAnalysis(rec.course_id)}
                           className="btn btn-ghost btn-sm"
                           style={{ color: 'var(--color-brand)' }}
                         >
-                          <Info size={13} /> {expandedAnalysis[rec.course_id] ? "Hide Match Analysis" : "Why this fits your path"}
+                          <Info size={14} /> {expandedAnalysis[rec.course_id] ? "Hide Details" : "Why this course was selected"}
                         </button>
 
                         <a 
@@ -748,14 +808,14 @@ export default function App() {
                           rel="noreferrer"
                           className="btn btn-secondary btn-sm"
                         >
-                          View on Coursera <ExternalLink size={12} />
+                          View on Coursera <ExternalLink size={13} />
                         </a>
                       </div>
 
                       {expandedAnalysis[rec.course_id] && (
-                        <div style={{ marginTop: '12px', background: 'var(--bg-app)', padding: '12px 14px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', fontSize: '12px', color: 'var(--text-body)' }}>
-                          <strong style={{ color: 'var(--color-brand)' }}>Recommendation Analysis:</strong>
-                          <p style={{ marginTop: '4px', lineHeight: 1.5 }}>{rec.rag_explanation}</p>
+                        <div style={{ marginTop: '14px', background: 'var(--bg-app)', padding: '14px 16px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-default)', fontSize: '13px', color: 'var(--text-body)' }}>
+                          <strong style={{ color: 'var(--color-brand)' }}>Recommendation Explanation:</strong>
+                          <p style={{ marginTop: '6px', lineHeight: 1.6 }}>{rec.rag_explanation}</p>
                         </div>
                       )}
                     </div>
@@ -767,15 +827,15 @@ export default function App() {
         )}
 
         {/* ========================================================================= */}
-        {/* PAGE 4: EVALUATION METRICS DASHBOARD */}
+        {/* PAGE 4: SYSTEM PERFORMANCE DASHBOARD */}
         {/* ========================================================================= */}
         {page === 'evaluation' && evaluation && (
-          <div>
+          <div className="animate-fade-in">
             <div className="panel" style={{ marginBottom: '24px' }}>
               <div className="panel-header">
                 <div>
-                  <h2 className="panel-title">System Benchmark & Accuracy Metrics</h2>
-                  <p className="panel-subtitle">Quantitative evaluation across 5 benchmark student profiles against the full Coursera dataset.</p>
+                  <h2 className="panel-title">System Performance & Quantitative Metrics</h2>
+                  <p className="panel-subtitle">Evaluation benchmarks across 5 benchmark student profiles against the full Coursera dataset.</p>
                 </div>
               </div>
 
@@ -784,7 +844,7 @@ export default function App() {
                 <div className="metric-card">
                   <div className="metric-label">Mean Precision@5</div>
                   <div className="metric-value">{evaluation.summary_metrics.mean_precision_at_5}</div>
-                  <div className="metric-sub">Top 5 Recommendation Relevance</div>
+                  <div className="metric-sub">Top-5 Recommendation Relevance</div>
                 </div>
                 <div className="metric-card">
                   <div className="metric-label">Mean NDCG@5</div>
@@ -804,7 +864,7 @@ export default function App() {
               </div>
 
               {/* Detailed Performance Table */}
-              <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '12px' }}>Benchmark Profile Results</h3>
+              <h3 style={{ fontSize: '15px', fontWeight: 600, marginBottom: '14px' }}>Benchmark Profile Results</h3>
               <div className="table-container">
                 <table className="data-table">
                   <thead>
@@ -845,20 +905,20 @@ export default function App() {
           <div className="modal-card" onClick={e => e.stopPropagation()}>
             <button 
               onClick={() => setAuthModalOpen(false)} 
-              style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}
+              style={{ position: 'absolute', top: '18px', right: '18px', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}
             >
               <X size={18} />
             </button>
 
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-              <div style={{ width: '40px', height: '40px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 10px' }}>
-                <User size={20} />
+            <div style={{ textAlign: 'center', marginBottom: '22px' }}>
+              <div style={{ width: '42px', height: '42px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px', border: '1px solid var(--color-brand-border)' }}>
+                <User size={22} />
               </div>
-              <h2 style={{ fontSize: '18px', fontWeight: 700 }}>
-                {authTab === 'login' ? "Welcome Back to PathFinder" : "Create Your Free Account"}
+              <h2 style={{ fontSize: '19px', fontWeight: 700 }}>
+                {authTab === 'login' ? "Welcome Back to CareerPilot AI" : "Create Your Free Account"}
               </h2>
-              <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '4px' }}>
-                {authTab === 'login' ? "Sign in to save your target career paths and skill benchmarks." : "Get personalized course paths grounded in 623 Coursera offerings."}
+              <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
+                {authTab === 'login' ? "Sign in to access Skill Assessment and save your target career paths." : "Get custom learning paths grounded in 623 Coursera offerings."}
               </p>
             </div>
 
@@ -929,7 +989,7 @@ export default function App() {
               </button>
             </form>
 
-            <div style={{ marginTop: '16px', textAlign: 'center', fontSize: '12px', color: 'var(--text-subtle)' }}>
+            <div style={{ marginTop: '18px', textAlign: 'center', fontSize: '13px', color: 'var(--text-subtle)' }}>
               {authTab === 'login' ? (
                 <span>Don't have an account? <button onClick={() => { setAuthTab('register'); setAuthError(''); }} style={{ background: 'none', border: 'none', color: 'var(--color-brand)', cursor: 'pointer', fontWeight: 500 }}>Sign up free</button></span>
               ) : (
@@ -941,9 +1001,9 @@ export default function App() {
       )}
 
       {/* FOOTER */}
-      <footer style={{ borderTop: '1px solid var(--border-default)', padding: '24px 0', marginTop: '40px', color: 'var(--text-subtle)', fontSize: '12px', textAlign: 'center' }}>
+      <footer style={{ borderTop: '1px solid var(--border-default)', padding: '28px 0', marginTop: '48px', color: 'var(--text-subtle)', fontSize: '12px', textAlign: 'center' }}>
         <div className="container">
-          PathFinder Recommendation Engine • Grounded on <code>coursera_course_dataset_v3.csv</code> (623 courses, 12 attributes)
+          CareerPilot AI Engine • Grounded on <code>coursera_course_dataset_v3.csv</code> (623 courses, 12 attributes)
         </div>
       </footer>
     </div>
