@@ -1,0 +1,4792 @@
+[
+  {
+    "canonical_skill": "Leadership & Management",
+    "aliases": [
+      "Leadership and Management",
+      "Leadership & Management"
+    ],
+    "related_skills": [
+      "Strategy and Operations",
+      "Communication & Soft Skills",
+      "Strategy",
+      "Cloud Computing",
+      "Data Analysis",
+      "Business Analysis"
+    ],
+    "course_count": 208
+  },
+  {
+    "canonical_skill": "Data Analysis",
+    "aliases": [
+      "Data Analysis"
+    ],
+    "related_skills": [
+      "Data Management",
+      "Data Visualization",
+      "Software Engineering & Programming",
+      "Python Programming",
+      "Databases & SQL",
+      "Probability & Statistics"
+    ],
+    "course_count": 191
+  },
+  {
+    "canonical_skill": "Software Engineering & Programming",
+    "aliases": [
+      "Software Engineering",
+      "Computer Programming",
+      "Software Engineering & Programming"
+    ],
+    "related_skills": [
+      "Python Programming",
+      "Data Analysis",
+      "Problem Solving",
+      "Leadership & Management",
+      "Cloud Computing",
+      "Data Structures"
+    ],
+    "course_count": 154
+  },
+  {
+    "canonical_skill": "Cloud Computing",
+    "aliases": [
+      "Cloud Computing",
+      "Cloud Platforms",
+      "Cloud Infrastructure"
+    ],
+    "related_skills": [
+      "Cloud Applications",
+      "Leadership & Management",
+      "Google Cloud Platform (GCP)",
+      "Cloud Storage",
+      "Cybersecurity & Network Security",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 152
+  },
+  {
+    "canonical_skill": "Python Programming",
+    "aliases": [
+      "Python Programming"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Machine Learning",
+      "Algorithms",
+      "Cloud Computing",
+      "Databases & SQL"
+    ],
+    "course_count": 128
+  },
+  {
+    "canonical_skill": "Communication & Soft Skills",
+    "aliases": [
+      "Communication",
+      "Communication & Soft Skills"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Data Analysis",
+      "Strategy and Operations",
+      "Collaboration",
+      "Software Engineering & Programming",
+      "Strategy"
+    ],
+    "course_count": 107
+  },
+  {
+    "canonical_skill": "Data Management",
+    "aliases": [
+      "Data Management"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Databases & SQL",
+      "Data Visualization",
+      "Cloud Computing",
+      "Leadership & Management",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 106
+  },
+  {
+    "canonical_skill": "Machine Learning",
+    "aliases": [
+      "Machine Learning Algorithms",
+      "Applied Machine Learning",
+      "Machine Learning"
+    ],
+    "related_skills": [
+      "Python Programming",
+      "Human Learning",
+      "Data Analysis",
+      "Algorithms",
+      "Artificial Neural Networks",
+      "Deep Learning & AI"
+    ],
+    "course_count": 98
+  },
+  {
+    "canonical_skill": "Databases & SQL",
+    "aliases": [
+      "SQL",
+      "Databases",
+      "Databases & SQL"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Cloud Computing",
+      "Software Engineering & Programming",
+      "Data Visualization",
+      "Leadership & Management"
+    ],
+    "course_count": 93
+  },
+  {
+    "canonical_skill": "Probability & Statistics",
+    "aliases": [
+      "General Statistics",
+      "Probability & Statistics"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Statistical Analysis",
+      "Regression",
+      "Statistical Programming",
+      "Data Visualization",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 88
+  },
+  {
+    "canonical_skill": "Problem Solving",
+    "aliases": [
+      "Problem Solving"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Critical Thinking",
+      "Data Analysis",
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Algorithms"
+    ],
+    "course_count": 86
+  },
+  {
+    "canonical_skill": "Strategy",
+    "aliases": [
+      "Strategy"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Business Analysis",
+      "Communication & Soft Skills",
+      "Marketing",
+      "Decision Making"
+    ],
+    "course_count": 86
+  },
+  {
+    "canonical_skill": "Algorithms",
+    "aliases": [
+      "Algorithms"
+    ],
+    "related_skills": [
+      "Python Programming",
+      "Machine Learning",
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Human Learning",
+      "Critical Thinking"
+    ],
+    "course_count": 84
+  },
+  {
+    "canonical_skill": "Critical Thinking",
+    "aliases": [
+      "Critical Thinking"
+    ],
+    "related_skills": [
+      "Problem Solving",
+      "Data Analysis",
+      "Software Engineering & Programming",
+      "Algorithms",
+      "Leadership & Management",
+      "Computational Thinking"
+    ],
+    "course_count": 84
+  },
+  {
+    "canonical_skill": "Data Visualization",
+    "aliases": [
+      "Data Visualization"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Software Engineering & Programming",
+      "Databases & SQL",
+      "Python Programming",
+      "Probability & Statistics"
+    ],
+    "course_count": 83
+  },
+  {
+    "canonical_skill": "Business Analysis",
+    "aliases": [
+      "Business Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Leadership & Management",
+      "Strategy",
+      "Data Management",
+      "Strategy and Operations",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 83
+  },
+  {
+    "canonical_skill": "Strategy and Operations",
+    "aliases": [
+      "Strategy and Operations"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Business Analysis",
+      "Planning",
+      "Entrepreneurship"
+    ],
+    "course_count": 80
+  },
+  {
+    "canonical_skill": "Cybersecurity & Network Security",
+    "aliases": [
+      "Network Security",
+      "System Security",
+      "Security Engineering",
+      "Cybersecurity & Network Security"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Leadership & Management",
+      "Software Security",
+      "Cryptography",
+      "Computer Networking",
+      "Network Architecture"
+    ],
+    "course_count": 78
+  },
+  {
+    "canonical_skill": "Finance",
+    "aliases": [
+      "Finance"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Financial Analysis",
+      "FinTech",
+      "Risk Management",
+      "Investment Management",
+      "BlockChain"
+    ],
+    "course_count": 75
+  },
+  {
+    "canonical_skill": "Cloud Applications",
+    "aliases": [
+      "Cloud Applications"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Leadership & Management",
+      "DevOps & CI/CD",
+      "Cloud Storage",
+      "Kubernetes",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 62
+  },
+  {
+    "canonical_skill": "Statistical Analysis",
+    "aliases": [
+      "Statistical Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Probability & Statistics",
+      "Basic Descriptive Statistics",
+      "Data Visualization",
+      "Statistical Tests",
+      "Business Analysis"
+    ],
+    "course_count": 62
+  },
+  {
+    "canonical_skill": "Planning",
+    "aliases": [
+      "Planning"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Project Management",
+      "Communication & Soft Skills",
+      "Strategy",
+      "Business Analysis"
+    ],
+    "course_count": 60
+  },
+  {
+    "canonical_skill": "Google Cloud Platform (GCP)",
+    "aliases": [
+      "Google Cloud Platform",
+      "Google Cloud Platform (GCP)"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Cloud Storage",
+      "Leadership & Management",
+      "Google App Engine",
+      "Kubernetes"
+    ],
+    "course_count": 60
+  },
+  {
+    "canonical_skill": "Risk Management",
+    "aliases": [
+      "Risk Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Finance",
+      "Strategy and Operations",
+      "Financial Analysis",
+      "Investment Management",
+      "Strategy"
+    ],
+    "course_count": 58
+  },
+  {
+    "canonical_skill": "Human Learning",
+    "aliases": [
+      "Human Learning"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Algorithms",
+      "Python Programming",
+      "Deep Learning & AI",
+      "Machine Learning Software",
+      "Data Analysis"
+    ],
+    "course_count": 58
+  },
+  {
+    "canonical_skill": "Exploratory Data Analysis",
+    "aliases": [
+      "Exploratory Data Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Software Engineering & Programming",
+      "Probability & Statistics",
+      "Python Programming",
+      "Data Management"
+    ],
+    "course_count": 53
+  },
+  {
+    "canonical_skill": "Regression",
+    "aliases": [
+      "Regression"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Probability & Statistics",
+      "Machine Learning",
+      "Python Programming",
+      "Algorithms",
+      "Statistical Analysis"
+    ],
+    "course_count": 51
+  },
+  {
+    "canonical_skill": "Data Structures",
+    "aliases": [
+      "Data Structures"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Python Programming",
+      "Problem Solving"
+    ],
+    "course_count": 51
+  },
+  {
+    "canonical_skill": "Decision Making",
+    "aliases": [
+      "Decision Making"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Business Analysis",
+      "Strategy and Operations",
+      "Data Analysis",
+      "Critical Thinking"
+    ],
+    "course_count": 50
+  },
+  {
+    "canonical_skill": "Statistical Programming",
+    "aliases": [
+      "Statistical Programming"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Software Engineering & Programming",
+      "Probability & Statistics",
+      "Python Programming",
+      "Data Visualization",
+      "Machine Learning"
+    ],
+    "course_count": 49
+  },
+  {
+    "canonical_skill": "DevOps & CI/CD",
+    "aliases": [
+      "DevOps",
+      "DevOps & CI/CD"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Leadership & Management",
+      "Cloud Storage",
+      "Software Engineering & Programming",
+      "Kubernetes"
+    ],
+    "course_count": 49
+  },
+  {
+    "canonical_skill": "Big Data",
+    "aliases": [
+      "Big Data"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Cloud Computing",
+      "Machine Learning",
+      "Databases & SQL",
+      "Python Programming"
+    ],
+    "course_count": 48
+  },
+  {
+    "canonical_skill": "Collaboration",
+    "aliases": [
+      "Collaboration"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Software Engineering & Programming",
+      "Strategy and Operations",
+      "Planning",
+      "Project Management"
+    ],
+    "course_count": 47
+  },
+  {
+    "canonical_skill": "Cloud Storage",
+    "aliases": [
+      "Cloud Storage"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "DevOps & CI/CD",
+      "Leadership & Management",
+      "Google Cloud Platform (GCP)",
+      "Data Management"
+    ],
+    "course_count": 47
+  },
+  {
+    "canonical_skill": "Mathematics",
+    "aliases": [
+      "Mathematics"
+    ],
+    "related_skills": [
+      "Mathematical Theory & Analysis",
+      "Probability & Statistics",
+      "Software Engineering & Programming",
+      "Algebra",
+      "Algorithms",
+      "Regression"
+    ],
+    "course_count": 46
+  },
+  {
+    "canonical_skill": "Data Science",
+    "aliases": [
+      "Data Science"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Python Programming",
+      "Machine Learning",
+      "Data Management",
+      "Databases & SQL",
+      "Data Visualization"
+    ],
+    "course_count": 44
+  },
+  {
+    "canonical_skill": "Project Management",
+    "aliases": [
+      "Project Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Planning",
+      "Communication & Soft Skills",
+      "Strategy and Operations",
+      "Collaboration",
+      "Strategy"
+    ],
+    "course_count": 42
+  },
+  {
+    "canonical_skill": "Programming Principles",
+    "aliases": [
+      "Programming Principles"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Problem Solving",
+      "Python Programming",
+      "Data Structures",
+      "Computer Programming Tools"
+    ],
+    "course_count": 41
+  },
+  {
+    "canonical_skill": "Financial Analysis",
+    "aliases": [
+      "Financial Analysis"
+    ],
+    "related_skills": [
+      "Finance",
+      "Leadership & Management",
+      "Investment Management",
+      "Financial Accounting",
+      "Accounting",
+      "Financial Management"
+    ],
+    "course_count": 41
+  },
+  {
+    "canonical_skill": "Cryptography",
+    "aliases": [
+      "Cryptography"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "BlockChain",
+      "Leadership & Management",
+      "Algorithms",
+      "FinTech",
+      "Finance"
+    ],
+    "course_count": 40
+  },
+  {
+    "canonical_skill": "Entrepreneurship",
+    "aliases": [
+      "Entrepreneurship"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Finance",
+      "Communication & Soft Skills",
+      "Planning"
+    ],
+    "course_count": 39
+  },
+  {
+    "canonical_skill": "Deep Learning & AI",
+    "aliases": [
+      "Deep Learning",
+      "Deep Learning & AI"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Artificial Neural Networks",
+      "Human Learning",
+      "Python Programming",
+      "Machine Learning Software",
+      "Algorithms"
+    ],
+    "course_count": 39
+  },
+  {
+    "canonical_skill": "Computer Networking",
+    "aliases": [
+      "Computer Networking"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Network Architecture",
+      "Cybersecurity & Network Security",
+      "Leadership & Management",
+      "Software Engineering & Programming",
+      "Cloud Storage"
+    ],
+    "course_count": 39
+  },
+  {
+    "canonical_skill": "Artificial Neural Networks",
+    "aliases": [
+      "Artificial Neural Networks"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Deep Learning & AI",
+      "Human Learning",
+      "Python Programming",
+      "Algorithms",
+      "Machine Learning Software"
+    ],
+    "course_count": 39
+  },
+  {
+    "canonical_skill": "Data Model",
+    "aliases": [
+      "Data Model"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Data Visualization",
+      "Software Engineering & Programming",
+      "Data Structures"
+    ],
+    "course_count": 38
+  },
+  {
+    "canonical_skill": "Machine Learning Software",
+    "aliases": [
+      "Machine Learning Software"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Human Learning",
+      "Algorithms",
+      "Python Programming",
+      "Deep Learning & AI",
+      "Artificial Neural Networks"
+    ],
+    "course_count": 38
+  },
+  {
+    "canonical_skill": "Innovation",
+    "aliases": [
+      "Innovation"
+    ],
+    "related_skills": [
+      "Finance",
+      "Leadership & Management",
+      "FinTech",
+      "Strategy and Operations",
+      "Strategy",
+      "BlockChain"
+    ],
+    "course_count": 37
+  },
+  {
+    "canonical_skill": "FinTech",
+    "aliases": [
+      "FinTech"
+    ],
+    "related_skills": [
+      "Finance",
+      "BlockChain",
+      "Innovation",
+      "Risk Management",
+      "Payments",
+      "Leadership & Management"
+    ],
+    "course_count": 37
+  },
+  {
+    "canonical_skill": "Marketing",
+    "aliases": [
+      "Marketing"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Market Analysis",
+      "Communication & Soft Skills",
+      "Digital Marketing"
+    ],
+    "course_count": 36
+  },
+  {
+    "canonical_skill": "Network Architecture",
+    "aliases": [
+      "Network Architecture"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Computer Networking",
+      "Cybersecurity & Network Security",
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Network Model"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Extract",
+    "aliases": [
+      "Extract"
+    ],
+    "related_skills": [
+      "Load",
+      "Transform",
+      "Data Management",
+      "Data Analysis",
+      "Databases & SQL",
+      "Data Visualization"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Load",
+    "aliases": [
+      "Load"
+    ],
+    "related_skills": [
+      "Extract",
+      "Transform",
+      "Data Management",
+      "Data Analysis",
+      "Databases & SQL",
+      "Data Visualization"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Transform",
+    "aliases": [
+      "Transform"
+    ],
+    "related_skills": [
+      "Extract",
+      "Load",
+      "Data Management",
+      "Data Analysis",
+      "Databases & SQL",
+      "Data Visualization"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Microsoft Excel",
+    "aliases": [
+      "Microsoft Excel"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Spreadsheet Software",
+      "Business Analysis",
+      "Data Visualization",
+      "Databases & SQL",
+      "Data Management"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Kubernetes",
+    "aliases": [
+      "Kubernetes"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "DevOps & CI/CD",
+      "Google Cloud Platform (GCP)",
+      "Leadership & Management",
+      "Google App Engine"
+    ],
+    "course_count": 35
+  },
+  {
+    "canonical_skill": "Data Analysis Software",
+    "aliases": [
+      "Data Analysis Software"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Data Visualization",
+      "Exploratory Data Analysis",
+      "Data Structures",
+      "Databases & SQL"
+    ],
+    "course_count": 33
+  },
+  {
+    "canonical_skill": "IBM Cloud",
+    "aliases": [
+      "IBM Cloud"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Software Engineering & Programming",
+      "Cloud Applications",
+      "Python Programming",
+      "DevOps & CI/CD",
+      "Leadership & Management"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Statistical Tests",
+    "aliases": [
+      "Statistical Tests"
+    ],
+    "related_skills": [
+      "Probability & Statistics",
+      "Data Analysis",
+      "Statistical Analysis",
+      "Basic Descriptive Statistics",
+      "Probability Distribution",
+      "Regression"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Basic Descriptive Statistics",
+    "aliases": [
+      "Basic Descriptive Statistics"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Statistical Analysis",
+      "Probability & Statistics",
+      "Statistical Tests",
+      "Data Visualization",
+      "Probability Distribution"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Mathematical Theory & Analysis",
+    "aliases": [
+      "Mathematical Theory & Analysis"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Probability & Statistics",
+      "Software Engineering & Programming",
+      "Python Programming",
+      "Data Analysis",
+      "Algorithms"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Probability Distribution",
+    "aliases": [
+      "Probability Distribution"
+    ],
+    "related_skills": [
+      "Probability & Statistics",
+      "Data Analysis",
+      "Statistical Analysis",
+      "Statistical Tests",
+      "Basic Descriptive Statistics",
+      "Regression"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Investment Management",
+    "aliases": [
+      "Investment Management"
+    ],
+    "related_skills": [
+      "Finance",
+      "Financial Analysis",
+      "Risk Management",
+      "Leadership & Management",
+      "Financial Management",
+      "Decision Making"
+    ],
+    "course_count": 32
+  },
+  {
+    "canonical_skill": "Organizational Development",
+    "aliases": [
+      "Organizational Development"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Planning",
+      "Business Analysis"
+    ],
+    "course_count": 31
+  },
+  {
+    "canonical_skill": "User Experience",
+    "aliases": [
+      "User Experience"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "User Experience Design",
+      "Collaboration",
+      "Leadership & Management",
+      "Human Computer Interaction",
+      "User Research"
+    ],
+    "course_count": 31
+  },
+  {
+    "canonical_skill": "Computer Programming Tools",
+    "aliases": [
+      "Computer Programming Tools"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Problem Solving",
+      "Programming Principles",
+      "Critical Thinking",
+      "Data Analysis",
+      "Algorithms"
+    ],
+    "course_count": 31
+  },
+  {
+    "canonical_skill": "BlockChain",
+    "aliases": [
+      "BlockChain"
+    ],
+    "related_skills": [
+      "FinTech",
+      "Finance",
+      "Cryptography",
+      "Innovation",
+      "Payments",
+      "Leadership & Management"
+    ],
+    "course_count": 31
+  },
+  {
+    "canonical_skill": "Spreadsheet Software",
+    "aliases": [
+      "Spreadsheet Software"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Microsoft Excel",
+      "Business Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Databases & SQL"
+    ],
+    "course_count": 30
+  },
+  {
+    "canonical_skill": "R Programming",
+    "aliases": [
+      "R Programming"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Statistical Programming",
+      "Software Engineering & Programming",
+      "Probability & Statistics",
+      "Data Visualization",
+      "Databases & SQL"
+    ],
+    "course_count": 30
+  },
+  {
+    "canonical_skill": "Software Security",
+    "aliases": [
+      "Software Security"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Cloud Computing",
+      "Leadership & Management",
+      "Security Software",
+      "Security Strategy",
+      "Computer Security Models"
+    ],
+    "course_count": 30
+  },
+  {
+    "canonical_skill": "Operations Management",
+    "aliases": [
+      "Operations Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Business Analysis",
+      "Cybersecurity & Network Security",
+      "Cloud Computing"
+    ],
+    "course_count": 30
+  },
+  {
+    "canonical_skill": "Web Development",
+    "aliases": [
+      "Web Development"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Javascript",
+      "Front-End Web Development",
+      "React (web framework)",
+      "Communication & Soft Skills",
+      "Cloud Computing"
+    ],
+    "course_count": 29
+  },
+  {
+    "canonical_skill": "Process Analysis",
+    "aliases": [
+      "Process Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Communication & Soft Skills",
+      "Decision Making",
+      "Leadership & Management",
+      "Critical Thinking",
+      "Problem Solving"
+    ],
+    "course_count": 29
+  },
+  {
+    "canonical_skill": "Linux & Systems",
+    "aliases": [
+      "Linux",
+      "Linux & Systems"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Databases & SQL",
+      "Leadership & Management",
+      "Cloud Computing",
+      "Python Programming",
+      "Software Engineering Tools"
+    ],
+    "course_count": 28
+  },
+  {
+    "canonical_skill": "Market Analysis",
+    "aliases": [
+      "Market Analysis"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Marketing",
+      "Leadership & Management",
+      "Business Analysis",
+      "Strategy and Operations",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 28
+  },
+  {
+    "canonical_skill": "Computational Thinking",
+    "aliases": [
+      "Computational Thinking"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Problem Solving",
+      "Critical Thinking",
+      "Programming Principles",
+      "Algorithms",
+      "Computer Programming Tools"
+    ],
+    "course_count": 28
+  },
+  {
+    "canonical_skill": "Data Mining",
+    "aliases": [
+      "Data Mining"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Machine Learning",
+      "Python Programming",
+      "Data Science",
+      "Databases & SQL"
+    ],
+    "course_count": 27
+  },
+  {
+    "canonical_skill": "Software Architecture",
+    "aliases": [
+      "Software Architecture"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Application Development",
+      "Software Engineering Tools"
+    ],
+    "course_count": 27
+  },
+  {
+    "canonical_skill": "Cloud-Based Integration",
+    "aliases": [
+      "Cloud-Based Integration"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Leadership & Management",
+      "DevOps & CI/CD",
+      "Kubernetes",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 27
+  },
+  {
+    "canonical_skill": "Cloud Management",
+    "aliases": [
+      "Cloud Management"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "DevOps & CI/CD",
+      "Cloud Storage",
+      "Leadership & Management",
+      "Google Cloud Platform (GCP)"
+    ],
+    "course_count": 27
+  },
+  {
+    "canonical_skill": "Financial Accounting",
+    "aliases": [
+      "Financial Accounting"
+    ],
+    "related_skills": [
+      "Finance",
+      "Accounting",
+      "Financial Analysis",
+      "Leadership & Management",
+      "Financial Management",
+      "Business Analysis"
+    ],
+    "course_count": 27
+  },
+  {
+    "canonical_skill": "Writing",
+    "aliases": [
+      "Writing"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Communication & Soft Skills",
+      "Creativity",
+      "Regression",
+      "Deep Learning & AI",
+      "Strategy"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Statistical Visualization",
+    "aliases": [
+      "Statistical Visualization"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Probability & Statistics",
+      "Statistical Analysis",
+      "Business Analysis",
+      "Interactive Data Visualization"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Visualization (Computer Graphics)",
+    "aliases": [
+      "Visualization (Computer Graphics)"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Computer Graphics",
+      "Data Structures"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Research and Design",
+    "aliases": [
+      "Research and Design"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Data Analysis",
+      "Strategy",
+      "Strategy and Operations",
+      "Business Analysis",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Financial Management",
+    "aliases": [
+      "Financial Management"
+    ],
+    "related_skills": [
+      "Finance",
+      "Financial Analysis",
+      "Investment Management",
+      "Financial Accounting",
+      "Leadership & Management",
+      "Accounting"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Regulations and Compliance",
+    "aliases": [
+      "Regulations and Compliance"
+    ],
+    "related_skills": [
+      "Finance",
+      "Leadership & Management",
+      "Risk Management",
+      "Financial Analysis",
+      "FinTech",
+      "Banking"
+    ],
+    "course_count": 26
+  },
+  {
+    "canonical_skill": "Application Development",
+    "aliases": [
+      "Application Development"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Software Engineering Tools",
+      "Cloud Computing",
+      "Collaboration",
+      "Software Architecture",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 25
+  },
+  {
+    "canonical_skill": "Business Process Management",
+    "aliases": [
+      "Business Process Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Business Analysis",
+      "Data Analysis",
+      "Organizational Development"
+    ],
+    "course_count": 25
+  },
+  {
+    "canonical_skill": "Accounting",
+    "aliases": [
+      "Accounting"
+    ],
+    "related_skills": [
+      "Financial Accounting",
+      "Finance",
+      "Financial Analysis",
+      "Leadership & Management",
+      "Financial Management",
+      "Business Analysis"
+    ],
+    "course_count": 25
+  },
+  {
+    "canonical_skill": "Plot (Graphics)",
+    "aliases": [
+      "Plot (Graphics)"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Probability & Statistics",
+      "Software Engineering & Programming",
+      "Databases & SQL"
+    ],
+    "course_count": 24
+  },
+  {
+    "canonical_skill": "Database Administration",
+    "aliases": [
+      "Database Administration"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Management",
+      "Data Analysis",
+      "Database Theory",
+      "Data Structures",
+      "Database Application"
+    ],
+    "course_count": 24
+  },
+  {
+    "canonical_skill": "Business Transformation",
+    "aliases": [
+      "Business Transformation"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Innovation",
+      "Strategy and Operations",
+      "Finance",
+      "Business Analysis"
+    ],
+    "course_count": 24
+  },
+  {
+    "canonical_skill": "Computational Logic",
+    "aliases": [
+      "Computational Logic"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Problem Solving",
+      "Algorithms",
+      "Critical Thinking",
+      "Python Programming",
+      "Computational Thinking"
+    ],
+    "course_count": 24
+  },
+  {
+    "canonical_skill": "Database Application",
+    "aliases": [
+      "Database Application"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Analysis",
+      "Data Management",
+      "Database Administration",
+      "Python Programming",
+      "Data Structures"
+    ],
+    "course_count": 23
+  },
+  {
+    "canonical_skill": "Statistical Machine Learning",
+    "aliases": [
+      "Statistical Machine Learning"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Algorithms",
+      "Data Analysis",
+      "Human Learning",
+      "Regression"
+    ],
+    "course_count": 23
+  },
+  {
+    "canonical_skill": "Cyberattacks",
+    "aliases": [
+      "Cyberattacks"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Cryptography",
+      "Leadership & Management",
+      "Cloud Computing",
+      "Software Security",
+      "Computer Security Incident Management"
+    ],
+    "course_count": 23
+  },
+  {
+    "canonical_skill": "Data Visualization Software",
+    "aliases": [
+      "Data Visualization Software"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Databases & SQL",
+      "Data Structures",
+      "Business Analysis"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Agile Software Development",
+    "aliases": [
+      "Agile Software Development"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Software Engineering & Programming",
+      "Communication & Soft Skills",
+      "Scrum (Software Development)",
+      "Collaboration",
+      "Project Management"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Software Engineering Tools",
+    "aliases": [
+      "Software Engineering Tools"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Application Development",
+      "Collaboration",
+      "Communication & Soft Skills",
+      "Software Architecture",
+      "Leadership & Management"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Natural Language Processing",
+    "aliases": [
+      "Natural Language Processing"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Software Engineering & Programming",
+      "Human Learning",
+      "Artificial Neural Networks",
+      "Data Analysis"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Business Intelligence",
+    "aliases": [
+      "Business Intelligence"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Leadership & Management",
+      "Business Analysis",
+      "Data Model",
+      "Data Visualization"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Correlation And Dependence",
+    "aliases": [
+      "Correlation And Dependence"
+    ],
+    "related_skills": [
+      "Probability & Statistics",
+      "Statistical Analysis",
+      "Statistical Tests",
+      "Data Analysis",
+      "Probability Distribution",
+      "Basic Descriptive Statistics"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Design and Product",
+    "aliases": [
+      "Design and Product"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Data Analysis",
+      "Strategy",
+      "Strategy and Operations",
+      "Business Analysis"
+    ],
+    "course_count": 22
+  },
+  {
+    "canonical_skill": "Computer Security Incident Management",
+    "aliases": [
+      "Computer Security Incident Management"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Leadership & Management",
+      "Cloud Computing",
+      "Cyberattacks",
+      "Software Security",
+      "Risk Management"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Business Communication",
+    "aliases": [
+      "Business Communication"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Leadership & Management",
+      "Data Analysis",
+      "Strategy and Operations",
+      "Project Management",
+      "Strategy"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "NoSQL",
+    "aliases": [
+      "NoSQL"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Python Programming",
+      "Data Management",
+      "Cloud Computing",
+      "Data Analysis",
+      "IBM Cloud"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Human Computer Interaction",
+    "aliases": [
+      "Human Computer Interaction"
+    ],
+    "related_skills": [
+      "User Experience",
+      "Software Engineering & Programming",
+      "Critical Thinking",
+      "User Experience Design",
+      "Cybersecurity & Network Security",
+      "Leadership & Management"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Computer Architecture",
+    "aliases": [
+      "Computer Architecture"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Computer Networking",
+      "Google Cloud Platform (GCP)",
+      "Cybersecurity & Network Security",
+      "Cloud Storage",
+      "Data Management"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Tensorflow",
+    "aliases": [
+      "Tensorflow"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Deep Learning & AI",
+      "Artificial Neural Networks",
+      "Machine Learning Software",
+      "Human Learning"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Cloud API",
+    "aliases": [
+      "Cloud API"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "DevOps & CI/CD",
+      "Google Cloud Platform (GCP)",
+      "Data Analysis",
+      "Kubernetes"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Data Architecture",
+    "aliases": [
+      "Data Architecture"
+    ],
+    "related_skills": [
+      "Data Management",
+      "Data Analysis",
+      "Cloud Computing",
+      "Databases & SQL",
+      "Data Warehousing",
+      "Leadership & Management"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Google App Engine",
+    "aliases": [
+      "Google App Engine"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Google Cloud Platform (GCP)",
+      "Kubernetes",
+      "Cloud Applications",
+      "Cloud Storage",
+      "Other Cloud Platforms and Tools"
+    ],
+    "course_count": 21
+  },
+  {
+    "canonical_skill": "Database Theory",
+    "aliases": [
+      "Database Theory"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Analysis",
+      "Data Structures",
+      "Data Management",
+      "Database Administration",
+      "Python Programming"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "Interactive Data Visualization",
+    "aliases": [
+      "Interactive Data Visualization"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Statistical Visualization",
+      "Business Analysis",
+      "Data Analysis Software"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "Network Model",
+    "aliases": [
+      "Network Model"
+    ],
+    "related_skills": [
+      "Network Architecture",
+      "Cybersecurity & Network Security",
+      "Leadership & Management",
+      "Computer Networking",
+      "Machine Learning",
+      "Python Programming"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "Data Warehousing",
+    "aliases": [
+      "Data Warehousing"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Management",
+      "Big Data",
+      "Cloud Computing",
+      "Data Analysis",
+      "Python Programming"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "Performance Management",
+    "aliases": [
+      "Performance Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Business Analysis",
+      "Decision Making",
+      "Organizational Development"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "Banking",
+    "aliases": [
+      "Banking"
+    ],
+    "related_skills": [
+      "Finance",
+      "FinTech",
+      "Financial Analysis",
+      "BlockChain",
+      "Investment Management",
+      "Leadership & Management"
+    ],
+    "course_count": 20
+  },
+  {
+    "canonical_skill": "People Management",
+    "aliases": [
+      "People Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Strategy and Operations",
+      "Strategy",
+      "Organizational Development",
+      "Business Analysis"
+    ],
+    "course_count": 19
+  },
+  {
+    "canonical_skill": "Javascript",
+    "aliases": [
+      "Javascript"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Software Engineering & Programming",
+      "Front-End Web Development",
+      "React (web framework)",
+      "Computer Science",
+      "Collaboration"
+    ],
+    "course_count": 19
+  },
+  {
+    "canonical_skill": "Algebra",
+    "aliases": [
+      "Algebra"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Linear Algebra",
+      "Mathematical Theory & Analysis",
+      "Critical Thinking",
+      "Calculus",
+      "Problem Solving"
+    ],
+    "course_count": 19
+  },
+  {
+    "canonical_skill": "Security Software",
+    "aliases": [
+      "Security Software"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Software Security",
+      "Cloud Computing",
+      "Security Strategy",
+      "Leadership & Management",
+      "Cyberattacks"
+    ],
+    "course_count": 19
+  },
+  {
+    "canonical_skill": "Operating Systems",
+    "aliases": [
+      "Operating Systems"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cybersecurity & Network Security",
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "DevOps & CI/CD",
+      "Cloud Applications"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Continuous Delivery",
+    "aliases": [
+      "Continuous Delivery"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Cloud Computing",
+      "Cloud Applications",
+      "Continuous Integration",
+      "DevOps & CI/CD",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Software-Defined Networking",
+    "aliases": [
+      "Software-Defined Networking"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Leadership & Management",
+      "Cloud Applications",
+      "Communication & Soft Skills",
+      "Python Programming",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Customer Analysis",
+    "aliases": [
+      "Customer Analysis"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Leadership & Management",
+      "Data Analysis",
+      "Business Analysis",
+      "Marketing",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "People Analysis",
+    "aliases": [
+      "People Analysis"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Strategy",
+      "Business Analysis",
+      "Strategy and Operations",
+      "Data Analysis"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Theoretical Computer Science",
+    "aliases": [
+      "Theoretical Computer Science"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Problem Solving",
+      "Critical Thinking",
+      "Algorithms",
+      "Computational Thinking",
+      "Computational Logic"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Security Strategy",
+    "aliases": [
+      "Security Strategy"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Software Security",
+      "Security Software",
+      "Cloud Computing",
+      "Leadership & Management",
+      "Computer Security Incident Management"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Other Cloud Platforms and Tools",
+    "aliases": [
+      "Other Cloud Platforms and Tools"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Google Cloud Platform (GCP)",
+      "Google App Engine",
+      "Cloud Management",
+      "Kubernetes"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Payments",
+    "aliases": [
+      "Payments"
+    ],
+    "related_skills": [
+      "Finance",
+      "FinTech",
+      "BlockChain",
+      "Innovation",
+      "Banking",
+      "Leadership & Management"
+    ],
+    "course_count": 18
+  },
+  {
+    "canonical_skill": "Digital Marketing",
+    "aliases": [
+      "Digital Marketing"
+    ],
+    "related_skills": [
+      "Marketing",
+      "Communication & Soft Skills",
+      "Strategy",
+      "Market Analysis",
+      "Marketing Management",
+      "Media Strategy & Planning"
+    ],
+    "course_count": 17
+  },
+  {
+    "canonical_skill": "Database Design",
+    "aliases": [
+      "Database Design"
+    ],
+    "related_skills": [
+      "Data Management",
+      "Databases & SQL",
+      "Data Analysis",
+      "Data Structures",
+      "Data Model",
+      "Database Administration"
+    ],
+    "course_count": 17
+  },
+  {
+    "canonical_skill": "Estimation",
+    "aliases": [
+      "Estimation"
+    ],
+    "related_skills": [
+      "Probability & Statistics",
+      "Leadership & Management",
+      "Mathematics",
+      "Data Analysis",
+      "Budget Management",
+      "Planning"
+    ],
+    "course_count": 17
+  },
+  {
+    "canonical_skill": "Computer Security Models",
+    "aliases": [
+      "Computer Security Models"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Software Security",
+      "Cloud Computing",
+      "Computer Networking",
+      "Security Software",
+      "Security Strategy"
+    ],
+    "course_count": 17
+  },
+  {
+    "canonical_skill": "Change Management",
+    "aliases": [
+      "Change Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Organizational Development",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Collaboration"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Scrum (Software Development)",
+    "aliases": [
+      "Scrum (Software Development)"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Agile Software Development",
+      "Software Engineering & Programming",
+      "Project Management",
+      "Communication & Soft Skills",
+      "Collaboration"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Web Design",
+    "aliases": [
+      "Web Design"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Web Development Tools",
+      "User Experience",
+      "Front-End Web Development",
+      "Collaboration",
+      "React (web framework)"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "User Experience Design",
+    "aliases": [
+      "User Experience Design"
+    ],
+    "related_skills": [
+      "User Experience",
+      "Human Computer Interaction",
+      "Communication & Soft Skills",
+      "Collaboration",
+      "User Research",
+      "Visual Design"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Software Testing",
+    "aliases": [
+      "Software Testing"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Problem Solving",
+      "Cloud Computing",
+      "Programming Principles",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Continuous Integration",
+    "aliases": [
+      "Continuous Integration"
+    ],
+    "related_skills": [
+      "DevOps & CI/CD",
+      "Cloud Computing",
+      "Continuous Delivery",
+      "Cloud Applications",
+      "Leadership & Management",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Mergers & Acquisitions",
+    "aliases": [
+      "Mergers & Acquisitions"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Collaboration",
+      "Software Architecture",
+      "Software Engineering Tools",
+      "Python Programming",
+      "Application Development"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Front-End Web Development",
+    "aliases": [
+      "Front-End Web Development"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Javascript",
+      "React (web framework)",
+      "Software Engineering & Programming",
+      "Web Design",
+      "Collaboration"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Linear Algebra",
+    "aliases": [
+      "Linear Algebra"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Algebra",
+      "Mathematical Theory & Analysis",
+      "Python Programming",
+      "Regression",
+      "Machine Learning"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Calculus",
+    "aliases": [
+      "Calculus"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Mathematical Theory & Analysis",
+      "Algebra",
+      "Linear Algebra",
+      "Problem Solving",
+      "Regression"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Forecasting",
+    "aliases": [
+      "Forecasting"
+    ],
+    "related_skills": [
+      "Statistical Analysis",
+      "Data Analysis",
+      "Business Analysis",
+      "Probability & Statistics",
+      "Spreadsheet Software",
+      "Data Visualization"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Cloud Engineering",
+    "aliases": [
+      "Cloud Engineering"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Cloud Storage",
+      "DevOps & CI/CD",
+      "Cloud Management",
+      "Other Cloud Platforms and Tools"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Market Research",
+    "aliases": [
+      "Market Research"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Market Analysis",
+      "Decision Making",
+      "Financial Analysis",
+      "Data Analysis",
+      "Strategy and Operations"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Supply Chain and Logistics",
+    "aliases": [
+      "Supply Chain and Logistics"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Planning",
+      "Strategy and Operations",
+      "Project Management",
+      "Supply Chain Systems",
+      "Business Process Management"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Software As A Service",
+    "aliases": [
+      "Software As A Service"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Cloud-Based Integration",
+      "Cloud Management",
+      "Cloud Storage",
+      "Leadership & Management"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Computer Vision",
+    "aliases": [
+      "Computer Vision"
+    ],
+    "related_skills": [
+      "Artificial Neural Networks",
+      "Machine Learning",
+      "Machine Learning Software",
+      "Deep Learning & AI",
+      "Human Learning",
+      "Python Programming"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Distributed Computing Architecture",
+    "aliases": [
+      "Distributed Computing Architecture"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Data Management",
+      "Apache",
+      "Big Data",
+      "Databases & SQL",
+      "Cybersecurity & Network Security"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Creativity",
+    "aliases": [
+      "Creativity"
+    ],
+    "related_skills": [
+      "Writing",
+      "Problem Solving",
+      "Leadership & Management",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Critical Thinking"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Professional Development",
+    "aliases": [
+      "Professional Development"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Leadership & Management",
+      "Data Analysis",
+      "Data Management",
+      "Business Analysis",
+      "Planning"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Product Management",
+    "aliases": [
+      "Product Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Project Management",
+      "Communication & Soft Skills",
+      "Agile Software Development",
+      "Product Development"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Social Media",
+    "aliases": [
+      "Social Media"
+    ],
+    "related_skills": [
+      "Marketing",
+      "Communication & Soft Skills",
+      "Media Strategy & Planning",
+      "Digital Marketing",
+      "Strategy",
+      "Market Analysis"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Media Strategy & Planning",
+    "aliases": [
+      "Media Strategy & Planning"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Strategy",
+      "Market Analysis",
+      "Marketing",
+      "Digital Marketing",
+      "Marketing Management"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Networking Hardware",
+    "aliases": [
+      "Networking Hardware"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Computer Networking",
+      "Cloud Computing",
+      "Network Architecture",
+      "Leadership & Management",
+      "Cryptography"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Business Psychology",
+    "aliases": [
+      "Business Psychology"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Strategy",
+      "Business Analysis",
+      "Decision Making",
+      "Entrepreneurship"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Web Development Tools",
+    "aliases": [
+      "Web Development Tools"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Web Design",
+      "HTML and CSS",
+      "Front-End Web Development",
+      "User Experience",
+      "React (web framework)"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Sales",
+    "aliases": [
+      "Sales"
+    ],
+    "related_skills": [
+      "Marketing",
+      "Leadership & Management",
+      "Strategy",
+      "Strategy and Operations",
+      "Entrepreneurship",
+      "Business Analysis"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Network Analysis",
+    "aliases": [
+      "Network Analysis"
+    ],
+    "related_skills": [
+      "Computer Networking",
+      "Network Architecture",
+      "Cybersecurity & Network Security",
+      "Cloud Computing",
+      "Network Model",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "React (web framework)",
+    "aliases": [
+      "React (web framework)"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Front-End Web Development",
+      "Javascript",
+      "Software Engineering & Programming",
+      "Computer Science",
+      "Collaboration"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Computer Science",
+    "aliases": [
+      "Computer Science"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Javascript",
+      "Web Development",
+      "React (web framework)",
+      "Collaboration",
+      "Front-End Web Development"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Visual Design",
+    "aliases": [
+      "Visual Design"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Visualization (Computer Graphics)",
+      "Communication & Soft Skills",
+      "User Experience",
+      "Graphic Design",
+      "User Experience Design"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "General Accounting",
+    "aliases": [
+      "General Accounting"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Financial Analysis",
+      "Financial Accounting",
+      "Finance",
+      "Business Analysis",
+      "Accounts Payable and Receivable"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Computer Graphics",
+    "aliases": [
+      "Computer Graphics"
+    ],
+    "related_skills": [
+      "Visualization (Computer Graphics)",
+      "Data Analysis",
+      "Software Engineering & Programming",
+      "Communication & Soft Skills",
+      "Data Visualization",
+      "Computer Graphic Techniques"
+    ],
+    "course_count": 13
+  },
+  {
+    "canonical_skill": "Product Design",
+    "aliases": [
+      "Product Design"
+    ],
+    "related_skills": [
+      "User Experience",
+      "Collaboration",
+      "Communication & Soft Skills",
+      "Software Engineering & Programming",
+      "Human Computer Interaction",
+      "Web Design"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "User Research",
+    "aliases": [
+      "User Research"
+    ],
+    "related_skills": [
+      "User Experience",
+      "User Experience Design",
+      "Collaboration",
+      "Web Design",
+      "Audit",
+      "Human Computer Interaction"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Product Development",
+    "aliases": [
+      "Product Development"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Product Management",
+      "Project Management",
+      "Collaboration",
+      "Planning",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Docker (Software)",
+    "aliases": [
+      "Docker (Software)"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Kubernetes",
+      "DevOps & CI/CD",
+      "Leadership & Management",
+      "Software Architecture",
+      "Cloud Applications"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Apache",
+    "aliases": [
+      "Apache"
+    ],
+    "related_skills": [
+      "Big Data",
+      "Cloud Computing",
+      "Python Programming",
+      "Databases & SQL",
+      "Data Analysis",
+      "Data Management"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Business Development",
+    "aliases": [
+      "Business Development"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Entrepreneurship",
+      "Strategy and Operations",
+      "Business Analysis",
+      "Finance"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Product Strategy",
+    "aliases": [
+      "Product Strategy"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Leadership & Management",
+      "Market Analysis",
+      "Marketing",
+      "Finance",
+      "Strategy and Operations"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Human Resources",
+    "aliases": [
+      "Human Resources"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Strategy and Operations",
+      "Business Analysis",
+      "People Analysis",
+      "Organizational Development"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Brand Management",
+    "aliases": [
+      "Brand Management"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Marketing",
+      "Strategy",
+      "Digital Marketing",
+      "Market Analysis",
+      "Leadership & Management"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Feature Engineering",
+    "aliases": [
+      "Feature Engineering"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Data Analysis",
+      "Machine Learning Software",
+      "Python Programming",
+      "Exploratory Data Analysis",
+      "Human Learning"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Operational Analysis",
+    "aliases": [
+      "Operational Analysis"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Business Analysis",
+      "Strategy and Operations",
+      "Critical Thinking",
+      "Problem Solving",
+      "Data Analysis"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Graph Theory",
+    "aliases": [
+      "Graph Theory"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Mathematics",
+      "Problem Solving",
+      "Algorithms",
+      "Critical Thinking",
+      "Computational Thinking"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Customer Relationship Management",
+    "aliases": [
+      "Customer Relationship Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Marketing",
+      "Communication & Soft Skills",
+      "Strategy and Operations",
+      "Customer Success"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Tableau Software",
+    "aliases": [
+      "Tableau Software"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Visualization",
+      "Data Management",
+      "Software Engineering & Programming",
+      "Communication & Soft Skills",
+      "Databases & SQL"
+    ],
+    "course_count": 11
+  },
+  {
+    "canonical_skill": "Marketing Management",
+    "aliases": [
+      "Marketing Management"
+    ],
+    "related_skills": [
+      "Digital Marketing",
+      "Marketing",
+      "Media Strategy & Planning",
+      "Market Analysis",
+      "Communication & Soft Skills",
+      "Strategy"
+    ],
+    "course_count": 11
+  },
+  {
+    "canonical_skill": "Accounts Payable and Receivable",
+    "aliases": [
+      "Accounts Payable and Receivable"
+    ],
+    "related_skills": [
+      "Finance",
+      "Financial Analysis",
+      "Financial Accounting",
+      "Accounting",
+      "General Accounting",
+      "Business Analysis"
+    ],
+    "course_count": 11
+  },
+  {
+    "canonical_skill": "Securities Trading",
+    "aliases": [
+      "Securities Trading"
+    ],
+    "related_skills": [
+      "Finance",
+      "Investment Management",
+      "Risk Management",
+      "Financial Analysis",
+      "Financial Management",
+      "Banking"
+    ],
+    "course_count": 11
+  },
+  {
+    "canonical_skill": "Budget Management",
+    "aliases": [
+      "Budget Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Planning",
+      "Entrepreneurship",
+      "Strategy and Operations",
+      "Finance",
+      "Project Management"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Emotional Intelligence",
+    "aliases": [
+      "Emotional Intelligence"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Leadership & Management",
+      "Planning",
+      "Strategy and Operations",
+      "Culture",
+      "Business Communication"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Culture",
+    "aliases": [
+      "Culture"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Communication & Soft Skills",
+      "Organizational Development",
+      "Strategy",
+      "Change Management"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Influencing",
+    "aliases": [
+      "Influencing"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Entrepreneurship",
+      "Marketing",
+      "Change Management"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "E-Commerce",
+    "aliases": [
+      "E-Commerce"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Marketing",
+      "Digital Marketing",
+      "Social Media",
+      "Data Analysis",
+      "Marketing Management"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Technical Product Management",
+    "aliases": [
+      "Technical Product Management"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Agile Software Development",
+      "Cloud Computing",
+      "Programming Principles"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Account Management",
+    "aliases": [
+      "Account Management"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Strategy",
+      "Leadership & Management",
+      "Financial Analysis",
+      "Accounts Payable and Receivable",
+      "Financial Accounting"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Microsoft Azure",
+    "aliases": [
+      "Microsoft Azure"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Data Management",
+      "Cloud Storage",
+      "Machine Learning",
+      "Big Data",
+      "Leadership & Management"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Audit",
+    "aliases": [
+      "Audit"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Risk Management",
+      "User Experience Design",
+      "User Research",
+      "User Experience",
+      "Collaboration"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Devops Tools",
+    "aliases": [
+      "Devops Tools"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Leadership & Management",
+      "Cloud Applications",
+      "Software Engineering & Programming",
+      "DevOps & CI/CD",
+      "Linux & Systems"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Interactive Design",
+    "aliases": [
+      "Interactive Design"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Communication & Soft Skills",
+      "Problem Solving",
+      "Web Development",
+      "User Experience",
+      "Data Structures"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "HTML and CSS",
+    "aliases": [
+      "HTML and CSS"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Front-End Web Development",
+      "Web Development Tools",
+      "Javascript",
+      "Software Engineering & Programming",
+      "Web Design"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Mobile Security",
+    "aliases": [
+      "Mobile Security"
+    ],
+    "related_skills": [
+      "Software Security",
+      "Cybersecurity & Network Security",
+      "Computer Security Incident Management",
+      "Cyberattacks",
+      "Security Strategy",
+      "Security Software"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Amazon Web Services (AWS)",
+    "aliases": [
+      "Amazon Web Services",
+      "Amazon Web Services (AWS)"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Cloud Storage",
+      "Software Architecture",
+      "Data Analysis",
+      "Data Management"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Adaptability",
+    "aliases": [
+      "Adaptability"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Decision Making",
+      "Strategy",
+      "Planning",
+      "Strategy and Operations"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Experiment",
+    "aliases": [
+      "Experiment"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Probability & Statistics",
+      "Statistical Analysis",
+      "Probability Distribution",
+      "Statistical Tests",
+      "Statistical Programming"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Entrepreneurial Finance",
+    "aliases": [
+      "Entrepreneurial Finance"
+    ],
+    "related_skills": [
+      "Finance",
+      "Financial Management",
+      "Investment Management",
+      "Financial Analysis",
+      "Innovation",
+      "FinTech"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Internet Of Things",
+    "aliases": [
+      "Internet Of Things"
+    ],
+    "related_skills": [
+      "Cybersecurity & Network Security",
+      "Software Security",
+      "Computer Networking",
+      "Cloud Computing",
+      "Leadership & Management",
+      "Network Architecture"
+    ],
+    "course_count": 9
+  },
+  {
+    "canonical_skill": "Advertising",
+    "aliases": [
+      "Advertising"
+    ],
+    "related_skills": [
+      "Media Strategy & Planning",
+      "Marketing",
+      "Communication & Soft Skills",
+      "Digital Marketing",
+      "Marketing Management",
+      "Social Media"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Differential Equations",
+    "aliases": [
+      "Differential Equations"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Algebra",
+      "Linear Algebra",
+      "Calculus",
+      "Mathematical Theory & Analysis",
+      "Problem Solving"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Cost Accounting",
+    "aliases": [
+      "Cost Accounting"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Financial Analysis",
+      "Financial Accounting",
+      "Finance",
+      "Accounts Payable and Receivable",
+      "General Accounting"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Cash Management",
+    "aliases": [
+      "Cash Management"
+    ],
+    "related_skills": [
+      "Finance",
+      "Financial Analysis",
+      "Financial Accounting",
+      "Leadership & Management",
+      "Accounting",
+      "Accounts Payable and Receivable"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "System Software",
+    "aliases": [
+      "System Software"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Linux & Systems",
+      "Cloud Computing",
+      "Cybersecurity & Network Security",
+      "DevOps & CI/CD",
+      "Cyberattacks"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Computer Graphic Techniques",
+    "aliases": [
+      "Computer Graphic Techniques"
+    ],
+    "related_skills": [
+      "Visualization (Computer Graphics)",
+      "Computer Graphics",
+      "Software Engineering & Programming",
+      "Critical Thinking",
+      "Communication & Soft Skills",
+      "Data Analysis"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Behavioral Economics",
+    "aliases": [
+      "Behavioral Economics"
+    ],
+    "related_skills": [
+      "Risk Management",
+      "Financial Analysis",
+      "Finance",
+      "Investment Management",
+      "Leadership & Management",
+      "Decision Making"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Recruitment",
+    "aliases": [
+      "Recruitment"
+    ],
+    "related_skills": [
+      "Human Resources",
+      "Leadership & Management",
+      "Employee Relations",
+      "Performance Management",
+      "Strategy",
+      "Strategy and Operations"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Storytelling",
+    "aliases": [
+      "Storytelling"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Data Analysis",
+      "Critical Thinking",
+      "Probability & Statistics",
+      "Data Visualization",
+      "Business Analysis"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Leadership Development",
+    "aliases": [
+      "Leadership Development"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Decision Making",
+      "Business Analysis",
+      "People Analysis",
+      "Communication & Soft Skills",
+      "Performance Management"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Conflict Management",
+    "aliases": [
+      "Conflict Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "People Management",
+      "Organizational Development",
+      "Communication & Soft Skills",
+      "Strategy and Operations",
+      "Business Analysis"
+    ],
+    "course_count": 8
+  },
+  {
+    "canonical_skill": "Search Engine Optimization",
+    "aliases": [
+      "Search Engine Optimization"
+    ],
+    "related_skills": [
+      "Media Strategy & Planning",
+      "Strategy",
+      "Marketing",
+      "Digital Marketing",
+      "Marketing Management",
+      "Social Media"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "PostgreSQL",
+    "aliases": [
+      "PostgreSQL"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Analysis",
+      "Database Administration",
+      "Data Management",
+      "Database Application",
+      "Data Warehousing"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Customer Success",
+    "aliases": [
+      "Customer Success"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Marketing",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Customer Relationship Management"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Taxes",
+    "aliases": [
+      "Taxes"
+    ],
+    "related_skills": [
+      "Financial Analysis",
+      "Finance",
+      "Accounting",
+      "Financial Accounting",
+      "General Accounting",
+      "Business Analysis"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Graphic Design",
+    "aliases": [
+      "Graphic Design"
+    ],
+    "related_skills": [
+      "Visual Design",
+      "User Experience",
+      "Communication & Soft Skills",
+      "User Experience Design",
+      "Visualization (Computer Graphics)",
+      "Design and Product"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Employee Relations",
+    "aliases": [
+      "Employee Relations"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "People Management",
+      "Communication & Soft Skills",
+      "Human Resources",
+      "Recruitment",
+      "Performance Management"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Supply Chain Systems",
+    "aliases": [
+      "Supply Chain Systems"
+    ],
+    "related_skills": [
+      "Supply Chain and Logistics",
+      "Leadership & Management",
+      "Data Analysis",
+      "Inventory Management",
+      "Strategy and Operations",
+      "Operations Management"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Bioinformatics",
+    "aliases": [
+      "Bioinformatics"
+    ],
+    "related_skills": [
+      "Probability & Statistics",
+      "Software Engineering & Programming",
+      "Data Analysis",
+      "Correlation And Dependence",
+      "R Programming",
+      "Problem Solving"
+    ],
+    "course_count": 7
+  },
+  {
+    "canonical_skill": "Reinforcement Learning",
+    "aliases": [
+      "Reinforcement Learning"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Human Learning",
+      "Algorithms",
+      "Statistical Machine Learning",
+      "Deep Learning & AI"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Customer Support",
+    "aliases": [
+      "Customer Support"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Cloud Computing",
+      "Networking Hardware",
+      "Computer Networking",
+      "Customer Success"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Microarchitecture",
+    "aliases": [
+      "Microarchitecture"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Software Architecture",
+      "Cloud Applications",
+      "IBM Cloud",
+      "Cloud-Based Integration",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Dimensionality Reduction",
+    "aliases": [
+      "Dimensionality Reduction"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Python Programming",
+      "Regression",
+      "Algorithms",
+      "Statistical Analysis",
+      "Artificial Neural Networks"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Product Marketing",
+    "aliases": [
+      "Product Marketing"
+    ],
+    "related_skills": [
+      "Strategy",
+      "Market Analysis",
+      "Marketing",
+      "Leadership & Management",
+      "Digital Marketing",
+      "Strategy and Operations"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Marketing Design",
+    "aliases": [
+      "Marketing Design"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Digital Marketing",
+      "Market Analysis",
+      "Customer Analysis",
+      "Brand Management",
+      "Business Analysis"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Generally Accepted Accounting Principles (GAAP)",
+    "aliases": [
+      "Generally Accepted Accounting Principles (GAAP)"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Financial Analysis",
+      "Financial Accounting",
+      "General Accounting",
+      "Finance",
+      "Cost Accounting"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Mobile Development",
+    "aliases": [
+      "Mobile Development"
+    ],
+    "related_skills": [
+      "Collaboration",
+      "Javascript",
+      "Web Development",
+      "Mobile Development Tools",
+      "User Experience",
+      "Human Computer Interaction"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Systems Design",
+    "aliases": [
+      "Systems Design"
+    ],
+    "related_skills": [
+      "Process Analysis",
+      "Software Engineering & Programming",
+      "Algorithms",
+      "Business Transformation",
+      "Cybersecurity & Network Security",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Training",
+    "aliases": [
+      "Training"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Machine Learning Software",
+      "Exploratory Data Analysis",
+      "Data Analysis",
+      "Regression",
+      "Python Programming"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Cloud Standards",
+    "aliases": [
+      "Cloud Standards"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Leadership & Management",
+      "Cloud Management",
+      "Software As A Service",
+      "Cloud-Based Integration"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Warehouse Management",
+    "aliases": [
+      "Warehouse Management"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Leadership & Management",
+      "Cloud Computing",
+      "Databases & SQL",
+      "Data Warehousing"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "People Development",
+    "aliases": [
+      "People Development"
+    ],
+    "related_skills": [
+      "People Analysis",
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Human Resources",
+      "Business Analysis",
+      "Leadership Development"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Cloud Clients",
+    "aliases": [
+      "Cloud Clients"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "Leadership & Management",
+      "Strategy",
+      "Strategy and Operations",
+      "Google App Engine"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Contract Management",
+    "aliases": [
+      "Contract Management"
+    ],
+    "related_skills": [
+      "BlockChain",
+      "FinTech",
+      "Finance",
+      "Cryptography",
+      "Cybersecurity & Network Security",
+      "Payments"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Persona Research",
+    "aliases": [
+      "Persona Research"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Media Strategy & Planning",
+      "Advertising",
+      "Digital Marketing",
+      "Marketing Management",
+      "Marketing"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Django (Web Framework)",
+    "aliases": [
+      "Django (Web Framework)"
+    ],
+    "related_skills": [
+      "Collaboration",
+      "Software Engineering Tools",
+      "Web Development",
+      "Application Development",
+      "Software Engineering & Programming",
+      "Databases & SQL"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Business Design",
+    "aliases": [
+      "Business Design"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Business Development",
+      "Strategy",
+      "Entrepreneurship",
+      "Strategy and Operations",
+      "Business Analysis"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Information Technology",
+    "aliases": [
+      "Information Technology"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Cloud Applications",
+      "DevOps & CI/CD",
+      "Operating Systems",
+      "Leadership & Management",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Product Lifecycle",
+    "aliases": [
+      "Product Lifecycle"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Data Management",
+      "Product Design",
+      "Project Management",
+      "Collaboration"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Management Accounting",
+    "aliases": [
+      "Management Accounting"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Financial Analysis",
+      "Financial Accounting",
+      "Finance",
+      "Accounts Payable and Receivable",
+      "General Accounting"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Inventory Management",
+    "aliases": [
+      "Inventory Management"
+    ],
+    "related_skills": [
+      "Business Analysis",
+      "Data Analysis",
+      "Supply Chain and Logistics",
+      "Supply Chain Systems",
+      "Leadership & Management",
+      "Planning"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Human Resources Operations",
+    "aliases": [
+      "Human Resources Operations"
+    ],
+    "related_skills": [
+      "Human Resources",
+      "Business Analysis",
+      "People Analysis",
+      "Leadership & Management",
+      "Performance Management",
+      "People Management"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "C++ Programming",
+    "aliases": [
+      "C++ Programming"
+    ],
+    "related_skills": [
+      "Critical Thinking",
+      "Software Engineering & Programming",
+      "Algorithms",
+      "Computational Thinking",
+      "Theoretical Computer Science",
+      "Graph Theory"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Human Factors (Security)",
+    "aliases": [
+      "Human Factors (Security)"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Risk Management",
+      "Data Analysis",
+      "Human Computer Interaction",
+      "Communication & Soft Skills",
+      "Algorithms"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Java Programming",
+    "aliases": [
+      "Java Programming"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Critical Thinking",
+      "Software Engineering & Programming",
+      "Programming Principles",
+      "Computer Programming Tools"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Matlab",
+    "aliases": [
+      "Matlab"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Probability & Statistics",
+      "Mathematics",
+      "Software Engineering & Programming",
+      "Plot (Graphics)",
+      "Data Visualization"
+    ],
+    "course_count": 5
+  },
+  {
+    "canonical_skill": "Small Data",
+    "aliases": [
+      "Small Data"
+    ],
+    "related_skills": [
+      "Problem Solving",
+      "Data Analysis",
+      "Data Management",
+      "Software Engineering & Programming",
+      "Big Data",
+      "Databases & SQL"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Procurement",
+    "aliases": [
+      "Procurement"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Supply Chain and Logistics",
+      "Finance",
+      "Budget Management",
+      "Communication & Soft Skills",
+      "Planning"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Full-Stack Web Development",
+    "aliases": [
+      "Full-Stack Web Development"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Collaboration",
+      "Software Architecture",
+      "Software Engineering Tools",
+      "Web Development",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Data Engineering",
+    "aliases": [
+      "Data Engineering"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Data Warehousing",
+      "Data Management",
+      "Cybersecurity & Network Security",
+      "Extract",
+      "Data Science"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Mobile Development Tools",
+    "aliases": [
+      "Mobile Development Tools"
+    ],
+    "related_skills": [
+      "Javascript",
+      "Web Development",
+      "Software Engineering & Programming",
+      "Mobile Development",
+      "Collaboration",
+      "Linux & Systems"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Benefits",
+    "aliases": [
+      "Benefits"
+    ],
+    "related_skills": [
+      "Recruitment",
+      "Compensation",
+      "Employee Relations",
+      "Performance Management",
+      "Training",
+      "Mergers & Acquisitions"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "C Programming Language Family",
+    "aliases": [
+      "C Programming Language Family"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Algorithms",
+      "Computational Thinking",
+      "Critical Thinking",
+      "Theoretical Computer Science",
+      "Programming Principles"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Negotiation",
+    "aliases": [
+      "Negotiation"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Critical Thinking",
+      "Influencing",
+      "Decision Making",
+      "Communication & Soft Skills",
+      "Innovation"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Salesforce",
+    "aliases": [
+      "Salesforce"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Customer Relationship Management",
+      "Sales",
+      "Sales Systems",
+      "Business Analysis",
+      "Databases & SQL"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Applied Mathematics",
+    "aliases": [
+      "Applied Mathematics"
+    ],
+    "related_skills": [
+      "Mathematics",
+      "Mathematical Theory & Analysis",
+      "Theoretical Computer Science",
+      "Problem Solving",
+      "Computational Thinking",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Spatial Analysis",
+    "aliases": [
+      "Spatial Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Spatial Data Analysis",
+      "Data Management",
+      "Data Visualization",
+      "Software Engineering & Programming",
+      "Mathematical Theory & Analysis"
+    ],
+    "course_count": 4
+  },
+  {
+    "canonical_skill": "Talent Management",
+    "aliases": [
+      "Talent Management"
+    ],
+    "related_skills": [
+      "Human Resources",
+      "Performance Management",
+      "Strategy",
+      "People Management",
+      "Strategy and Operations",
+      "Business Analysis"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Other Programming Languages",
+    "aliases": [
+      "Other Programming Languages"
+    ],
+    "related_skills": [
+      "Programming Principles",
+      "Software Engineering & Programming",
+      "Problem Solving",
+      "Algorithms",
+      "Data Visualization",
+      "Mathematics"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Compensation",
+    "aliases": [
+      "Compensation"
+    ],
+    "related_skills": [
+      "Performance Management",
+      "Recruitment",
+      "Employee Relations",
+      "Risk Management",
+      "Benefits",
+      "Business Psychology"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Geometry",
+    "aliases": [
+      "Geometry"
+    ],
+    "related_skills": [
+      "Graph Theory",
+      "Algebra",
+      "Linear Algebra",
+      "Mathematics",
+      "Mathematical Theory & Analysis",
+      "Graphic Design"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Cloud Load Balancing",
+    "aliases": [
+      "Cloud Load Balancing"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Software Architecture",
+      "Computer Architecture",
+      "Cloud Storage",
+      "Google Cloud Platform (GCP)",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Material Handling",
+    "aliases": [
+      "Material Handling"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Estimation",
+      "Supply Chain and Logistics",
+      "Continuous Delivery",
+      "Planning",
+      "Probability & Statistics"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Transportation Operations Management",
+    "aliases": [
+      "Transportation Operations Management"
+    ],
+    "related_skills": [
+      "Supply Chain and Logistics",
+      "Planning",
+      "Inventory Management",
+      "Supply Chain Systems",
+      "Strategy and Operations",
+      "Warehouse Management"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Corporate Accouting",
+    "aliases": [
+      "Corporate Accouting"
+    ],
+    "related_skills": [
+      "Financial Accounting",
+      "Accounting",
+      "Financial Analysis",
+      "Finance",
+      "Taxes",
+      "Market Analysis"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Sales Systems",
+    "aliases": [
+      "Sales Systems"
+    ],
+    "related_skills": [
+      "Salesforce",
+      "Customer Relationship Management",
+      "Sales",
+      "Leadership & Management",
+      "Business Analysis",
+      "Databases & SQL"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Biostatistics",
+    "aliases": [
+      "Biostatistics"
+    ],
+    "related_skills": [
+      "Correlation And Dependence",
+      "Statistical Tests",
+      "R Programming",
+      "Data Analysis",
+      "Statistical Programming",
+      "Probability & Statistics"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Supplier Relationship Management",
+    "aliases": [
+      "Supplier Relationship Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Procurement",
+      "Supply Chain Systems",
+      "Supply Chain and Logistics",
+      "Customer Relationship Management",
+      "Negotiation"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Bayesian Statistics",
+    "aliases": [
+      "Bayesian Statistics"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Probability & Statistics",
+      "Probability Distribution",
+      "Statistical Programming",
+      "Regression",
+      "Machine Learning"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Spatial Data Analysis",
+    "aliases": [
+      "Spatial Data Analysis"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Spatial Analysis",
+      "Data Management",
+      "Data Visualization",
+      "Statistical Analysis",
+      "Data Visualization Software"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "System Programming",
+    "aliases": [
+      "System Programming"
+    ],
+    "related_skills": [
+      "Computer Programming Tools",
+      "Databases & SQL",
+      "Plot (Graphics)",
+      "Exploratory Data Analysis",
+      "Programming Principles",
+      "Spreadsheet Software"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Power BI",
+    "aliases": [
+      "Power BI"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Data Management",
+      "Data Model",
+      "Data Visualization",
+      "Microsoft Excel",
+      "Databases & SQL"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Back-End Web Development",
+    "aliases": [
+      "Back-End Web Development"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Algorithms",
+      "Cloud Computing",
+      "Collaboration",
+      "Software Testing",
+      "Linux & Systems"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Swift Programming",
+    "aliases": [
+      "Swift Programming"
+    ],
+    "related_skills": [
+      "Collaboration",
+      "Linux & Systems",
+      "Javascript",
+      "Software Architecture",
+      "Communication & Soft Skills",
+      "Problem Solving"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "iOS Development",
+    "aliases": [
+      "iOS Development"
+    ],
+    "related_skills": [
+      "Javascript",
+      "Web Development",
+      "Mobile Development Tools",
+      "Software Engineering & Programming",
+      "Mobile Development",
+      "Collaboration"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "SAS (Software)",
+    "aliases": [
+      "SAS (Software)"
+    ],
+    "related_skills": [
+      "Process Analysis",
+      "Network Architecture",
+      "Cybersecurity & Network Security",
+      "Systems Design",
+      "Operating Systems",
+      "Training"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Billing & Invoicing",
+    "aliases": [
+      "Billing & Invoicing"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Google App Engine",
+      "Cloud Applications",
+      "Cloud-Based Integration",
+      "DevOps & CI/CD",
+      "Cloud Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Cross Platform Development",
+    "aliases": [
+      "Cross Platform Development"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Billing & Invoicing",
+      "Google App Engine",
+      "Cloud Applications",
+      "Cloud-Based Integration",
+      "DevOps & CI/CD"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Operations Research",
+    "aliases": [
+      "Operations Research"
+    ],
+    "related_skills": [
+      "Spreadsheet Software",
+      "Data Analysis",
+      "Operations Management",
+      "Performance Management",
+      "Strategy",
+      "Probability & Statistics"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Prospecting and Qualification",
+    "aliases": [
+      "Prospecting and Qualification"
+    ],
+    "related_skills": [
+      "Communication & Soft Skills",
+      "Strategy",
+      "Leadership & Management",
+      "Change Management",
+      "Collaboration",
+      "Budget Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Business Research",
+    "aliases": [
+      "Business Research"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Process Analysis",
+      "Planning",
+      "Data Management",
+      "Data Visualization",
+      "Statistical Analysis"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Store Management",
+    "aliases": [
+      "Store Management"
+    ],
+    "related_skills": [
+      "Material Handling",
+      "Supply Chain and Logistics",
+      "Continuous Delivery",
+      "Planning",
+      "Transportation Operations Management",
+      "Inventory Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Shipping and Receiving",
+    "aliases": [
+      "Shipping and Receiving"
+    ],
+    "related_skills": [
+      "Material Handling",
+      "Supply Chain and Logistics",
+      "Continuous Delivery",
+      "Planning",
+      "Transportation Operations Management",
+      "Inventory Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Knitr",
+    "aliases": [
+      "Knitr"
+    ],
+    "related_skills": [
+      "Databases & SQL",
+      "Plot (Graphics)",
+      "Computer Graphics",
+      "Exploratory Data Analysis",
+      "Programming Principles",
+      "Communication & Soft Skills"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "B2B Sales",
+    "aliases": [
+      "B2B Sales"
+    ],
+    "related_skills": [
+      "Salesforce",
+      "Databases & SQL",
+      "Customer Relationship Management",
+      "Sales",
+      "Marketing",
+      "Operations Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Securities Sales",
+    "aliases": [
+      "Securities Sales"
+    ],
+    "related_skills": [
+      "Securities Trading",
+      "Investment Management",
+      "Probability & Statistics",
+      "Risk Management",
+      "Leadership & Management",
+      "Finance"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Retail Sales",
+    "aliases": [
+      "Retail Sales"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Marketing Management",
+      "Retail Store Operations",
+      "Digital Marketing",
+      "Marketing"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Epidemiology",
+    "aliases": [
+      "Epidemiology"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Basic Descriptive Statistics",
+      "Correlation And Dependence",
+      "Regression",
+      "Probability & Statistics",
+      "Critical Thinking"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Game Theory",
+    "aliases": [
+      "Game Theory"
+    ],
+    "related_skills": [
+      "Probability Distribution",
+      "Strategy",
+      "Probability & Statistics",
+      "Combinatorics",
+      "Cryptography",
+      "Visualization (Computer Graphics)"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Software Framework",
+    "aliases": [
+      "Software Framework"
+    ],
+    "related_skills": [
+      "Web Development",
+      "Artificial Neural Networks",
+      "Javascript",
+      "Machine Learning",
+      "Machine Learning Software",
+      "Mobile Development Tools"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Econometrics",
+    "aliases": [
+      "Econometrics"
+    ],
+    "related_skills": [
+      "Regression",
+      "Probability & Statistics",
+      "Correlation And Dependence",
+      "Exploratory Data Analysis",
+      "Accounting",
+      "Probability Distribution"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Scientific Visualization",
+    "aliases": [
+      "Scientific Visualization"
+    ],
+    "related_skills": [
+      "Critical Thinking",
+      "Human Learning",
+      "Social Media",
+      "Market Analysis",
+      "Data Analysis",
+      "Data Management"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Clinical Data Management",
+    "aliases": [
+      "Clinical Data Management"
+    ],
+    "related_skills": [
+      "Data Management",
+      "Data Analysis",
+      "Databases & SQL",
+      "Leadership & Management",
+      "Regulations and Compliance",
+      "Research and Design"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Geovisualization",
+    "aliases": [
+      "Geovisualization"
+    ],
+    "related_skills": [
+      "Data Visualization Software",
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Spatial Data Analysis",
+      "Data Visualization"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Underwriting",
+    "aliases": [
+      "Underwriting"
+    ],
+    "related_skills": [
+      "FinTech",
+      "Decision Making",
+      "Strategy",
+      "Critical Thinking",
+      "Risk Management",
+      "Innovation"
+    ],
+    "course_count": 2
+  },
+  {
+    "canonical_skill": "Semantic Web",
+    "aliases": [
+      "Semantic Web"
+    ],
+    "related_skills": [
+      "Cloud Computing",
+      "Collaboration",
+      "Software Testing",
+      "Linux & Systems",
+      "Databases & SQL",
+      "Javascript"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Accounting Software",
+    "aliases": [
+      "Accounting Software"
+    ],
+    "related_skills": [
+      "Business Analysis",
+      "Data Analysis",
+      "General Accounting",
+      "Financial Accounting",
+      "Cost Accounting",
+      "Accounting"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Android Development",
+    "aliases": [
+      "Android Development"
+    ],
+    "related_skills": [
+      "Collaboration",
+      "Linux & Systems",
+      "Databases & SQL",
+      "Javascript",
+      "Programming Principles",
+      "Software Architecture"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Marketing Psychology",
+    "aliases": [
+      "Marketing Psychology"
+    ],
+    "related_skills": [
+      "Social Media",
+      "Communication & Soft Skills",
+      "Data Analysis",
+      "Media Strategy & Planning",
+      "Customer Relationship Management",
+      "Web Development"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Resilience",
+    "aliases": [
+      "Resilience"
+    ],
+    "related_skills": [],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Insurance Sales",
+    "aliases": [
+      "Insurance Sales"
+    ],
+    "related_skills": [
+      "Correlation And Dependence",
+      "Accounting",
+      "Financial Analysis",
+      "Business Psychology",
+      "Financial Management",
+      "Problem Solving"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Retail Store Operations",
+    "aliases": [
+      "Retail Store Operations"
+    ],
+    "related_skills": [
+      "Marketing Management",
+      "Digital Marketing",
+      "Marketing",
+      "Leadership & Management",
+      "Communication & Soft Skills",
+      "Brand Management"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Markov Model",
+    "aliases": [
+      "Markov Model"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Regression",
+      "Probability & Statistics",
+      "Machine Learning",
+      "Probability Distribution",
+      "Bayesian Statistics"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Hardware Design",
+    "aliases": [
+      "Hardware Design"
+    ],
+    "related_skills": [
+      "Critical Thinking",
+      "Software Engineering & Programming",
+      "Systems Design",
+      "Computer Architecture",
+      "Theoretical Computer Science",
+      "Computational Logic"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Journalism",
+    "aliases": [
+      "Journalism"
+    ],
+    "related_skills": [
+      "Social Media",
+      "Design and Product",
+      "Communication & Soft Skills",
+      "Media Strategy & Planning",
+      "Advertising",
+      "Customer Relationship Management"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Combinatorics",
+    "aliases": [
+      "Combinatorics"
+    ],
+    "related_skills": [
+      "Cryptography",
+      "Probability Distribution",
+      "Visualization (Computer Graphics)",
+      "Algorithms",
+      "Mathematics",
+      "Problem Solving"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Health",
+    "aliases": [
+      "Health"
+    ],
+    "related_skills": [],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Public Relations",
+    "aliases": [
+      "Public Relations"
+    ],
+    "related_skills": [
+      "Social Media",
+      "Budget Management",
+      "Communication & Soft Skills",
+      "Emotional Intelligence",
+      "Media Strategy & Planning",
+      "Advertising"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Survey Creation",
+    "aliases": [
+      "Survey Creation"
+    ],
+    "related_skills": [
+      "Social Media",
+      "Market Analysis",
+      "Data Analysis",
+      "Data Management",
+      "Process Analysis",
+      "Probability & Statistics"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Minitab",
+    "aliases": [
+      "Minitab"
+    ],
+    "related_skills": [
+      "Basic Descriptive Statistics",
+      "Correlation And Dependence",
+      "Data Analysis",
+      "Probability & Statistics",
+      "Data Visualization",
+      "Statistical Visualization"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Other Web Frameworks",
+    "aliases": [
+      "Other Web Frameworks"
+    ],
+    "related_skills": [
+      "Data Analysis",
+      "Regression",
+      "Probability & Statistics",
+      "Machine Learning",
+      "Statistical Machine Learning",
+      "Software Engineering & Programming"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Geostatistics",
+    "aliases": [
+      "Geostatistics"
+    ],
+    "related_skills": [
+      "Data Visualization Software",
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Spatial Data Analysis",
+      "Geovisualization"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "GIS Software",
+    "aliases": [
+      "GIS Software"
+    ],
+    "related_skills": [
+      "Data Visualization Software",
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Spatial Data Analysis",
+      "Geostatistics"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "ArcGIS",
+    "aliases": [
+      "ArcGIS"
+    ],
+    "related_skills": [
+      "Data Visualization Software",
+      "Data Analysis",
+      "Data Management",
+      "Databases & SQL",
+      "Spatial Data Analysis",
+      "Geostatistics"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Virtual Reality",
+    "aliases": [
+      "Virtual Reality"
+    ],
+    "related_skills": [
+      "Critical Thinking",
+      "Graphic Design",
+      "Computer Graphic Techniques",
+      "Visual Design",
+      "User Experience Design",
+      "Human Computer Interaction"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Graphics Software",
+    "aliases": [
+      "Graphics Software"
+    ],
+    "related_skills": [
+      "Critical Thinking",
+      "Graphic Design",
+      "Computer Graphic Techniques",
+      "Visual Design",
+      "User Experience Design",
+      "Human Computer Interaction"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Jira (Software)",
+    "aliases": [
+      "Jira (Software)"
+    ],
+    "related_skills": [
+      "Software Testing",
+      "Product Management",
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Planning",
+      "Project Management"
+    ],
+    "course_count": 1
+  }
+]

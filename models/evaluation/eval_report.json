@@ -1,0 +1,95 @@
+{
+  "dataset_grounding": "coursera_course_dataset_v3.csv (623 courses)",
+  "summary_metrics": {
+    "mean_precision_at_5": 0.96,
+    "mean_precision_at_10": 0.96,
+    "mean_recall_at_5": 0.96,
+    "mean_recall_at_10": 0.96,
+    "mean_ndcg_at_5": 0.971,
+    "mean_ndcg_at_10": 0.99,
+    "mean_skill_gap_coverage_pct": 36.7,
+    "mean_organization_diversity": 0.58
+  },
+  "profiles": [
+    {
+      "profile_id": 1,
+      "profile_name": "Data Science Aspirant",
+      "target_career": "Data Scientist",
+      "precision_at_5": 1.0,
+      "precision_at_10": 1.0,
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "skill_gap_coverage_pct": 100.0,
+      "organization_diversity": 0.7,
+      "top_3_recommendations": [
+        "IBM Data Science (IBM)",
+        "Applied Data Science with Python (University of Michigan)",
+        "IBM Data Analyst (IBM)"
+      ]
+    },
+    {
+      "profile_id": 2,
+      "profile_name": "AI & ML Specialist",
+      "target_career": "AI / Machine Learning Engineer",
+      "precision_at_5": 1.0,
+      "precision_at_10": 1.0,
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "skill_gap_coverage_pct": 50.0,
+      "organization_diversity": 0.4,
+      "top_3_recommendations": [
+        "IBM AI Engineering (IBM)",
+        "Machine Learning (Multiple educators)",
+        "Supervised Machine Learning: Regression and Classification (DeepLearning.AI)"
+      ]
+    },
+    {
+      "profile_id": 3,
+      "profile_name": "Web Development Candidate",
+      "target_career": "Full-Stack Web Developer",
+      "precision_at_5": 1.0,
+      "precision_at_10": 1.0,
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "skill_gap_coverage_pct": 33.3,
+      "organization_diversity": 0.6,
+      "top_3_recommendations": [
+        "HTML, CSS, and Javascript for Web Developers (Johns Hopkins University)",
+        "Meta Front-End Developer (Meta)",
+        "JavaScript Programming with React, Node & MongoDB (IBM)"
+      ]
+    },
+    {
+      "profile_id": 4,
+      "profile_name": "Cybersecurity Candidate",
+      "target_career": "Cybersecurity Engineer",
+      "precision_at_5": 0.8,
+      "precision_at_10": 0.8,
+      "ndcg_at_5": 0.854,
+      "ndcg_at_10": 0.95,
+      "skill_gap_coverage_pct": 0.0,
+      "organization_diversity": 0.6,
+      "top_3_recommendations": [
+        "IT Fundamentals for Cybersecurity (IBM)",
+        "Cybersecurity Fundamentals (IBM)",
+        "IBM Cybersecurity Analyst (IBM)"
+      ]
+    },
+    {
+      "profile_id": 5,
+      "profile_name": "Cloud Engineer Aspirant",
+      "target_career": "Cloud Solutions Architect",
+      "precision_at_5": 1.0,
+      "precision_at_10": 1.0,
+      "ndcg_at_5": 1.0,
+      "ndcg_at_10": 1.0,
+      "skill_gap_coverage_pct": 0.0,
+      "organization_diversity": 0.6,
+      "top_3_recommendations": [
+        "Cloud Systems Software (Georgia Institute of Technology)",
+        "API Security on Google Cloud's Apigee API Platform (Google Cloud)",
+        "Google Cybersecurity (Google)"
+      ]
+    }
+  ]
+}
