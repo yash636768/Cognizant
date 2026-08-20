@@ -7,6 +7,12 @@
 [![React](https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61dafb.svg)](file:///d:/cognizant/frontend)
 [![Python ML](https://img.shields.io/badge/ML-SentenceTransformers%20%2B%20FAISS-blue.svg)](file:///d:/cognizant/build_pipeline.py)
 [![Dataset Grounding](https://img.shields.io/badge/Dataset-623%20Coursera%20Courses-orange.svg)](file:///d:/cognizant/coursera_course_dataset_v3.csv)
+[![Full Documentation](https://img.shields.io/badge/Docs-Full%20Documentation-purple.svg)](file:///d:/cognizant/docs/PROJECT_DOCUMENTATION.md)
+
+---
+
+## 📖 Complete Documentation
+For exhaustive technical details, dataset profiling, math formulas, API specs, and evaluation reports, read [docs/PROJECT_DOCUMENTATION.md](file:///d:/cognizant/docs/PROJECT_DOCUMENTATION.md).
 
 ---
 
