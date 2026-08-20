@@ -1,4 +1,4 @@
-# Pathfinder (CareerPilot AI) — Comprehensive System Documentation 🚀
+# Pathfinder — Comprehensive System Documentation 🚀
 
 > **Data-Grounded Career Trajectory & Course Recommendation Engine**  
 > *Powered by SentenceTransformer Dense Vector Embeddings, FAISS Indexing, Skill Taxonomy Intelligence, Node.js Express REST Backend, and React 18 UI.*
@@ -31,7 +31,7 @@
 
 ## 1. Executive Summary & System Architecture
 
-**Pathfinder (CareerPilot AI)** is an end-to-end AI career trajectory and course recommendation platform. Built directly upon real-world data from `coursera_course_dataset_v3.csv` (comprising 623 Coursera offerings across 115 institutions and 319 canonical skills), Pathfinder enables users to evaluate their technical readiness for high-demand target roles, identify precise skill gaps, tune recommendation weights, and receive rank-ordered courses with transparent **Retrieval-Augmented Generation (RAG)** explanations.
+**Pathfinder** is an end-to-end AI career trajectory and course recommendation platform. Built directly upon real-world data from `coursera_course_dataset_v3.csv` (comprising 623 Coursera offerings across 115 institutions and 319 canonical skills), Pathfinder enables users to evaluate their technical readiness for high-demand target roles, identify precise skill gaps, tune recommendation weights, and receive rank-ordered courses with transparent **Retrieval-Augmented Generation (RAG)** explanations.
 
 ### High-Level Architecture Diagram
 

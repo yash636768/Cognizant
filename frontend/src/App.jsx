@@ -270,10 +270,10 @@ export default function App() {
             type="button"
             className="brand-logo"
             onClick={() => setPage('landing')}
-            aria-label="Go to CareerPilot AI overview"
+            aria-label="Go to Pathfinder overview"
           >
-            <span className="brand-icon">CP</span>
-            <span className="brand-name">CareerPilot AI</span>
+            <span className="brand-icon">PF</span>
+            <span className="brand-name">Pathfinder</span>
             <span className="brand-tag">AI Career Advisor</span>
           </button>
 
@@ -378,11 +378,11 @@ export default function App() {
                     </div>
 
                     <h1 className="profile-name">
-                      {currentUser.name || 'CareerPilot User'}
+                      {currentUser.name || 'Pathfinder User'}
                     </h1>
 
                     <p className="profile-email">
-                      {currentUser.email || 'Registered CareerPilot account'}
+                      {currentUser.email || 'Registered Pathfinder account'}
                     </p>
                   </div>
                 </div>
@@ -441,7 +441,7 @@ export default function App() {
                     </div>
                     <div>
                       <h2>Career Snapshot</h2>
-                      <p>Your current CareerPilot data</p>
+                      <p>Your current Pathfinder data</p>
                     </div>
                   </div>
 
@@ -779,7 +779,7 @@ export default function App() {
                     maxWidth: '720px',
                   }}
                 >
-                  CareerPilot AI understands your skills, interests, and target roles to help you discover the right career path and pinpoint exactly what to learn next — grounded directly in <strong>623 Coursera offerings</strong>.
+                  Pathfinder understands your skills, interests, and target roles to help you discover the right career path and pinpoint exactly what to learn next — grounded directly in <strong>623 Coursera offerings</strong>.
                 </p>
 
                 <div
@@ -1439,7 +1439,7 @@ export default function App() {
                 <User size={22} />
               </div>
               <h2 style={{ fontSize: '19px', fontWeight: 700 }}>
-                {authTab === 'login' ? "Welcome Back to CareerPilot AI" : "Create Your Free Account"}
+                {authTab === 'login' ? "Welcome Back to Pathfinder" : "Create Your Free Account"}
               </h2>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '4px' }}>
                 {authTab === 'login' ? "Sign in to access Skill Assessment and save your target career paths." : "Get custom learning paths grounded in 623 Coursera offerings."}
@@ -1544,8 +1544,8 @@ export default function App() {
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <span className="brand-icon">CP</span>
-                <strong style={{ fontSize: '16px', color: 'var(--text-heading)' }}>CareerPilot AI</strong>
+                <span className="brand-icon">PF</span>
+                <strong style={{ fontSize: '16px', color: 'var(--text-heading)' }}>Pathfinder</strong>
               </div>
               <p style={{ maxWidth: '360px', fontSize: '12px', lineHeight: 1.7, color: 'var(--text-muted)', margin: 0 }}>
                 An AI-powered career guidance engine that connects your skills and goals with practical learning paths.
@@ -1599,7 +1599,7 @@ export default function App() {
               fontSize: '11px',
             }}
           >
-            <span>© {new Date().getFullYear()} CareerPilot AI. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Pathfinder. All rights reserved.</span>
             <span>Grounded on <code>coursera_course_dataset_v3.csv</code></span>
           </div>
         </div>
