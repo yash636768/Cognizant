@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Compass, 
-  Target, 
-  BookOpen, 
-  Award, 
-  BarChart2, 
-  Sliders, 
-  ExternalLink, 
-  CheckCircle, 
-  AlertCircle, 
+import {
+  Compass,
+  Target,
+  BookOpen,
+  Award,
+  BarChart2,
+  Sliders,
+  ExternalLink,
+  CheckCircle,
+  AlertCircle,
   Database,
   Search,
   Layers,
@@ -66,7 +66,7 @@ export default function App() {
   const [page, setPage] = useState('landing'); // 'landing' | 'input' | 'results' | 'evaluation' | 'profile'
   const [stats, setStats] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
-  
+
   // Auth State
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('pathfinder_token') || '');
@@ -87,7 +87,7 @@ export default function App() {
   const [difficulty, setDifficulty] = useState("Beginner");
   const [duration, setDuration] = useState("Any");
   const [courseType, setCourseType] = useState("Any");
-  
+
   // Scoring Weights Priorities
   const [showTuner, setShowTuner] = useState(false);
   const [weights, setWeights] = useState({
@@ -100,7 +100,7 @@ export default function App() {
     review_confidence: 0.04,
     type_preference: 0.03
   });
-  
+
   // Execution State
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
@@ -162,7 +162,7 @@ export default function App() {
     setAuthLoading(true);
 
     const endpoint = authTab === 'login' ? `${API_BASE}/auth/login` : `${API_BASE}/auth/register`;
-    const payload = authTab === 'login' 
+    const payload = authTab === 'login'
       ? { email: authForm.email, password: authForm.password }
       : { name: authForm.name, email: authForm.email, password: authForm.password };
 
@@ -243,7 +243,7 @@ export default function App() {
           top_k: 10
         })
       });
-      
+
       if (res.ok) {
         const data = await res.json();
         setResults(data);
@@ -262,10 +262,12 @@ export default function App() {
   return (
     <div>
       {/* =========================
-          PREMIUM NAVBAR
-          ========================= */}
+    SIMPLE NAVBAR
+========================= */}
       <header className="navbar">
         <div className="container nav-content">
+
+          {/* Brand */}
           <button
             type="button"
             className="brand-logo"
@@ -274,10 +276,11 @@ export default function App() {
           >
             <span className="brand-icon">PF</span>
             <span className="brand-name">Pathfinder</span>
-            <span className="brand-tag">AI Career Advisor</span>
           </button>
 
+          {/* Navigation */}
           <nav className="nav-menu" aria-label="Main navigation">
+
             <button
               type="button"
               onClick={() => setPage('landing')}
@@ -296,17 +299,6 @@ export default function App() {
               Skill Assessment
             </button>
 
-            {results && (
-              <button
-                type="button"
-                onClick={() => setPage('results')}
-                className={`nav-link ${page === 'results' ? 'active' : ''}`}
-              >
-                <BookOpen size={14} />
-                Learning Paths
-              </button>
-            )}
-
             <button
               type="button"
               onClick={() => setPage('evaluation')}
@@ -315,29 +307,29 @@ export default function App() {
               <BarChart2 size={14} />
               Performance
             </button>
+
           </nav>
 
+          {/* User */}
           <div className="navbar-actions">
             {currentUser ? (
-              <div className="profile-nav-area">
-                <button
-                  type="button"
-                  className="user-avatar-badge profile-trigger"
-                  onClick={() => setPage('profile')}
-                  title="Open your profile"
-                  aria-label="Open your profile"
-                >
-                  <div className="avatar-circle">
-                    {currentUser.name?.charAt(0).toUpperCase() || 'U'}
-                  </div>
+              <button
+                type="button"
+                className="user-avatar-badge profile-trigger"
+                onClick={() => setPage('profile')}
+                title="Open your profile"
+                aria-label="Open your profile"
+              >
+                <div className="avatar-circle">
+                  {currentUser.name?.charAt(0).toUpperCase() || 'U'}
+                </div>
 
-                  <span>
-                    {currentUser.name?.split(' ')[0] || 'Profile'}
-                  </span>
+                <span>
+                  {currentUser.name?.split(' ')[0] || 'Profile'}
+                </span>
 
-                  <ChevronDown size={13} />
-                </button>
-              </div>
+                <ChevronDown size={13} />
+              </button>
             ) : (
               <button
                 type="button"
@@ -352,6 +344,7 @@ export default function App() {
               </button>
             )}
           </div>
+
         </div>
       </header>
 
@@ -921,20 +914,6 @@ export default function App() {
                           marginBottom: '16px',
                         }}
                       >
-                        <div
-                          style={{
-                            width: '42px',
-                            height: '42px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            background: 'var(--bg-surface-raised)',
-                            borderRadius: '12px',
-                            border: '1px solid var(--border-default)',
-                          }}
-                        >
-                          <IconComp size={19} color="var(--color-brand)" />
-                        </div>
                         <span className="tag tag-brand">{track.count}</span>
                       </div>
 
@@ -972,241 +951,441 @@ export default function App() {
             </section>
           </div>
         )}
-        {/* ========================================================================= */}
-        {/* PAGE 2: PROGRESSIVE SKILL ASSESSMENT FORM (AUTH PROTECTED) */}
-        {/* ========================================================================= */}
-        {page === 'input' && (
-          <div style={{ maxWidth: '720px', margin: '0 auto' }} className="animate-fade-in">
-            {!currentUser ? (
-              <div className="panel" style={{ padding: '48px 32px', textAlign: 'center' }}>
-                <div style={{ width: '52px', height: '52px', background: 'var(--color-brand-light)', color: 'var(--color-brand)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
-                  <Lock size={26} />
-                </div>
-                <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '8px' }}>Sign In Required</h2>
-                <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '24px', maxWidth: '480px', margin: '0 auto 24px', lineHeight: 1.6 }}>
-                  Skill Assessment and personalized course recommendations are accessible only to registered users. Please sign in or create a free account to proceed.
-                </p>
-                <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <button onClick={() => { setAuthError(''); setAuthModalOpen(true); }} className="btn btn-primary">
-                    <LogIn size={15} /> Sign In / Create Free Account
-                  </button>
-                  <button onClick={() => setPage('landing')} className="btn btn-secondary">
-                    Return to Overview
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="panel">
-                <div className="panel-header">
-                  <div>
-                    <h2 className="panel-title">Career Assessment & Preferences</h2>
-                    <p className="panel-subtitle">Step {assessmentStep} of 3 — Tell us about your background and targets.</p>
-                  </div>
-                  <button onClick={() => setPage('landing')} className="btn btn-ghost btn-sm">
-                    <ArrowLeft size={14} /> Cancel
-                  </button>
-                </div>
+{/* ========================================================================= */}
+{/* PAGE 2: PROGRESSIVE SKILL ASSESSMENT FORM */}
+{/* ========================================================================= */}
 
-                {/* STEP TRACKER BADGE */}
-                <div className="step-tracker">
-                  <div className={`step-dot ${assessmentStep >= 1 ? 'active' : ''}`}>1</div>
-                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 1 ? 600 : 400, color: assessmentStep === 1 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Target Role</span>
-                  <span style={{ color: 'var(--border-default)' }}>•</span>
-                  <div className={`step-dot ${assessmentStep >= 2 ? 'active' : ''}`}>2</div>
-                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 2 ? 600 : 400, color: assessmentStep === 2 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Your Skills</span>
-                  <span style={{ color: 'var(--border-default)' }}>•</span>
-                  <div className={`step-dot ${assessmentStep >= 3 ? 'active' : ''}`}>3</div>
-                  <span style={{ fontSize: '12px', fontWeight: assessmentStep === 3 ? 600 : 400, color: assessmentStep === 3 ? 'var(--text-heading)' : 'var(--text-muted)' }}>Preferences</span>
-                </div>
+{page === 'input' && (
+  <div className="assessment-page animate-fade-in">
 
-                {/* STEP 1: TARGET ROLE & SPECIFIC FOCUS */}
-                {assessmentStep === 1 && (
-                  <div>
-                    <div className="form-group">
-                      <label className="form-label">Target Career Track</label>
-                      <select className="select" value={targetCareer} onChange={e => setTargetCareer(e.target.value)}>
-                        <option value="Data Scientist">Data Scientist</option>
-                        <option value="AI / Machine Learning Engineer">AI / Machine Learning Engineer</option>
-                        <option value="Cloud Solutions Architect">Cloud Solutions Architect</option>
-                        <option value="Cybersecurity Engineer">Cybersecurity Engineer</option>
-                        <option value="Full-Stack Web Developer">Full-Stack Web Developer</option>
-                        <option value="Data & Business Analyst">Data & Business Analyst</option>
-                        <option value="Product & Strategy Leader">Product & Strategy Leader</option>
-                      </select>
-                    </div>
+    {!currentUser ? (
+      <div className="panel assessment-login">
+        <div className="assessment-lock">
+          <Lock size={24} />
+        </div>
 
-                    <div className="form-group">
-                      <label className="form-label">Specific Goal or Query (Optional)</label>
-                      <input 
-                        type="text" 
-                        className="input" 
-                        placeholder="e.g. I want to transition into MLOps and deep learning algorithms..."
-                        value={userQuery}
-                        onChange={e => setUserQuery(e.target.value)}
-                      />
-                    </div>
+        <h2>Sign In Required</h2>
 
-                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '28px' }}>
-                      <button onClick={() => setAssessmentStep(2)} className="btn btn-primary">
-                        Next: Add Your Skills <ArrowRight size={15} />
-                      </button>
-                    </div>
-                  </div>
-                )}
+        <p>
+          Skill Assessment and personalized course recommendations are
+          accessible only to registered users. Please sign in or create a
+          free account to proceed.
+        </p>
 
-                {/* STEP 2: TECHNICAL SKILLS */}
-                {assessmentStep === 2 && (
-                  <div>
-                    <div className="form-group">
-                      <label className="form-label">Technical Skills You Currently Have</label>
-                      
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '12px' }}>
-                        {currentSkills.map(s => (
-                          <span key={s} className="tag tag-brand">
-                            {s}
-                            <button onClick={() => handleRemoveSkill(s)} className="tag-remove"><X size={12} /></button>
-                          </span>
-                        ))}
-                      </div>
+        <div className="assessment-login-actions">
+          <button
+            onClick={() => {
+              setAuthError('');
+              setAuthModalOpen(true);
+            }}
+            className="btn btn-primary"
+          >
+            <LogIn size={15} />
+            Sign In / Create Free Account
+          </button>
 
-                      <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
-                        <input 
-                          type="text" 
-                          className="input" 
-                          placeholder="Type a skill name and press Enter..." 
-                          value={skillInput}
-                          onChange={e => setSkillInput(e.target.value)}
-                          onKeyDown={e => e.key === 'Enter' && handleAddSkill(skillInput)}
-                        />
-                        <button onClick={() => handleAddSkill(skillInput)} className="btn btn-secondary">
-                          Add
-                        </button>
-                      </div>
+          <button
+            onClick={() => setPage('landing')}
+            className="btn btn-secondary"
+          >
+            Return to Overview
+          </button>
+        </div>
+      </div>
+    ) : (
 
-                      <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '8px' }}>Suggested dataset skills:</div>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-                        {PRESET_SKILLS.map(s => (
-                          <button 
-                            key={s} 
-                            onClick={() => handleAddSkill(s)}
-                            style={{ 
-                              background: 'transparent', 
-                              border: '1px solid var(--border-default)', 
-                              color: 'var(--text-muted)', 
-                              padding: '3px 10px', 
-                              borderRadius: '12px', 
-                              fontSize: '11px', 
-                              cursor: 'pointer' 
-                            }}
-                          >
-                            + {s}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
+      <div className="assessment-container">
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '28px' }}>
-                      <button onClick={() => setAssessmentStep(1)} className="btn btn-secondary">
-                        <ArrowLeft size={14} /> Back
-                      </button>
-                      <button onClick={() => setAssessmentStep(3)} className="btn btn-primary">
-                        Next: Preferences & Weights <ArrowRight size={15} />
-                      </button>
-                    </div>
-                  </div>
-                )}
+        {/* HEADER */}
+        <div className="assessment-header">
+          <div>
+            <h2>Career Assessment & Preferences</h2>
 
-                {/* STEP 3: PREFERENCES & SCORING PRIORITY */}
-                {assessmentStep === 3 && (
-                  <div>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-group">
-                      <div>
-                        <label className="form-label">Preferred Difficulty Level</label>
-                        <select className="select" value={difficulty} onChange={e => setDifficulty(e.target.value)}>
-                          <option value="Any">Any Level</option>
-                          <option value="Beginner">Beginner</option>
-                          <option value="Intermediate">Intermediate</option>
-                          <option value="Advanced">Advanced</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="form-label">Time Commitment</label>
-                        <select className="select" value={duration} onChange={e => setDuration(e.target.value)}>
-                          <option value="Any">Any Duration</option>
-                          <option value="1 - 4 Weeks">1 - 4 Weeks</option>
-                          <option value="1 - 3 Months">1 - 3 Months</option>
-                          <option value="3 - 6 Months">3 - 6 Months</option>
-                        </select>
-                      </div>
-                    </div>
+            <p>
+              Step {assessmentStep} of 3 — Tell us about your background
+              and targets.
+            </p>
+          </div>
 
-                    {/* Weight Priority Customization */}
-                    <div style={{ borderTop: '1px solid var(--border-default)', paddingTop: '16px', marginBottom: '24px' }}>
-                      <button 
-                        onClick={() => setShowTuner(!showTuner)}
-                        className="btn btn-ghost btn-sm"
-                        style={{ color: 'var(--color-brand)' }}
-                      >
-                        <Sliders size={13} /> {showTuner ? "Hide Weight Priorities" : "Customize Scoring Priority Weights"}
-                      </button>
+          <button
+            onClick={() => setPage('landing')}
+            className="assessment-cancel"
+          >
+            <ArrowLeft size={16} />
+            Cancel
+          </button>
+        </div>
 
-                      {showTuner && (
-                        <div style={{ marginTop: '12px', background: 'var(--bg-app)', padding: '16px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-default)', fontSize: '12px' }}>
-                          <div style={{ marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                              <span>Semantic Vector Similarity</span>
-                              <strong>{Math.round(weights.semantic_skill_match * 100)}%</strong>
-                            </div>
-                            <input 
-                              type="range" min="0" max="0.8" step="0.05" 
-                              value={weights.semantic_skill_match}
-                              onChange={e => setWeights({...weights, semantic_skill_match: parseFloat(e.target.value)})}
-                              style={{ width: '100%' }}
-                            />
-                          </div>
-                          <div style={{ marginBottom: '12px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                              <span>Skill Gap Resolution Weight</span>
-                              <strong>{Math.round(weights.career_skill_gap_relevance * 100)}%</strong>
-                            </div>
-                            <input 
-                              type="range" min="0" max="0.5" step="0.05" 
-                              value={weights.career_skill_gap_relevance}
-                              onChange={e => setWeights({...weights, career_skill_gap_relevance: parseFloat(e.target.value)})}
-                              style={{ width: '100%' }}
-                            />
-                          </div>
-                          <div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                              <span>Rating Quality Weight</span>
-                              <strong>{Math.round(weights.rating * 100)}%</strong>
-                            </div>
-                            <input 
-                              type="range" min="0" max="0.3" step="0.02" 
-                              value={weights.rating}
-                              onChange={e => setWeights({...weights, rating: parseFloat(e.target.value)})}
-                              style={{ width: '100%' }}
-                            />
-                          </div>
-                        </div>
-                      )}
-                    </div>
+        {/* STEP INDICATOR */}
+        <div className="assessment-steps">
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <button onClick={() => setAssessmentStep(2)} className="btn btn-secondary">
-                        <ArrowLeft size={14} /> Back
-                      </button>
-                      <button onClick={handleRunAdvisor} className="btn btn-primary">
-                        Build My Learning Path <ArrowRight size={15} />
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
+          <div
+            className={`assessment-step ${
+              assessmentStep >= 1 ? 'active' : ''
+            }`}
+          >
+            <span className="assessment-step-number">1</span>
+            <span>Target Role</span>
+          </div>
+
+          <span className="assessment-step-line" />
+
+          <div
+            className={`assessment-step ${
+              assessmentStep >= 2 ? 'active' : ''
+            }`}
+          >
+            <span className="assessment-step-number">2</span>
+            <span>Your Skills</span>
+          </div>
+
+          <span className="assessment-step-line" />
+
+          <div
+            className={`assessment-step ${
+              assessmentStep >= 3 ? 'active' : ''
+            }`}
+          >
+            <span className="assessment-step-number">3</span>
+            <span>Preferences</span>
+          </div>
+
+        </div>
+
+        {/* =============================================================== */}
+        {/* STEP 1 */}
+        {/* =============================================================== */}
+
+        {assessmentStep === 1 && (
+          <div className="assessment-form">
+
+            <div className="assessment-field">
+              <label>Target Career Track</label>
+
+              <select
+                className="assessment-select"
+                value={targetCareer}
+                onChange={(e) => setTargetCareer(e.target.value)}
+              >
+                <option value="Data Scientist">
+                  Data Scientist
+                </option>
+
+                <option value="AI / Machine Learning Engineer">
+                  AI / Machine Learning Engineer
+                </option>
+
+                <option value="Cloud Solutions Architect">
+                  Cloud Solutions Architect
+                </option>
+
+                <option value="Cybersecurity Engineer">
+                  Cybersecurity Engineer
+                </option>
+
+                <option value="Full-Stack Web Developer">
+                  Full-Stack Web Developer
+                </option>
+
+                <option value="Data & Business Analyst">
+                  Data & Business Analyst
+                </option>
+
+                <option value="Product & Strategy Leader">
+                  Product & Strategy Leader
+                </option>
+              </select>
+            </div>
+
+            <div className="assessment-field">
+              <label>Specific Goal or Query (Optional)</label>
+
+              <input
+                type="text"
+                className="assessment-input"
+                placeholder="e.g. I want to transition into MLOps and deep learning algorithms..."
+                value={userQuery}
+                onChange={(e) => setUserQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="assessment-actions">
+              <button
+                onClick={() => setAssessmentStep(2)}
+                className="btn btn-primary"
+              >
+                Next: Add Your Skills
+                <ArrowRight size={15} />
+              </button>
+            </div>
+
           </div>
         )}
 
+        {/* =============================================================== */}
+        {/* STEP 2 */}
+        {/* =============================================================== */}
+
+        {assessmentStep === 2 && (
+          <div className="assessment-form">
+
+            <div className="assessment-field">
+              <label>Technical Skills You Currently Have</label>
+
+              <div className="selected-skills">
+                {currentSkills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="tag tag-brand"
+                  >
+                    {skill}
+
+                    <button
+                      onClick={() => handleRemoveSkill(skill)}
+                      className="tag-remove"
+                    >
+                      <X size={12} />
+                    </button>
+                  </span>
+                ))}
+              </div>
+
+              <div className="skill-input-row">
+
+                <input
+                  type="text"
+                  className="assessment-input"
+                  placeholder="Type a skill name and press Enter..."
+                  value={skillInput}
+                  onChange={(e) => setSkillInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleAddSkill(skillInput);
+                    }
+                  }}
+                />
+
+                <button
+                  onClick={() => handleAddSkill(skillInput)}
+                  className="btn btn-secondary"
+                >
+                  Add
+                </button>
+
+              </div>
+
+              <div className="suggested-skills-label">
+                Suggested dataset skills
+              </div>
+
+              <div className="suggested-skills">
+                {PRESET_SKILLS.map((skill) => (
+                  <button
+                    key={skill}
+                    onClick={() => handleAddSkill(skill)}
+                    className="suggested-skill"
+                  >
+                    + {skill}
+                  </button>
+                ))}
+              </div>
+
+            </div>
+
+            <div className="assessment-actions assessment-actions-between">
+
+              <button
+                onClick={() => setAssessmentStep(1)}
+                className="btn btn-secondary"
+              >
+                <ArrowLeft size={14} />
+                Back
+              </button>
+
+              <button
+                onClick={() => setAssessmentStep(3)}
+                className="btn btn-primary"
+              >
+                Next: Preferences
+                <ArrowRight size={15} />
+              </button>
+
+            </div>
+
+          </div>
+        )}
+
+        {/* =============================================================== */}
+        {/* STEP 3 */}
+        {/* =============================================================== */}
+
+        {assessmentStep === 3 && (
+          <div className="assessment-form">
+
+            <div className="assessment-preferences">
+
+              <div className="assessment-field">
+                <label>Preferred Difficulty Level</label>
+
+                <select
+                  className="assessment-select"
+                  value={difficulty}
+                  onChange={(e) => setDifficulty(e.target.value)}
+                >
+                  <option value="Any">Any Level</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+
+              <div className="assessment-field">
+                <label>Time Commitment</label>
+
+                <select
+                  className="assessment-select"
+                  value={duration}
+                  onChange={(e) => setDuration(e.target.value)}
+                >
+                  <option value="Any">Any Duration</option>
+                  <option value="1 - 4 Weeks">1 - 4 Weeks</option>
+                  <option value="1 - 3 Months">1 - 3 Months</option>
+                  <option value="3 - 6 Months">3 - 6 Months</option>
+                </select>
+              </div>
+
+            </div>
+
+            {/* SCORING OPTIONS */}
+
+            <div className="scoring-options">
+
+              <button
+                onClick={() => setShowTuner(!showTuner)}
+                className="scoring-toggle"
+              >
+                <Sliders size={14} />
+
+                {showTuner
+                  ? "Hide Scoring Priorities"
+                  : "Customize Scoring Priorities"}
+              </button>
+
+              {showTuner && (
+                <div className="scoring-panel">
+
+                  <div className="scoring-item">
+                    <div>
+                      <span>Semantic Vector Similarity</span>
+                      <strong>
+                        {Math.round(
+                          weights.semantic_skill_match * 100
+                        )}
+                        %
+                      </strong>
+                    </div>
+
+                    <input
+                      type="range"
+                      min="0"
+                      max="0.8"
+                      step="0.05"
+                      value={weights.semantic_skill_match}
+                      onChange={(e) =>
+                        setWeights({
+                          ...weights,
+                          semantic_skill_match:
+                            parseFloat(e.target.value)
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="scoring-item">
+                    <div>
+                      <span>Skill Gap Resolution Weight</span>
+                      <strong>
+                        {Math.round(
+                          weights.career_skill_gap_relevance * 100
+                        )}
+                        %
+                      </strong>
+                    </div>
+
+                    <input
+                      type="range"
+                      min="0"
+                      max="0.5"
+                      step="0.05"
+                      value={weights.career_skill_gap_relevance}
+                      onChange={(e) =>
+                        setWeights({
+                          ...weights,
+                          career_skill_gap_relevance:
+                            parseFloat(e.target.value)
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="scoring-item">
+                    <div>
+                      <span>Rating Quality Weight</span>
+                      <strong>
+                        {Math.round(weights.rating * 100)}%
+                      </strong>
+                    </div>
+
+                    <input
+                      type="range"
+                      min="0"
+                      max="0.3"
+                      step="0.02"
+                      value={weights.rating}
+                      onChange={(e) =>
+                        setWeights({
+                          ...weights,
+                          rating: parseFloat(e.target.value)
+                        })
+                      }
+                    />
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+
+            {/* ACTIONS */}
+
+            <div className="assessment-actions assessment-actions-between">
+
+              <button
+                onClick={() => setAssessmentStep(2)}
+                className="btn btn-secondary"
+              >
+                <ArrowLeft size={14} />
+                Back
+              </button>
+
+              <button
+                onClick={handleRunAdvisor}
+                className="btn btn-primary"
+              >
+                Build My Learning Path
+                <ArrowRight size={15} />
+              </button>
+
+            </div>
+
+          </div>
+        )}
+
+      </div>
+    )}
+
+  </div>
+)}
         {/* ========================================================================= */}
         {/* PAGE 3: CAREER MATCH & COURSE RECOMMENDATIONS */}
         {/* ========================================================================= */}
@@ -1318,7 +1497,7 @@ export default function App() {
                       </div>
 
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '14px', borderTop: '1px solid var(--border-default)' }}>
-                        <button 
+                        <button
                           onClick={() => toggleAnalysis(rec.course_id)}
                           className="btn btn-ghost btn-sm"
                           style={{ color: 'var(--color-brand)' }}
@@ -1326,9 +1505,9 @@ export default function App() {
                           <Info size={14} /> {expandedAnalysis[rec.course_id] ? "Hide Details" : "Why this course was selected"}
                         </button>
 
-                        <a 
-                          href={rec.course_url} 
-                          target="_blank" 
+                        <a
+                          href={rec.course_url}
+                          target="_blank"
                           rel="noreferrer"
                           className="btn btn-secondary btn-sm"
                         >
@@ -1427,8 +1606,8 @@ export default function App() {
       {authModalOpen && (
         <div className="modal-overlay" onClick={() => setAuthModalOpen(false)}>
           <div className="modal-card" onClick={e => e.stopPropagation()}>
-            <button 
-              onClick={() => setAuthModalOpen(false)} 
+            <button
+              onClick={() => setAuthModalOpen(false)}
               style={{ position: 'absolute', top: '18px', right: '18px', background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer' }}
             >
               <X size={18} />
@@ -1447,13 +1626,13 @@ export default function App() {
             </div>
 
             <div className="auth-tabs">
-              <button 
+              <button
                 className={`auth-tab ${authTab === 'login' ? 'active' : ''}`}
                 onClick={() => { setAuthTab('login'); setAuthError(''); }}
               >
                 Sign In
               </button>
-              <button 
+              <button
                 className={`auth-tab ${authTab === 'register' ? 'active' : ''}`}
                 onClick={() => { setAuthTab('register'); setAuthError(''); }}
               >
@@ -1472,8 +1651,8 @@ export default function App() {
               {authTab === 'register' && (
                 <div className="form-group">
                   <label className="form-label">Full Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="input"
                     placeholder="e.g. Alex Morgan"
                     required
@@ -1485,8 +1664,8 @@ export default function App() {
 
               <div className="form-group">
                 <label className="form-label">Email Address</label>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   className="input"
                   placeholder="name@company.com"
                   required
@@ -1497,8 +1676,8 @@ export default function App() {
 
               <div className="form-group">
                 <label className="form-label">Password</label>
-                <input 
-                  type="password" 
+                <input
+                  type="password"
                   className="input"
                   placeholder="••••••••"
                   required
@@ -1524,84 +1703,66 @@ export default function App() {
         </div>
       )}
 
-      {/* FOOTER */}
-      <footer
-        style={{
-          borderTop: '1px solid var(--border-default)',
-          marginTop: '56px',
-          padding: '42px 0 24px',
-          background: 'var(--bg-surface)',
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'minmax(240px, 1.6fr) repeat(3, minmax(120px, 1fr))',
-              gap: '32px',
-              paddingBottom: '30px',
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <span className="brand-icon">PF</span>
-                <strong style={{ fontSize: '16px', color: 'var(--text-heading)' }}>Pathfinder</strong>
-              </div>
-              <p style={{ maxWidth: '360px', fontSize: '12px', lineHeight: 1.7, color: 'var(--text-muted)', margin: 0 }}>
-                An AI-powered career guidance engine that connects your skills and goals with practical learning paths.
-              </p>
+      {/* =========================
+    SIMPLE FOOTER
+========================= */}
+      <footer className="footer">
+        <div className="container footer-content">
+
+          {/* Left */}
+          <div className="footer-brand">
+            <div className="footer-logo">
+              <div className="footer-icon">PF</div>
+              <h2>PathFinder</h2>
             </div>
 
-            <div>
-              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Platform</strong>
-              <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
-                <button type="button" style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }} onClick={() => setPage('landing')}>Overview</button>
-                <button type="button" style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }} onClick={() => navigateToAssessment()}>Skill Assessment</button>
-                <button type="button" className="footer-link" onClick={() => setPage('evaluation')}>Performance</button>
-              </div>
-            </div>
-
-            <div>
-              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Career Tracks</strong>
-              <div style={{ display: 'grid', gap: '8px', marginTop: '12px' }}>
-                {CAREER_TRACKS.slice(0, 3).map((track) => (
-                  <button
-                    type="button"
-                    key={track.id}
-                    style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', color: 'var(--text-muted)', fontSize: '12px', cursor: 'pointer' }}
-                    onClick={() => handleSelectCareerFromLanding(track.title)}
-                  >
-                    {track.title}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <strong style={{ fontSize: '12px', color: 'var(--text-heading)' }}>Dataset</strong>
-              <div style={{ display: 'grid', gap: '8px', marginTop: '12px', fontSize: '12px', color: 'var(--text-muted)' }}>
-                <span>623 Courses</span>
-                <span>319 Skills</span>
-                <span>115 Providers</span>
-              </div>
-            </div>
+            <p>
+              An AI-powered career guidance engine that connects
+              your skills and goals with practical learning paths.
+            </p>
           </div>
 
-          <div
-            style={{
-              borderTop: '1px solid var(--border-default)',
-              paddingTop: '18px',
-              display: 'flex',
-              justifyContent: 'space-between',
-              gap: '16px',
-              flexWrap: 'wrap',
-              color: 'var(--text-subtle)',
-              fontSize: '11px',
-            }}
-          >
-            <span>© {new Date().getFullYear()} Pathfinder. All rights reserved.</span>
-            <span>Grounded on <code>coursera_course_dataset_v3.csv</code></span>
+          {/* Platform */}
+          <div className="footer-column">
+            <h4>Platform</h4>
+
+            <button onClick={() => setPage("landing")}>
+              Overview
+            </button>
+
+            <button onClick={() => navigateToAssessment()}>
+              Skill Assessment
+            </button>
+
+            <button onClick={() => setPage("evaluation")}>
+              Performance
+            </button>
           </div>
+
+          {/* Career Tracks */}
+          <div className="footer-column">
+            <h4>Career Tracks</h4>
+
+            <span>Data Scientist</span>
+            <span>AI & ML Engineer</span>
+            <span>Cloud Architect</span>
+          </div>
+
+          {/* Dataset */}
+          <div className="footer-column">
+            <h4>Dataset</h4>
+
+            <span>623 Courses</span>
+            <span>319 Skills</span>
+            <span>115 Providers</span>
+          </div>
+
+        </div>
+
+        <div className="footer-bottom">
+          <span>© 2026 PathFinder. All rights reserved.</span>
+
+          <span>Data source: coursera_course_dataset_v3.csv</span>
         </div>
       </footer>
     </div>
