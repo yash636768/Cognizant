@@ -3986,3 +3986,19 @@ select:focus-visible {
 .footer .footer-accent {
   color: #FB7185;
 }
+/* =========================================================
+   REMOVE CAREER PATH ICONS
+   ========================================================= */
+
+   .career-path-icon {
+    display: none !important;
+  }
+  
+  .career-path-card svg {
+    display: none !important;
+  }
+  
+  /* Keep the career card content aligned properly */
+  .career-path-content {
+    width: 100%;
+  }
