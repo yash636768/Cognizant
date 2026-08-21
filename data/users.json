@@ -34,5 +34,14 @@
     "passwordHash": "858cc464fa467081694d5ebc8304be1f8d3aed522fa6827d1454dc5a203d01fb",
     "token": "dXNlcl8xNzg3MDYxNzcwNzgxXzFlMWVmOTYyOjE3ODcwNjE3NzA3ODE6NDVjN2ZlNmQzZjBlODA0ODUxNjAyZmY3MmFhNWNhODY=",
     "createdAt": "2026-08-18T14:02:50.781Z"
+  },
+  {
+    "id": "user_1787216309444_2aba1adc",
+    "name": "Test User",
+    "email": "test@example.com",
+    "salt": "37f279dec9c9f1215f3b90ee2a46b1e6",
+    "passwordHash": "b08922c558e72296a7f87615a0e547ff2fc57bc528ad883f866103d53cc0d14f",
+    "token": "dXNlcl8xNzg3MjE2MzA5NDQ0XzJhYmExYWRjOjE3ODcyMTYzMDk0NDQ6YTQ3ZmFlYjJlZWY3MTEzZDQ2MTBmOTUyZTA4NjZmN2Q=",
+    "createdAt": "2026-08-20T08:58:29.444Z"
   }
 ]

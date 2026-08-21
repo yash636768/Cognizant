@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Chatbot from './components/Chatbot';
 import {
   Compass,
   Target,
@@ -1643,6 +1644,9 @@ export default function App() {
           <span>Data source: coursera_course_dataset_v3.csv</span>
         </div>
       </footer>
+
+      {/* Floating Pathfinder AI Chatbot */}
+      <Chatbot targetCareer={targetCareer} currentSkills={currentSkills} />
     </div>
   );
 }
