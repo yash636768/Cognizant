@@ -43,5 +43,14 @@
     "passwordHash": "b08922c558e72296a7f87615a0e547ff2fc57bc528ad883f866103d53cc0d14f",
     "token": "dXNlcl8xNzg3MjE2MzA5NDQ0XzJhYmExYWRjOjE3ODcyMTYzMDk0NDQ6YTQ3ZmFlYjJlZWY3MTEzZDQ2MTBmOTUyZTA4NjZmN2Q=",
     "createdAt": "2026-08-20T08:58:29.444Z"
+  },
+  {
+    "id": "user_1787304055889_54745b39",
+    "name": "Abhishek Singh",
+    "email": "abhisheksingh13dz@gmail.com",
+    "salt": "2d85f81eb4b0f2eb62bbd1da471ec40b",
+    "passwordHash": "95131cd0ae58151011695110f9abfca42647dcaec1345ce1341f7c65da2ca659",
+    "token": "dXNlcl8xNzg3MzA0MDU1ODg5XzU0NzQ1YjM5OjE3ODczMDQwNTU4ODk6YjBjNDUyODQyZTE0YTU2YWZiNmQ3YmE1ZThiNzAyMTA=",
+    "createdAt": "2026-08-21T09:20:55.889Z"
   }
 ]

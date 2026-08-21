@@ -4,13 +4,11 @@ import {
   Compass,
   Target,
   BookOpen,
-  Award,
   BarChart2,
   Sliders,
   ExternalLink,
   CheckCircle,
   AlertCircle,
-  Database,
   Search,
   Layers,
   Sparkles,
@@ -32,7 +30,6 @@ import {
   LogOut,
   Lock,
   Mail,
-  Zap,
   Filter
 } from 'lucide-react';
 
@@ -765,7 +762,6 @@ export default function App() {
 
               <div className="landing-metrics">
                 <div className="landing-metric">
-                  <Layers size={26} />
                   <div>
                     <div className="landing-metric-label">Courses Analyzed</div>
                     <div className="landing-metric-value">{stats ? stats.total_courses : 623}</div>
@@ -773,7 +769,6 @@ export default function App() {
                   </div>
                 </div>
                 <div className="landing-metric">
-                  <Zap size={26} />
                   <div>
                     <div className="landing-metric-label">Skills Extracted</div>
                     <div className="landing-metric-value">{stats ? stats.total_skills_identified : 319}</div>
@@ -781,7 +776,6 @@ export default function App() {
                   </div>
                 </div>
                 <div className="landing-metric">
-                  <Database size={26} />
                   <div>
                     <div className="landing-metric-label">Educational Institutions</div>
                     <div className="landing-metric-value">{stats ? stats.total_organizations : 115}</div>
@@ -789,7 +783,6 @@ export default function App() {
                   </div>
                 </div>
                 <div className="landing-metric">
-                  <Award size={26} />
                   <div>
                     <div className="landing-metric-label">Dataset Mean Rating</div>
                     <div className="landing-metric-value">4.64 / 5.0</div>
