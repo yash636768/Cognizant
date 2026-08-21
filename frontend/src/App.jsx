@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Chatbot from './components/Chatbot';
+import MockInterviewModal from './components/MockInterviewModal';
 import {
   Compass,
   Target,
   BookOpen,
+  BrainCircuit,
+  Award,
   BarChart2,
   Sliders,
   ExternalLink,
@@ -64,6 +67,7 @@ export default function App() {
   const [page, setPage] = useState('landing'); // 'landing' | 'input' | 'results' | 'evaluation' | 'profile'
   const [stats, setStats] = useState(null);
   const [evaluation, setEvaluation] = useState(null);
+  const [isInterviewOpen, setIsInterviewOpen] = useState(false);
 
   // Auth State
   const [currentUser, setCurrentUser] = useState(null);
@@ -253,6 +257,49 @@ export default function App() {
     }
   };
 
+  const handleViewRecommendationsFromInterview = async (selectedRole, weakTopics = []) => {
+    let roleToUse = targetCareer;
+    if (selectedRole) {
+      roleToUse = selectedRole;
+      setTargetCareer(selectedRole);
+    }
+    setIsInterviewOpen(false);
+    setLoading(true);
+    setPage('results');
+
+    let queryText = userQuery;
+    if (weakTopics && weakTopics.length > 0) {
+      queryText = `Focus on missing skills: ${weakTopics.join(', ')}`;
+      setUserQuery(queryText);
+    }
+
+    try {
+      const res = await fetch(`${API_BASE}/recommend`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          current_skills: currentSkills,
+          target_career: roleToUse,
+          user_query: queryText,
+          preferred_difficulty: difficulty,
+          preferred_duration: duration,
+          preferred_type: courseType,
+          custom_weights: weights,
+          top_k: 10
+        })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        setResults(data);
+      }
+    } catch (e) {
+      console.error("Recommend error:", e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const toggleAnalysis = (id) => {
     setExpandedAnalysis(prev => ({ ...prev, [id]: !prev[id] }));
   };
@@ -306,6 +353,16 @@ export default function App() {
               Performance
             </button>
 
+            <button
+              type="button"
+              onClick={() => setIsInterviewOpen(true)}
+              className="nav-link"
+              title="Practice AI Technical Mock Interview"
+              style={{ color: '#6366f1', fontWeight: 600 }}
+            >
+              <BrainCircuit size={14} />
+              AI Mock Interview
+            </button>
           </nav>
 
           {/* User */}
@@ -1639,7 +1696,20 @@ export default function App() {
       </footer>
 
       {/* Floating Pathfinder AI Chatbot */}
-      <Chatbot targetCareer={targetCareer} currentSkills={currentSkills} />
+      <Chatbot
+        targetCareer={targetCareer}
+        currentSkills={currentSkills}
+        onOpenInterview={() => setIsInterviewOpen(true)}
+      />
+
+      {/* AI Technical Mock Interview & Skill Verifier Overlay Modal */}
+      <MockInterviewModal
+        targetCareer={targetCareer}
+        currentSkills={currentSkills}
+        isOpen={isInterviewOpen}
+        onClose={() => setIsInterviewOpen(false)}
+        onViewRecommendations={handleViewRecommendationsFromInterview}
+      />
     </div>
   );
 }

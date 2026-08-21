@@ -49,15 +49,15 @@ const getActiveApiKey = () => {
 };
 
 const STARTER_PROMPTS = [
+  "🎯 Start AI Mock Interview for my role",
   "Recommend a learning roadmap for my target role",
   "What skills am I missing for Data Science & AI?",
-  "How should I structure my study schedule?",
-  "Which Coursera course type fits a beginner best?"
+  "How should I structure my study schedule?"
 ];
 
 const DEFAULT_MODELS = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-2.5-flash', 'gemini-3.6-flash'];
 
-export default function Chatbot({ targetCareer, currentSkills }) {
+export default function Chatbot({ targetCareer, currentSkills, onOpenInterview }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [apiKey, setApiKey] = useState(() => getActiveApiKey());
@@ -286,6 +286,11 @@ Guidelines:
   const handleSendMessage = async (textToSend) => {
     const query = (textToSend || input).trim();
     if (!query || isGenerating) return;
+
+    if (query.includes("Start AI Mock Interview") && onOpenInterview) {
+      onOpenInterview();
+      return;
+    }
 
     const currentKey = getActiveApiKey();
     if (!currentKey) {
