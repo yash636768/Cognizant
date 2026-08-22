@@ -63,16 +63,30 @@ class HybridRecommender:
     def _compute_semantic_similarity(self, query_str):
         if not query_str.strip():
             return np.ones(len(self.df), dtype=np.float32) * 0.5
-            
+
         try:
             from sentence_transformers import SentenceTransformer
             model = SentenceTransformer('all-MiniLM-L6-v2')
-            q_vec = model.encode([query_str], normalize_embeddings=True)[0]
-            sims = np.dot(self.embeddings, q_vec)
-            # Clip between 0 and 1
+            # Encode & normalize query vector (float32 required by FAISS)
+            q_vec = model.encode([query_str], normalize_embeddings=True).astype(np.float32)
+
+            if self.faiss_index is not None:
+                # ── FAISS path (IndexFlatIP on normalized vecs = cosine sim) ──
+                n_courses = len(self.df)
+                # Search all n_courses — returns (distances, indices) sorted desc
+                distances, indices = self.faiss_index.search(q_vec, n_courses)
+                # Reconstruct scores array in original course order
+                sims = np.zeros(n_courses, dtype=np.float32)
+                for rank, idx in enumerate(indices[0]):
+                    sims[idx] = distances[0][rank]
+            else:
+                # ── Fallback: plain cosine via np.dot ──
+                sims = np.dot(self.embeddings, q_vec[0])
+
             return np.clip(sims, 0.0, 1.0)
+
         except Exception:
-            # TF-IDF fallback similarity
+            # Last-resort TF-IDF fallback
             from sklearn.feature_extraction.text import TfidfVectorizer
             from sklearn.metrics.pairwise import cosine_similarity
             docs = [f"{r['title']} {r['skills']} {r['description']}" for r in self.metadata]
