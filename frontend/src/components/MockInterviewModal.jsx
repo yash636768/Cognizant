@@ -21,10 +21,16 @@ const cleanTokenString = (str) => {
 
 const INVALID_DUMMY_KEY = 'AQ.Ab8RN6IzAzxjpHYNObqbKl-ftwPYtNoKttAxtTyi8bVP_mxqhQ';
 
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
+
 const getActiveApiKey = () => {
   const saved = localStorage.getItem('pathfinder_gemini_api_key');
   const cleanSaved = cleanTokenString(saved);
   if (cleanSaved && cleanSaved.length > 10 && cleanSaved !== INVALID_DUMMY_KEY) return cleanSaved;
+
+  const directKey = cleanTokenString(GEMINI_API_KEY);
+  if (directKey && directKey.length > 10 && directKey !== INVALID_DUMMY_KEY) return directKey;
+
   return '';
 };
 
