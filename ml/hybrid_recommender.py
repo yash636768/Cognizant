@@ -1,8 +1,8 @@
 import os
 import json
+import sys
 import numpy as np
 import pandas as pd
-from collections import Counter
 
 DEFAULT_WEIGHTS = {
     "semantic_skill_match": 0.40,
@@ -63,30 +63,16 @@ class HybridRecommender:
     def _compute_semantic_similarity(self, query_str):
         if not query_str.strip():
             return np.ones(len(self.df), dtype=np.float32) * 0.5
-
+            
         try:
             from sentence_transformers import SentenceTransformer
             model = SentenceTransformer('all-MiniLM-L6-v2')
-            # Encode & normalize query vector (float32 required by FAISS)
-            q_vec = model.encode([query_str], normalize_embeddings=True).astype(np.float32)
-
-            if self.faiss_index is not None:
-                # ── FAISS path (IndexFlatIP on normalized vecs = cosine sim) ──
-                n_courses = len(self.df)
-                # Search all n_courses — returns (distances, indices) sorted desc
-                distances, indices = self.faiss_index.search(q_vec, n_courses)
-                # Reconstruct scores array in original course order
-                sims = np.zeros(n_courses, dtype=np.float32)
-                for rank, idx in enumerate(indices[0]):
-                    sims[idx] = distances[0][rank]
-            else:
-                # ── Fallback: plain cosine via np.dot ──
-                sims = np.dot(self.embeddings, q_vec[0])
-
+            q_vec = model.encode([query_str], normalize_embeddings=True)[0]
+            sims = np.dot(self.embeddings, q_vec)
+            # Clip between 0 and 1
             return np.clip(sims, 0.0, 1.0)
-
         except Exception:
-            # Last-resort TF-IDF fallback
+            # TF-IDF fallback similarity
             from sklearn.feature_extraction.text import TfidfVectorizer
             from sklearn.metrics.pairwise import cosine_similarity
             docs = [f"{r['title']} {r['skills']} {r['description']}" for r in self.metadata]
@@ -218,12 +204,19 @@ class HybridRecommender:
         return scores[:top_k]
 
 if __name__ == "__main__":
-    hr = HybridRecommender("models/vector_index/course_metadata.json", "models/embeddings/course_embeddings.npy")
-    recs = hr.recommend(
-        current_skills=["Python Programming", "Databases & SQL"],
-        target_career_missing_skills=["Machine Learning", "Probability & Statistics", "Data Visualization"],
-        preferred_difficulty="Beginner",
-        top_k=3
+    request = json.loads(sys.stdin.read())
+    recommender = HybridRecommender(
+        request["metadata_path"],
+        request.get("embeddings_path"),
+        request.get("faiss_path")
     )
-    for r in recs:
-        print(f"[{r['final_score']:.3f}] {r['title']} ({r['organization']}) - Rating: {r['rating']}")
+    print(json.dumps(recommender.recommend(
+        current_skills=request.get("current_skills", []),
+        target_career_missing_skills=request.get("target_career_missing_skills", []),
+        user_query=request.get("user_query", ""),
+        preferred_difficulty=request.get("preferred_difficulty", "Any"),
+        preferred_duration=request.get("preferred_duration", "Any"),
+        preferred_type=request.get("preferred_type", "Any"),
+        custom_weights=request.get("custom_weights"),
+        top_k=request.get("top_k", 10)
+    )))

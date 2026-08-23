@@ -1,8 +1,8 @@
-const { getUserByToken } = require('../auth');
+const jwt = require('jsonwebtoken');
+const { getUserById } = require('../auth');
 
-function authenticateUser(req, res, next) {
+async function authenticateUser(req, res, next) {
   const authHeader = req.headers.authorization || '';
-
   const token = authHeader
     .replace(/^Bearer\s+/i, '')
     .trim();
@@ -13,16 +13,20 @@ function authenticateUser(req, res, next) {
     });
   }
 
-  const user = getUserByToken(token);
+  try {
+    const { userId } = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await getUserById(userId);
+    if (!user) {
+      return res.status(401).json({ error: 'User no longer exists.' });
+    }
 
-  if (!user) {
+    req.user = user;
+    return next();
+  } catch (error) {
     return res.status(401).json({
       error: 'Invalid or expired token.'
     });
   }
-
-  req.user = user;
-  next();
 }
 
 module.exports = authenticateUser;

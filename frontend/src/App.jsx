@@ -36,7 +36,20 @@ import {
   Filter
 } from 'lucide-react';
 
-const API_BASE = "/api";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "/api";
+
+async function readApiResponse(response) {
+  const text = await response.text();
+  if (!text) {
+    throw new Error('Backend is unavailable. Start the backend and MongoDB, then try again.');
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Backend returned an invalid response (${response.status}).`);
+  }
+}
 
 const PRESET_SKILLS = [
   "Python Programming",
@@ -175,7 +188,7 @@ export default function App() {
         body: JSON.stringify(payload)
       });
 
-      const data = await res.json();
+      const data = await readApiResponse(res);
       if (!res.ok) {
         throw new Error(data.error || "Authentication failed.");
       }

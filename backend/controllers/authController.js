@@ -1,14 +1,9 @@
-const {
-  registerUser,
-  loginUser,
-  getUserByToken
-} = require('../auth');
-
-function register(req, res) {
+const { registerUser, loginUser } = require('../auth');
+async function register(req, res) {
   try {
     const { name, email, password } = req.body || {};
 
-    const result = registerUser({
+    const result = await registerUser({
       name,
       email,
       password
@@ -22,11 +17,11 @@ function register(req, res) {
   }
 }
 
-function login(req, res) {
+async function login(req, res) {
   try {
     const { email, password } = req.body || {};
 
-    const result = loginUser({
+    const result = await loginUser({
       email,
       password
     });
@@ -40,29 +35,7 @@ function login(req, res) {
 }
 
 function me(req, res) {
-  const authHeader = req.headers.authorization || '';
-
-  const token = authHeader
-    .replace(/^Bearer\s+/i, '')
-    .trim();
-
-  if (!token) {
-    return res.status(401).json({
-      error: 'No token provided.'
-    });
-  }
-
-  const user = getUserByToken(token);
-
-  if (!user) {
-    return res.status(401).json({
-      error: 'Invalid or expired token.'
-    });
-  }
-
-  return res.json({
-    user
-  });
+  return res.json({ user: req.user });
 }
 
 module.exports = {

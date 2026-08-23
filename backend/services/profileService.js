@@ -1,54 +1,23 @@
-const fs = require('fs');
-const { USER_PROFILES_PATH } = require('../config/paths');
+const Profile = require('../models/Profile');
 
-function readUserProfiles() {
-  try {
-    if (!fs.existsSync(USER_PROFILES_PATH)) {
-      return {};
-    }
-
-    const raw = fs.readFileSync(
-      USER_PROFILES_PATH,
-      'utf-8'
-    );
-
-    return JSON.parse(raw || '{}');
-  } catch (error) {
-    console.error(
-      'Error reading user profiles:',
-      error
-    );
-
-    return {};
-  }
+async function getProfile(user) {
+  return Profile.findOne({ user: user.id }).lean();
 }
 
-function writeUserProfiles(profiles) {
-  fs.writeFileSync(
-    USER_PROFILES_PATH,
-    JSON.stringify(
-      profiles,
-      null,
-      2
-    )
-  );
+async function saveProfile(user, profileData) {
+  const {
+    _id,
+    user: existingUser,
+    createdAt,
+    updatedAt,
+    ...safeProfileData
+  } = profileData;
+
+  return Profile.findOneAndUpdate(
+    { user: user.id },
+    { $set: { ...safeProfileData, user: user.id } },
+    { new: true, upsert: true, setDefaultsOnInsert: true }
+  ).lean();
 }
 
-function getProfileKey(user) {
-  if (!user) {
-    return null;
-  }
-
-  return (
-    user.email ||
-    user.id ||
-    user._id ||
-    null
-  );
-}
-
-module.exports = {
-  readUserProfiles,
-  writeUserProfiles,
-  getProfileKey
-};
+module.exports = { getProfile, saveProfile };

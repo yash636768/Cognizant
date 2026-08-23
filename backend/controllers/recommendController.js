@@ -6,11 +6,18 @@ async function recommend(req, res) {
     return res.json(result);
   } catch (err) {
     if (err.statusCode) {
-      return res.status(err.statusCode).json({ error: err.message });
+      return res.status(err.statusCode).json({
+        error: err.message
+      });
     }
+
     console.error('Error in /api/recommend:', err);
-    return res.status(500).json({ error: err.message });
+    return res.status(500).json({
+      error: err.message
+    });
   }
 }
 
-module.exports = { recommend };
+module.exports = {
+  recommend
+};
