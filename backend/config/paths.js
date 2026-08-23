@@ -14,7 +14,6 @@ const FAISS_PATH = path.join(MODELS_DIR, 'vector_index', 'course_faiss.index');
 const TAXONOMY_PATH = path.join(DATA_DIR, 'skill_taxonomy.json');
 const EVAL_PATH = path.join(MODELS_DIR, 'evaluation', 'eval_report.json');
 
-// Initialize user profiles directory & file if they don't exist
 if (!fs.existsSync(USER_PROFILES_DIR)) {
   fs.mkdirSync(USER_PROFILES_DIR, { recursive: true });
 }

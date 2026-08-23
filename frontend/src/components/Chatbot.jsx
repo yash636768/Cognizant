@@ -26,16 +26,17 @@ const cleanTokenString = (str) => {
 
 const INVALID_DUMMY_KEY = 'AQ.Ab8RN6IzAzxjpHYNObqbKl-ftwPYtNoKttAxtTyi8bVP_mxqhQ';
 
-// =============================================================
-// PASTE YOUR GEMINI API KEY HERE (starts with AIzaSy...):
-// =============================================================
-const GEMINI_API_KEY = '';
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 
 const GEMINI_STORAGE_KEY = 'pathfinder_gemini_api_key';
+const getTimestamp = () => new Date().toLocaleTimeString([], {
+  hour: '2-digit',
+  minute: '2-digit'
+});
 
 // Smart helper to get active API key
 const getActiveApiKey = () => {
-  const saved = cleanTokenString(localStorage.getItem('pathfinder_gemini_api_key') || localStorage.getItem(GEMINI_STORAGE_KEY));
+  const saved = cleanTokenString(localStorage.getItem(GEMINI_STORAGE_KEY));
   if (saved && saved.length > 10 && saved !== INVALID_DUMMY_KEY) {
     return saved;
   }
@@ -72,7 +73,7 @@ export default function Chatbot({ targetCareer, currentSkills, onOpenInterview }
       id: 'welcome-1',
       role: 'model',
       text: "👋 Hi! I'm **PathFinder AI**, your personal career & learning guide powered by Google Gemini.\n\nAsk me anything about career tracks, skill gaps, course choices, or learning strategies!",
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: getTimestamp()
     }
   ]);
 
@@ -302,7 +303,7 @@ Guidelines:
       id: `user-${Date.now()}`,
       role: 'user',
       text: query,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: getTimestamp()
     };
 
     setMessages(prev => [...prev, userMsg]);
@@ -315,13 +316,12 @@ Guidelines:
         id: `ai-${Date.now()}`,
         role: 'model',
         text: responseText,
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        timestamp: getTimestamp()
       };
       setMessages(prev => [...prev, aiMsg]);
     } catch (err) {
       if (err.message.includes("API key not valid") || err.message.includes("Invalid") || err.message.includes("400") || err.message.includes("403")) {
         localStorage.removeItem(GEMINI_STORAGE_KEY);
-        localStorage.removeItem('pathfinder_gemini_api_key');
         setApiKey('');
         setShowKeyConfig(true);
       }
@@ -330,7 +330,7 @@ Guidelines:
         role: 'model',
         text: `⚠️ **Invalid API Key Error**: ${err.message}.\n\n👉 Please paste your valid key (starts with \`AIzaSy...\`) from [Google AI Studio](https://aistudio.google.com/app/apikey) in the settings box above.`,
         isError: true,
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        timestamp: getTimestamp()
       };
       setMessages(prev => [...prev, errorMsg]);
     } finally {
@@ -344,7 +344,7 @@ Guidelines:
         id: 'welcome-reset',
         role: 'model',
         text: "Conversation cleared! How can I assist you with your career goals today?",
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        timestamp: getTimestamp()
       }
     ]);
   };

@@ -1,95 +1,46 @@
 const {
-  readUserProfiles,
-  writeUserProfiles,
-  getProfileKey
+  getProfile,
+  saveProfile
 } = require('../services/profileService');
 
-function getProfile(req, res) {
+function defaultProfile(user) {
+  return {
+    name: user.name || '',
+    email: user.email || '',
+    assessment_history: []
+  };
+}
+
+async function getProfileController(req, res) {
   try {
-    const profiles = readUserProfiles();
-    const profileKey = getProfileKey(req.user);
-
-    if (!profileKey) {
-      return res.status(400).json({
-        error: 'Unable to identify user.'
-      });
-    }
-
-    const profile = profiles[profileKey];
-
-    if (!profile) {
-      return res.json({
-        profile: null
-      });
-    }
-
-    return res.json({
-      profile
-    });
-  } catch (err) {
-    console.error('Error in GET /api/profile:', err);
-    return res.status(500).json({
-      error: err.message
-    });
+    const profile = await getProfile(req.user);
+    return res.json({ profile: profile || null });
+  } catch (error) {
+    console.error('Error in GET /api/profile:', error);
+    return res.status(500).json({ error: error.message });
   }
 }
 
-function updateProfile(req, res) {
+async function updateProfile(req, res) {
   try {
-    const profiles = readUserProfiles();
-    const profileKey = getProfileKey(req.user);
-
-    if (!profileKey) {
-      return res.status(400).json({
-        error: 'Unable to identify user.'
-      });
-    }
-
-    const existingProfile = profiles[profileKey] || {
-      name: req.user.name || '',
-      email: req.user.email || '',
-      assessment_history: []
-    };
-
-    const updatedProfile = {
-      ...existingProfile,
-      name: req.body.name ?? existingProfile.name,
-      email: req.user.email || existingProfile.email,
+    const existing = (await getProfile(req.user)) || defaultProfile(req.user);
+    const profile = await saveProfile(req.user, {
+      ...existing,
+      name: req.body.name ?? existing.name,
+      email: req.user.email,
       updated_at: new Date().toISOString()
-    };
-
-    profiles[profileKey] = updatedProfile;
-    writeUserProfiles(profiles);
-
-    return res.json({
-      message: 'Profile updated successfully.',
-      profile: updatedProfile
     });
-  } catch (err) {
-    console.error('Error in PUT /api/profile:', err);
-    return res.status(500).json({
-      error: err.message
-    });
+
+    return res.json({ message: 'Profile updated successfully.', profile });
+  } catch (error) {
+    console.error('Error in PUT /api/profile:', error);
+    return res.status(500).json({ error: error.message });
   }
 }
 
-function saveAssessment(req, res) {
+async function saveAssessment(req, res) {
   try {
-    const profiles = readUserProfiles();
-    const profileKey = getProfileKey(req.user);
-
-    if (!profileKey) {
-      return res.status(400).json({
-        error: 'Unable to identify user.'
-      });
-    }
-
-    const existingProfile = profiles[profileKey] || {
-      name: req.user.name || '',
-      email: req.user.email || '',
-      assessment_history: []
-    };
-
+    const existing = (await getProfile(req.user)) || defaultProfile(req.user);
     const assessment = {
       id: `assessment_${Date.now()}`,
       created_at: new Date().toISOString(),
@@ -104,90 +55,45 @@ function saveAssessment(req, res) {
       target_missing_skills: req.body.target_missing_skills || [],
       recommendations: req.body.recommendations || []
     };
-
-    const updatedProfile = {
-      ...existingProfile,
-      name: req.user.name || existingProfile.name,
-      email: req.user.email || existingProfile.email,
-      target_career: assessment.target_career,
-      current_skills: assessment.current_skills,
-      user_query: assessment.user_query,
-      preferred_difficulty: assessment.preferred_difficulty,
-      preferred_duration: assessment.preferred_duration,
-      preferred_type: assessment.preferred_type,
-      custom_weights: assessment.custom_weights,
-      selected_career: assessment.selected_career,
-      target_missing_skills: assessment.target_missing_skills,
-      recommendations: assessment.recommendations,
+    const profile = await saveProfile(req.user, {
+      ...existing,
+      name: req.user.name || existing.name,
+      email: req.user.email,
+      ...assessment,
       last_assessment_at: assessment.created_at,
-      assessment_history: [
-        ...(existingProfile.assessment_history || []),
-        assessment
-      ],
+      assessment_history: [...(existing.assessment_history || []), assessment],
       updated_at: new Date().toISOString()
-    };
-
-    profiles[profileKey] = updatedProfile;
-    writeUserProfiles(profiles);
-
-    return res.status(201).json({
-      message: 'Assessment saved successfully.',
-      profile: updatedProfile
     });
-  } catch (err) {
-    console.error('Error in POST /api/profile/assessment:', err);
-    return res.status(500).json({
-      error: err.message
-    });
+
+    return res.status(201).json({ message: 'Assessment saved successfully.', profile });
+  } catch (error) {
+    console.error('Error in POST /api/profile/assessment:', error);
+    return res.status(500).json({ error: error.message });
   }
 }
 
-function deleteAssessment(req, res) {
+async function deleteAssessment(req, res) {
   try {
-    const profiles = readUserProfiles();
-    const profileKey = getProfileKey(req.user);
+    const existing = await getProfile(req.user);
+    if (!existing) return res.status(404).json({ error: 'Profile not found.' });
 
-    if (!profileKey) {
-      return res.status(400).json({
-        error: 'Unable to identify user.'
-      });
-    }
-
-    const profile = profiles[profileKey];
-
-    if (!profile) {
-      return res.status(404).json({
-        error: 'Profile not found.'
-      });
-    }
-
-    const history = profile.assessment_history || [];
-    const updatedHistory = history.filter(
-      (item) => item.id !== req.params.id
-    );
-
-    profiles[profileKey] = {
-      ...profile,
-      assessment_history: updatedHistory,
+    const profile = await saveProfile(req.user, {
+      ...existing,
+      assessment_history: (existing.assessment_history || []).filter(
+        (item) => item.id !== req.params.id
+      ),
       updated_at: new Date().toISOString()
-    };
-
-    writeUserProfiles(profiles);
-
-    return res.json({
-      message: 'Assessment removed successfully.',
-      profile: profiles[profileKey]
     });
-  } catch (err) {
-    console.error('Error deleting assessment:', err);
-    return res.status(500).json({
-      error: err.message
-    });
+
+    return res.json({ message: 'Assessment removed successfully.', profile });
+  } catch (error) {
+    console.error('Error deleting assessment:', error);
+    return res.status(500).json({ error: error.message });
   }
 }
 
 module.exports = {
-  getProfile,
+  getProfile: getProfileController,
   updateProfile,
   saveAssessment,
   deleteAssessment
