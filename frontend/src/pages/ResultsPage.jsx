@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Check,
   AlertCircle,
   Sparkles,
-  Info,
   ExternalLink,
-  DollarSign,
-  TrendingUp,
-  Zap,
   ArrowRight,
-  ChevronDown,
-  ChevronUp,
-  Layers,
+  ArrowLeft,
+  Briefcase,
+  TrendingUp,
+  Star,
+  Clock,
+  BarChart,
+  Users,
   Award
 } from 'lucide-react';
 import InfoTooltip from '../components/common/InfoTooltip';
@@ -133,13 +133,12 @@ const getTrackSuggestionReason = (track) => {
 export default function ResultsPage({
   results,
   loading,
-  expandedAnalysis,
-  toggleAnalysis,
-  onSwitchTrack
+  onSwitchTrack,
+  setPage
 }) {
   const selectedTitle = results?.selected_career?.title || "Data Scientist";
 
-  // Find market trends for the current selected role with clean fallback
+  // Market trends for current role
   const currentMarket = ROLE_MARKET_TRENDS[selectedTitle] || {
     avgCtc: "₹12 - 26 LPA",
     salaryBracket: "₹6L Entry • ₹45L+ Senior",
@@ -149,73 +148,80 @@ export default function ResultsPage({
     trendingSkills: ["Python", "SQL", "Cloud", "Modern Frameworks"]
   };
 
-  // Find candidate careers from backend evaluation
+  // Alternative career candidates
   const allCandidates = results?.career_candidates || [];
-
-  // Filter alternative tracks (different from current selected role)
   const alternativeCandidates = allCandidates.filter(
     c => c.title?.toLowerCase() !== selectedTitle.toLowerCase()
   );
-
-  // Top 3 alternative tracks
   const topThreeAlternatives = alternativeCandidates.slice(0, 3);
 
+  const recommendations = results?.recommendations || [];
+  const matchPct = results?.selected_career?.match_percentage || 0;
+  const matchedSkillsCount = results?.selected_career?.matched_core_skills?.length || 0;
+  const missingSkillsCount = results?.selected_career?.missing_core_skills?.length || 0;
+
   return (
-    <div className="animate-fade-in">
-      {/* CAREER READINESS PANEL */}
+    <div className="results-page animate-fade-in">
+      {/* 1. TOP NAV BAR */}
+      <div className="results-top-nav">
+        <button
+          type="button"
+          onClick={() => (setPage ? setPage('input') : null)}
+          className="btn btn-secondary btn-sm"
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+        >
+          <ArrowLeft size={14} />
+          Back to Assessment
+        </button>
+      </div>
+
+      {/* 2. HERO CAREER READINESS EXECUTIVE SUMMARY */}
       {results && results.selected_career && (
-        <div className="panel" style={{ marginBottom: '24px' }}>
-          {/* Header */}
-          <div className="panel-header">
+        <div className="results-hero-card">
+          <div className="results-hero-header">
             <div>
-              <span className="tag tag-brand" style={{ marginBottom: '6px' }}>Your Target Path</span>
-              <h2 className="panel-title" style={{ fontSize: '22px' }}>{results.selected_career.title}</h2>
+              <span className="tag tag-brand" style={{ marginBottom: '6px' }}>
+                <Award size={12} style={{ display: 'inline', marginRight: '4px', verticalAlign: 'middle' }} />
+                Target Career Path
+              </span>
+              <h1 className="results-hero-title">{results.selected_career.title}</h1>
             </div>
 
-            <div style={{ textAlign: 'right' }}>
-              <div style={{ fontSize: '26px', fontWeight: 800, color: 'var(--color-brand)' }}>
-                {results.selected_career.match_percentage}%
+            <div className="results-match-widget">
+              <div className="results-match-score">
+                {matchPct}%
               </div>
-              <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>Skill Match Score</div>
+              <div className="results-match-label">
+                {matchPct >= 75 ? 'Strong Fit' : matchPct >= 40 ? 'Moderate Fit' : 'Growth Track'}
+              </div>
             </div>
           </div>
 
-          <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.6 }}>
+          <p className="results-hero-desc">
             {results.selected_career.description}
           </p>
 
-          {/* 1. Skills Possessed vs Skills Needed */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '16px',
-              background: 'var(--bg-app)',
-              padding: '18px',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-default)',
-              marginBottom: '16px'
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: 'var(--status-success-text)',
-                  marginBottom: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px'
-                }}
-              >
-                <Check size={15} /> Skills You Possess ({results.selected_career.matched_core_skills.length})
-                <InfoTooltip text="These are skills from your assessment that match the core requirements of this target career track." align="left" />
+          {/* 3. SKILLS GRID (Possessed vs What You Need Next) */}
+          <div className="results-skills-grid">
+            <div className="results-skill-card">
+              <div className="results-skill-card-header">
+                <div className="results-skill-card-title possessed">
+                  <Check size={16} />
+                  <span>Skills You Possess</span>
+                  <InfoTooltip
+                    text="These are skills from your assessment that match the core requirements of this target career track."
+                    align="left"
+                  />
+                </div>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {results.selected_career.matched_core_skills.length > 0 ? (
+
+              <div className="results-tags-wrap">
+                {matchedSkillsCount > 0 ? (
                   results.selected_career.matched_core_skills.map(s => (
-                    <span key={s} className="tag tag-success">{s}</span>
+                    <span key={s} className="results-chip possessed">
+                      <Check size={12} />
+                      {s}
+                    </span>
                   ))
                 ) : (
                   <span style={{ fontSize: '12px', color: 'var(--text-subtle)' }}>None matched yet</span>
@@ -223,98 +229,81 @@ export default function ResultsPage({
               </div>
             </div>
 
-            <div>
-              <div
-                style={{
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: 'var(--status-warning-text)',
-                  marginBottom: '10px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px'
-                }}
-              >
-                <AlertCircle size={15} /> What You Need Next ({results.selected_career.missing_core_skills.length})
-                <InfoTooltip text="These are the crucial skills currently missing from your profile required to achieve full career readiness for this role." align="right" />
+            <div className="results-skill-card">
+              <div className="results-skill-card-header">
+                <div className="results-skill-card-title needed">
+                  <AlertCircle size={16} />
+                  <span>What You Need Next</span>
+                  <InfoTooltip
+                    text="These are the crucial skills currently missing from your profile required to achieve full career readiness for this role."
+                    align="right"
+                  />
+                </div>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {results.selected_career.missing_core_skills.map(s => (
-                  <span key={s} className="tag tag-warning">{s}</span>
-                ))}
+
+              <div className="results-tags-wrap">
+                {missingSkillsCount > 0 ? (
+                  results.selected_career.missing_core_skills.map(s => (
+                    <span key={s} className="results-chip needed">
+                      🎯 {s}
+                    </span>
+                  ))
+                ) : (
+                  <span style={{ fontSize: '12px', color: 'var(--status-success-text)' }}>
+                    All core skills acquired!
+                  </span>
+                )}
               </div>
             </div>
           </div>
 
-          {/* 2. MARKET TRENDS & KEY STATS (SIMPLE ONE-LINE STRIP) */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '14px',
-              padding: '12px 18px',
-              background: 'var(--bg-app)',
-              borderRadius: 'var(--radius-md)',
-              border: '1px solid var(--border-default)',
-              fontSize: '13px',
-              marginBottom: topThreeAlternatives.length > 0 ? '16px' : '0'
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Avg CTC:</span>
-              <strong style={{ color: 'var(--color-brand)', fontWeight: 700 }}>{currentMarket.avgCtc}</strong>
-              <span style={{ color: 'var(--text-subtle)', fontSize: '11px' }}>({currentMarket.salaryBracket})</span>
+          {/* 4. MARKET COMPENSATION & DEMAND STRIP */}
+          <div className="results-stats-strip">
+            <div className="results-stat-box">
+              <div className="results-stat-icon brand">
+                <Briefcase size={18} />
+              </div>
+              <div className="results-stat-info">
+                <span className="results-stat-label">Market Compensation</span>
+                <span className="results-stat-val">
+                  {currentMarket.avgCtc} <span style={{ fontSize: '11px', color: 'var(--text-subtle)', fontWeight: 400 }}>({currentMarket.salaryBracket})</span>
+                </span>
+              </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Market Demand:</span>
-              <span className="tag tag-success" style={{ fontSize: '11px', padding: '2px 8px', fontWeight: 600 }}>
-                {currentMarket.demand}
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ color: 'var(--text-muted)' }}>Trending Skills:</span>
-              <strong style={{ color: 'var(--text-heading)', fontSize: '12px' }}>
-                {currentMarket.trendingSkills.slice(0, 4).join(', ')}
-              </strong>
+            <div className="results-stat-box">
+              <div className="results-stat-icon success">
+                <TrendingUp size={18} />
+              </div>
+              <div className="results-stat-info">
+                <span className="results-stat-label">Hiring Velocity</span>
+                <span className="results-stat-val" style={{ color: 'var(--status-success-text)' }}>
+                  {currentMarket.demand}
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* 3. TOP 3 RELATED TRACK SUGGESTIONS (WITH ONE-LINE REASONS) */}
+          {/* 5. TOP ALTERNATIVE CAREER PATHS */}
           {topThreeAlternatives.length > 0 && onSwitchTrack && (
-            <div style={{ paddingTop: '14px', borderTop: '1px solid var(--border-default)' }}>
-              <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--text-heading)', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Sparkles size={14} color="var(--color-brand)" />
-                Top 3 Alternative Tracks for Your Skills:
+            <div className="results-alt-tracks-container">
+              <div className="results-alt-header">
+                <Sparkles size={16} color="var(--color-brand)" />
+                <span>Alternative Career Tracks for Your Skillset:</span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px' }}>
+              <div className="results-alt-grid">
                 {topThreeAlternatives.map((track) => {
                   const reason = getTrackSuggestionReason(track);
                   return (
-                    <div
-                      key={track.career_key || track.title}
-                      style={{
-                        background: 'var(--bg-app)',
-                        padding: '12px 14px',
-                        borderRadius: 'var(--radius-md)',
-                        border: '1px solid var(--border-default)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'space-between',
-                        gap: '8px'
-                      }}
-                    >
+                    <div key={track.career_key || track.title} className="results-alt-card">
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                         <div>
-                          <strong style={{ fontSize: '13px', color: 'var(--text-heading)' }}>
+                          <strong style={{ fontSize: '13.5px', color: 'var(--text-heading)' }}>
                             {track.title}
                           </strong>
-                          <div style={{ fontSize: '11px', color: 'var(--text-subtle)', marginTop: '2px' }}>
-                            {track.matched_core_skills?.length || 0} skills match • {track.missing_core_skills?.length || 0} missing
+                          <div style={{ fontSize: '11.5px', color: 'var(--text-subtle)', marginTop: '2px' }}>
+                            {track.matched_core_skills?.length || 0} skills match • {track.missing_core_skills?.length || 0} gap
                           </div>
                         </div>
 
@@ -326,8 +315,7 @@ export default function ResultsPage({
                         </span>
                       </div>
 
-                      {/* One line suggestion why we choose this */}
-                      <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.4 }}>
+                      <p style={{ margin: 0, fontSize: '12px', color: 'var(--text-muted)', lineHeight: 1.45 }}>
                         💡 <span style={{ color: 'var(--text-body)' }}>{reason}</span>
                       </p>
 
@@ -335,9 +323,16 @@ export default function ResultsPage({
                         type="button"
                         onClick={() => onSwitchTrack(track.title)}
                         className="btn btn-secondary btn-sm"
-                        style={{ fontSize: '11px', padding: '4px 8px', alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                        style={{
+                          fontSize: '11.5px',
+                          padding: '5px 10px',
+                          alignSelf: 'flex-start',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px'
+                        }}
                       >
-                        Switch Track <ArrowRight size={11} />
+                        Switch to This Path <ArrowRight size={12} />
                       </button>
                     </div>
                   );
@@ -348,24 +343,8 @@ export default function ResultsPage({
         </div>
       )}
 
-      {/* RECOMMENDED COURSES CATALOG */}
-      <div>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '18px'
-          }}
-        >
-          <h3 style={{ fontSize: '17px', fontWeight: 600, color: 'var(--text-heading)' }}>
-            Courses Picked for Your Next Step ({results ? results.recommendations.length : 0})
-          </h3>
-          <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-            Grounded on <strong style={{ color: 'var(--text-heading)' }}>coursera_course_dataset_v3.csv</strong>
-          </div>
-        </div>
-
+      {/* 6. RECOMMENDED COURSES CATALOG */}
+      <section className="results-catalog-section">
         {loading ? (
           <div className="panel" style={{ padding: '52px', textAlign: 'center' }}>
             <Sparkles
@@ -375,110 +354,101 @@ export default function ResultsPage({
               style={{ margin: '0 auto 14px' }}
             />
             <div style={{ color: 'var(--text-muted)' }}>
-              Calculating vector matches &amp; RAG explanations...
+              Calculating neural matches &amp; precision learning roadmap...
             </div>
           </div>
-        ) : results && results.recommendations ? (
+        ) : recommendations.length > 0 ? (
           <div>
-            {results.recommendations.map((rec) => (
-              <div key={rec.course_id} className="course-card">
-                <div className="course-header">
-                  <div>
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        marginBottom: '8px'
-                      }}
-                    >
-                      <span className="tag" style={{ fontSize: '11px' }}>Row #{rec.course_id + 1}</span>
-                      <span className="tag tag-brand">{rec.organization}</span>
-                      <span className="tag tag-success">{rec.type}</span>
+            {recommendations.map((rec) => {
+              const matchPercent = Math.round(rec.final_score * 100);
+
+              return (
+                <div key={rec.course_id} className="course-card-enhanced">
+                  <div className="course-card-top-row">
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                        <span className="tag tag-brand">{rec.organization}</span>
+                        <span className="tag tag-success">{rec.type}</span>
+                      </div>
+                      <h3 className="course-card-title-text">{rec.title}</h3>
                     </div>
-                    <h4 className="course-title">{rec.title}</h4>
+
+                    <div className="match-score-badge" style={{ fontSize: '15px', fontWeight: 800 }}>
+                      {matchPercent}%
+                    </div>
                   </div>
 
-                  <div className="match-score-badge">
-                    {Math.round(rec.final_score * 100)}%
+                  {/* Metadata items */}
+                  <div className="course-card-meta-grid">
+                    <div className="course-card-meta-item">
+                      <Star size={13} color="#f59e0b" fill="#f59e0b" />
+                      <span><strong>{rec.rating}</strong> / 5.0</span>
+                      <span style={{ color: 'var(--text-subtle)', fontSize: '11.5px' }}>
+                        ({(rec.review_count || 0).toLocaleString()} reviews)
+                      </span>
+                    </div>
+
+                    <div className="course-card-meta-item">
+                      <BarChart size={13} color="var(--text-muted)" />
+                      <span>Level: <strong>{rec.difficulty}</strong></span>
+                    </div>
+
+                    <div className="course-card-meta-item">
+                      <Clock size={13} color="var(--text-muted)" />
+                      <span>Duration: <strong>{rec.duration}</strong></span>
+                    </div>
+
+                    <div className="course-card-meta-item">
+                      <Users size={13} color="var(--text-muted)" />
+                      <span>Enrolled: <strong>{(rec.enrolled_count || 0).toLocaleString()}</strong></span>
+                    </div>
+                  </div>
+
+                  {/* Skills tags */}
+                  <div className="course-card-skills-section">
+                    <div className="course-card-skills-label">Skills Covered in this Course:</div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {rec.skills.split(',').map((s) => {
+                        const trimmed = s.trim();
+                        const isGap = rec.matched_gap_skills && rec.matched_gap_skills.includes(trimmed);
+                        return (
+                          <span
+                            key={trimmed}
+                            className={isGap ? "tag tag-warning" : "tag tag-brand"}
+                            style={{ fontSize: '11px', fontWeight: isGap ? 700 : 500 }}
+                          >
+                            {isGap ? `🎯 ${trimmed}` : trimmed}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Footer Action */}
+                  <div className="course-card-footer-row">
+                    <div className="course-card-score-pill">
+                      <span>Match Quality:</span>
+                      <strong style={{ color: matchPercent >= 75 ? 'var(--status-success-text)' : 'var(--color-brand)' }}>
+                        {matchPercent >= 80 ? 'Exceptional Fit' : matchPercent >= 65 ? 'High Relevance' : 'Good Fit'}
+                      </strong>
+                    </div>
+
+                    <a
+                      href={rec.course_url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary btn-sm"
+                      style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                    >
+                      View on Coursera <ExternalLink size={13} />
+                    </a>
                   </div>
                 </div>
-
-                <div className="course-meta">
-                  <div>⭐ <strong style={{ color: 'var(--text-heading)' }}>{rec.rating}</strong> / 5.0 ({rec.review_count.toLocaleString()} reviews)</div>
-                  <div>Level: <strong style={{ color: 'var(--text-heading)' }}>{rec.difficulty}</strong></div>
-                  <div>Duration: <strong style={{ color: 'var(--text-heading)' }}>{rec.duration}</strong></div>
-                  <div>Enrolled: <strong style={{ color: 'var(--text-heading)' }}>{rec.enrolled_count.toLocaleString()}</strong></div>
-                </div>
-
-                <div style={{ marginBottom: '16px' }}>
-                  <div style={{ fontSize: '12px', color: 'var(--text-subtle)', marginBottom: '6px' }}>Skills Covered:</div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                    {rec.skills.split(',').map(s => {
-                      const trimmed = s.trim();
-                      const isGap = rec.matched_gap_skills.includes(trimmed);
-                      return (
-                        <span
-                          key={trimmed}
-                          className={isGap ? "tag tag-warning" : "tag tag-brand"}
-                          style={{ fontSize: '11px' }}
-                        >
-                          {isGap ? `🎯 ${trimmed}` : trimmed}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    paddingTop: '14px',
-                    borderTop: '1px solid var(--border-default)'
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => toggleAnalysis(rec.course_id)}
-                    className="btn btn-ghost btn-sm"
-                    style={{ color: 'var(--color-brand)' }}
-                  >
-                    <Info size={14} /> {expandedAnalysis[rec.course_id] ? "Hide Details" : "Why this course was selected"}
-                  </button>
-
-                  <a
-                    href={rec.course_url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-secondary btn-sm"
-                  >
-                    View on Coursera <ExternalLink size={13} />
-                  </a>
-                </div>
-
-                {expandedAnalysis[rec.course_id] && (
-                  <div
-                    style={{
-                      marginTop: '14px',
-                      background: 'var(--bg-app)',
-                      padding: '14px 16px',
-                      borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-default)',
-                      fontSize: '13px',
-                      color: 'var(--text-body)'
-                    }}
-                  >
-                    <strong style={{ color: 'var(--color-brand)' }}>Recommendation Explanation:</strong>
-                    <p style={{ marginTop: '6px', lineHeight: 1.6 }}>{rec.rag_explanation}</p>
-                  </div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : null}
-      </div>
+      </section>
     </div>
   );
 }

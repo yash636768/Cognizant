@@ -26,8 +26,6 @@ export default function AssessmentPage({
   setDifficulty,
   duration,
   setDuration,
-  courseType,
-  setCourseType,
   handleRunAdvisor,
   setPage,
   onOpenAuthModal
@@ -148,7 +146,16 @@ export default function AssessmentPage({
                 />
               </div>
 
-              <div className="assessment-actions">
+              <div className="assessment-actions assessment-actions-between">
+                <button
+                  type="button"
+                  onClick={() => setPage('landing')}
+                  className="btn btn-secondary"
+                >
+                  <ArrowLeft size={14} />
+                  Back
+                </button>
+
                 <button
                   type="button"
                   onClick={() => setAssessmentStep(2)}
@@ -284,24 +291,6 @@ export default function AssessmentPage({
                     <option value="1 - 4 Weeks">1 - 4 Weeks</option>
                     <option value="1 - 3 Months">1 - 3 Months</option>
                     <option value="3 - 6 Months">3 - 6 Months</option>
-                  </select>
-                </div>
-
-                <div className="assessment-field">
-                  <label>
-                    Course Format
-                    <InfoTooltip text="Filter by standalone Courses, comprehensive multi-course Specializations, industry-recognized Professional Certificates, or hands-on Guided Projects." align="right" />
-                  </label>
-                  <select
-                    className="assessment-select"
-                    value={courseType}
-                    onChange={(e) => setCourseType(e.target.value)}
-                  >
-                    <option value="Any">Any Format</option>
-                    <option value="Course">Course</option>
-                    <option value="Specialization">Specialization</option>
-                    <option value="Professional Certificate">Professional Certificate</option>
-                    <option value="Guided Project">Guided Project</option>
                   </select>
                 </div>
               </div>

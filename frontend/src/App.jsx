@@ -40,7 +40,7 @@ export default function App() {
   const [userQuery, setUserQuery] = useState("");
   const [difficulty, setDifficulty] = useState("Beginner");
   const [duration, setDuration] = useState("Any");
-  const [courseType, setCourseType] = useState("Any");
+  const courseType = "Any";
 
   // Scoring Weights Defaults
   const [weights] = useState(DEFAULT_WEIGHTS);
@@ -48,7 +48,6 @@ export default function App() {
   // Execution & Recommendation Results
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
-  const [expandedAnalysis, setExpandedAnalysis] = useState({});
 
   useEffect(() => {
     loadStats();
@@ -215,10 +214,6 @@ export default function App() {
     }
   };
 
-  const toggleAnalysis = (id) => {
-    setExpandedAnalysis(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
   return (
     <div>
       {/* Top Navigation */}
@@ -279,8 +274,6 @@ export default function App() {
             setDifficulty={setDifficulty}
             duration={duration}
             setDuration={setDuration}
-            courseType={courseType}
-            setCourseType={setCourseType}
             handleRunAdvisor={handleRunAdvisor}
             setPage={setPage}
             onOpenAuthModal={() => {
@@ -294,9 +287,8 @@ export default function App() {
           <ResultsPage
             results={results}
             loading={loading}
-            expandedAnalysis={expandedAnalysis}
-            toggleAnalysis={toggleAnalysis}
             onSwitchTrack={handleSwitchCareerTrack}
+            setPage={setPage}
           />
         )}
       </main>

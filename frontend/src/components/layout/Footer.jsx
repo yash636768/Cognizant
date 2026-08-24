@@ -47,7 +47,7 @@ export default function Footer({ setPage, navigateToAssessment }) {
 
       <div className="footer-bottom">
         <span>© 2026 PathFinder. All rights reserved.</span>
-        <span>Data source: coursera_course_dataset_v3.csv</span>
+        <span>Data source: Coursera Course Catalog</span>
       </div>
     </footer>
   );
