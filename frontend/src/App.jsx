@@ -42,9 +42,8 @@ export default function App() {
   const [duration, setDuration] = useState("Any");
   const [courseType, setCourseType] = useState("Any");
 
-  // Scoring Weights Priorities
-  const [showTuner, setShowTuner] = useState(false);
-  const [weights, setWeights] = useState(DEFAULT_WEIGHTS);
+  // Scoring Weights Defaults
+  const [weights] = useState(DEFAULT_WEIGHTS);
 
   // Execution & Recommendation Results
   const [loading, setLoading] = useState(false);
@@ -194,6 +193,28 @@ export default function App() {
     }
   };
 
+  const handleSwitchCareerTrack = async (newTrack) => {
+    setTargetCareer(newTrack);
+    setLoading(true);
+    try {
+      const data = await fetchRecommendations({
+        current_skills: currentSkills,
+        target_career: newTrack,
+        user_query: userQuery,
+        preferred_difficulty: difficulty,
+        preferred_duration: duration,
+        preferred_type: courseType,
+        custom_weights: weights,
+        top_k: 10
+      });
+      setResults(data);
+    } catch (e) {
+      console.error("Recommend error:", e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const toggleAnalysis = (id) => {
     setExpandedAnalysis(prev => ({ ...prev, [id]: !prev[id] }));
   };
@@ -260,10 +281,6 @@ export default function App() {
             setDuration={setDuration}
             courseType={courseType}
             setCourseType={setCourseType}
-            showTuner={showTuner}
-            setShowTuner={setShowTuner}
-            weights={weights}
-            setWeights={setWeights}
             handleRunAdvisor={handleRunAdvisor}
             setPage={setPage}
             onOpenAuthModal={() => {
@@ -279,6 +296,7 @@ export default function App() {
             loading={loading}
             expandedAnalysis={expandedAnalysis}
             toggleAnalysis={toggleAnalysis}
+            onSwitchTrack={handleSwitchCareerTrack}
           />
         )}
       </main>

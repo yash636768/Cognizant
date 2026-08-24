@@ -4,8 +4,7 @@ import {
   LogIn,
   ArrowLeft,
   ArrowRight,
-  X,
-  Sliders
+  X
 } from 'lucide-react';
 import { PRESET_SKILLS } from '../constants';
 import InfoTooltip from '../components/common/InfoTooltip';
@@ -29,10 +28,6 @@ export default function AssessmentPage({
   setDuration,
   courseType,
   setCourseType,
-  showTuner,
-  setShowTuner,
-  weights,
-  setWeights,
   handleRunAdvisor,
   setPage,
   onOpenAuthModal
@@ -309,90 +304,6 @@ export default function AssessmentPage({
                     <option value="Guided Project">Guided Project</option>
                   </select>
                 </div>
-              </div>
-
-              {/* SCORING OPTIONS */}
-              <div className="scoring-options">
-                <button
-                  type="button"
-                  onClick={() => setShowTuner(!showTuner)}
-                  className="scoring-toggle"
-                >
-                  <Sliders size={14} />
-                  {showTuner
-                    ? "Hide Scoring Priorities"
-                    : "Customize Scoring Priorities"}
-                </button>
-
-                {showTuner && (
-                  <div className="scoring-panel">
-                    <div className="scoring-item">
-                      <div>
-                        <span>Semantic Vector Similarity</span>
-                        <strong>
-                          {Math.round(weights.semantic_skill_match * 100)}%
-                        </strong>
-                      </div>
-                      <input
-                        type="range"
-                        min="0"
-                        max="0.8"
-                        step="0.05"
-                        value={weights.semantic_skill_match}
-                        onChange={(e) =>
-                          setWeights({
-                            ...weights,
-                            semantic_skill_match: parseFloat(e.target.value)
-                          })
-                        }
-                      />
-                    </div>
-
-                    <div className="scoring-item">
-                      <div>
-                        <span>Skill Gap Resolution Weight</span>
-                        <strong>
-                          {Math.round(weights.career_skill_gap_relevance * 100)}%
-                        </strong>
-                      </div>
-                      <input
-                        type="range"
-                        min="0"
-                        max="0.5"
-                        step="0.05"
-                        value={weights.career_skill_gap_relevance}
-                        onChange={(e) =>
-                          setWeights({
-                            ...weights,
-                            career_skill_gap_relevance: parseFloat(e.target.value)
-                          })
-                        }
-                      />
-                    </div>
-
-                    <div className="scoring-item">
-                      <div>
-                        <span>Rating Quality Weight</span>
-                        <strong>
-                          {Math.round(weights.rating * 100)}%
-                        </strong>
-                      </div>
-                      <input
-                        type="range"
-                        min="0"
-                        max="0.3"
-                        step="0.02"
-                        value={weights.rating}
-                        onChange={(e) =>
-                          setWeights({
-                            ...weights,
-                            rating: parseFloat(e.target.value)
-                          })
-                        }
-                      />
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* ACTIONS */}
