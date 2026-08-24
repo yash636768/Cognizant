@@ -5,17 +5,12 @@ import {
   X,
   Send,
   Key,
-  Settings,
   Trash2,
   Minimize2,
   Maximize2,
-  RefreshCw,
   Check,
   AlertTriangle,
-  User,
-  ChevronDown,
-  ExternalLink,
-  MessageSquare
+  ExternalLink
 } from 'lucide-react';
 
 const cleanTokenString = (str) => {
@@ -134,7 +129,7 @@ export default function Chatbot({ targetCareer, currentSkills, onOpenInterview }
   };
 
   // Dynamically query available models for the user's key
-  const discoverModels = async (key) => {
+  const _discoverModels = async (key) => {
     try {
       const { url, headers } = getRequestConfig(key, null);
       const res = await fetch(url, { headers });

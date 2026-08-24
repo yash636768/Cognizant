@@ -8,7 +8,7 @@ import { CAREER_TRACKS } from '../constants';
 export default function LandingPage({
   stats,
   navigateToAssessment,
-  setPage,
+  _setPage,
   handleSelectCareerFromLanding
 }) {
   return (

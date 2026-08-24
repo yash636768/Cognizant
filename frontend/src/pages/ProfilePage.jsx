@@ -13,6 +13,7 @@ import {
   AlertCircle,
   Check
 } from 'lucide-react';
+import InfoTooltip from '../components/common/InfoTooltip';
 
 export default function ProfilePage({
   currentUser,
@@ -304,7 +305,10 @@ export default function ProfilePage({
                   <CheckCircle size={17} />
                 </div>
                 <div>
-                  <h2>Matched Skills</h2>
+                  <h2>
+                    Matched Skills
+                    <InfoTooltip text="Skills you currently have that match the requirements for this career track." align="left" />
+                  </h2>
                   <p>Skills aligned with your target role</p>
                 </div>
               </div>
@@ -331,7 +335,10 @@ export default function ProfilePage({
                   <AlertCircle size={17} />
                 </div>
                 <div>
-                  <h2>Skills to Improve</h2>
+                  <h2>
+                    Skills to Improve
+                    <InfoTooltip text="Essential skills missing from your profile that you need to acquire next." align="right" />
+                  </h2>
                   <p>Recommended areas for your next step</p>
                 </div>
               </div>

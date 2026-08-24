@@ -56,7 +56,7 @@ export default function App() {
     if (token) {
       loadCurrentUser(token);
     }
-  }, []);
+  }, [token]);
 
   const loadStats = async () => {
     try {
@@ -258,6 +258,8 @@ export default function App() {
             setDifficulty={setDifficulty}
             duration={duration}
             setDuration={setDuration}
+            courseType={courseType}
+            setCourseType={setCourseType}
             showTuner={showTuner}
             setShowTuner={setShowTuner}
             weights={weights}

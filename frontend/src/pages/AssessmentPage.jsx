@@ -8,6 +8,7 @@ import {
   Sliders
 } from 'lucide-react';
 import { PRESET_SKILLS } from '../constants';
+import InfoTooltip from '../components/common/InfoTooltip';
 
 export default function AssessmentPage({
   currentUser,
@@ -26,6 +27,8 @@ export default function AssessmentPage({
   setDifficulty,
   duration,
   setDuration,
+  courseType,
+  setCourseType,
   showTuner,
   setShowTuner,
   weights,
@@ -117,7 +120,10 @@ export default function AssessmentPage({
           {assessmentStep === 1 && (
             <div className="assessment-form">
               <div className="assessment-field">
-                <label>Target Career Track</label>
+                <label>
+                  Target Career Track
+                  <InfoTooltip text="Select the target job profile you want to prepare for. Pathfinder maps requirements across 7 core tech disciplines." align="left" />
+                </label>
                 <select
                   className="assessment-select"
                   value={targetCareer}
@@ -134,7 +140,10 @@ export default function AssessmentPage({
               </div>
 
               <div className="assessment-field">
-                <label>Specific Goal or Query (Optional)</label>
+                <label>
+                  Additional (Optional)
+                  <InfoTooltip text="Optional details to refine recommendations (e.g. sub-skills like MLOps, Next.js, Cloud Security, or career transition goals)." align="left" />
+                </label>
                 <input
                   type="text"
                   className="assessment-input"
@@ -161,7 +170,10 @@ export default function AssessmentPage({
           {assessmentStep === 2 && (
             <div className="assessment-form">
               <div className="assessment-field">
-                <label>Technical Skills You Currently Have</label>
+                <label>
+                  Technical Skills You Currently Have
+                  <InfoTooltip text="Enter the technical and professional skills you already possess to evaluate your career match and missing gaps." align="left" />
+                </label>
 
                 <div className="selected-skills">
                   {currentSkills.map((skill) => (
@@ -247,7 +259,10 @@ export default function AssessmentPage({
             <div className="assessment-form">
               <div className="assessment-preferences">
                 <div className="assessment-field">
-                  <label>Preferred Difficulty Level</label>
+                  <label>
+                    Preferred Difficulty Level
+                    <InfoTooltip text="Match your current foundation: Beginner (fundamentals), Intermediate (practical application), or Advanced (deep domain mastery)." align="left" />
+                  </label>
                   <select
                     className="assessment-select"
                     value={difficulty}
@@ -261,7 +276,10 @@ export default function AssessmentPage({
                 </div>
 
                 <div className="assessment-field">
-                  <label>Time Commitment</label>
+                  <label>
+                    Time Commitment
+                    <InfoTooltip text="Select expected course duration: short modules (< 2 hours or 1-4 weeks) or in-depth career tracks (1-3 months or 3-6 months)." align="left" />
+                  </label>
                   <select
                     className="assessment-select"
                     value={duration}
@@ -271,6 +289,24 @@ export default function AssessmentPage({
                     <option value="1 - 4 Weeks">1 - 4 Weeks</option>
                     <option value="1 - 3 Months">1 - 3 Months</option>
                     <option value="3 - 6 Months">3 - 6 Months</option>
+                  </select>
+                </div>
+
+                <div className="assessment-field">
+                  <label>
+                    Course Format
+                    <InfoTooltip text="Filter by standalone Courses, comprehensive multi-course Specializations, industry-recognized Professional Certificates, or hands-on Guided Projects." align="right" />
+                  </label>
+                  <select
+                    className="assessment-select"
+                    value={courseType}
+                    onChange={(e) => setCourseType(e.target.value)}
+                  >
+                    <option value="Any">Any Format</option>
+                    <option value="Course">Course</option>
+                    <option value="Specialization">Specialization</option>
+                    <option value="Professional Certificate">Professional Certificate</option>
+                    <option value="Guided Project">Guided Project</option>
                   </select>
                 </div>
               </div>

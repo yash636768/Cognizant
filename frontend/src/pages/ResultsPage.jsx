@@ -6,6 +6,7 @@ import {
   Info,
   ExternalLink
 } from 'lucide-react';
+import InfoTooltip from '../components/common/InfoTooltip';
 
 export default function ResultsPage({
   results,
@@ -59,6 +60,7 @@ export default function ResultsPage({
                 }}
               >
                 <Check size={15} /> Skills You Possess ({results.selected_career.matched_core_skills.length})
+                <InfoTooltip text="These are skills from your assessment that match the core requirements of this target career track." align="left" />
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {results.selected_career.matched_core_skills.length > 0 ? (
@@ -84,6 +86,7 @@ export default function ResultsPage({
                 }}
               >
                 <AlertCircle size={15} /> What You Need Next ({results.selected_career.missing_core_skills.length})
+                <InfoTooltip text="These are the crucial skills currently missing from your profile required to achieve full career readiness for this role." align="right" />
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {results.selected_career.missing_core_skills.map(s => (
