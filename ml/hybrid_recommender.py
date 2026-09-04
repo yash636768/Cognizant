@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 
 DEFAULT_WEIGHTS = {
-    "semantic_skill_match": 0.40,
-    "career_skill_gap_relevance": 0.20,
+    "semantic_skill_match": 0.30,
+    "career_skill_gap_relevance": 0.30,
     "rating": 0.10,
     "difficulty_fit": 0.10,
     "duration_fit": 0.08,

@@ -33,8 +33,8 @@
   {
     "canonical_skill": "Software Engineering & Programming",
     "aliases": [
-      "Computer Programming",
       "Software Engineering",
+      "Computer Programming",
       "Software Engineering & Programming"
     ],
     "related_skills": [
@@ -50,9 +50,9 @@
   {
     "canonical_skill": "Cloud Computing",
     "aliases": [
-      "Cloud Computing",
       "Cloud Platforms",
-      "Cloud Infrastructure"
+      "Cloud Infrastructure",
+      "Cloud Computing"
     ],
     "related_skills": [
       "Cloud Applications",
@@ -113,9 +113,9 @@
   {
     "canonical_skill": "Machine Learning",
     "aliases": [
+      "Machine Learning Algorithms",
       "Applied Machine Learning",
-      "Machine Learning",
-      "Machine Learning Algorithms"
+      "Machine Learning"
     ],
     "related_skills": [
       "Python Programming",
@@ -130,8 +130,8 @@
   {
     "canonical_skill": "Databases & SQL",
     "aliases": [
-      "Databases",
       "SQL",
+      "Databases",
       "Databases & SQL"
     ],
     "related_skills": [
@@ -147,8 +147,8 @@
   {
     "canonical_skill": "Probability & Statistics",
     "aliases": [
-      "Probability & Statistics",
-      "General Statistics"
+      "General Statistics",
+      "Probability & Statistics"
     ],
     "related_skills": [
       "Data Analysis",
@@ -518,8 +518,8 @@
     "related_skills": [
       "Cloud Computing",
       "Cloud Applications",
-      "DevOps & CI/CD",
       "Leadership & Management",
+      "DevOps & CI/CD",
       "Google Cloud Platform (GCP)",
       "Data Management"
     ],
@@ -625,8 +625,8 @@
       "Strategy and Operations",
       "Strategy",
       "Finance",
-      "Planning",
-      "Communication & Soft Skills"
+      "Communication & Soft Skills",
+      "Planning"
     ],
     "course_count": 39
   },
@@ -730,8 +730,8 @@
       "Finance",
       "BlockChain",
       "Innovation",
-      "Payments",
       "Risk Management",
+      "Payments",
       "Leadership & Management"
     ],
     "course_count": 37
@@ -746,8 +746,8 @@
       "Leadership & Management",
       "Strategy and Operations",
       "Market Analysis",
-      "Digital Marketing",
-      "Communication & Soft Skills"
+      "Communication & Soft Skills",
+      "Digital Marketing"
     ],
     "course_count": 36
   },
@@ -767,13 +767,13 @@
     "course_count": 35
   },
   {
-    "canonical_skill": "Transform",
+    "canonical_skill": "Extract",
     "aliases": [
-      "Transform"
+      "Extract"
     ],
     "related_skills": [
       "Load",
-      "Extract",
+      "Transform",
       "Data Management",
       "Data Analysis",
       "Databases & SQL",
@@ -787,8 +787,8 @@
       "Load"
     ],
     "related_skills": [
-      "Transform",
       "Extract",
+      "Transform",
       "Data Management",
       "Data Analysis",
       "Databases & SQL",
@@ -812,12 +812,12 @@
     "course_count": 35
   },
   {
-    "canonical_skill": "Extract",
+    "canonical_skill": "Transform",
     "aliases": [
-      "Extract"
+      "Transform"
     ],
     "related_skills": [
-      "Transform",
+      "Extract",
       "Load",
       "Data Management",
       "Data Analysis",
@@ -850,8 +850,8 @@
       "Data Analysis",
       "Data Management",
       "Data Visualization",
-      "Data Structures",
       "Exploratory Data Analysis",
+      "Data Structures",
       "Databases & SQL"
     ],
     "course_count": 33
@@ -866,23 +866,23 @@
       "Software Engineering & Programming",
       "Cloud Applications",
       "Python Programming",
-      "DevOps & CI/CD",
-      "Leadership & Management"
+      "Leadership & Management",
+      "DevOps & CI/CD"
     ],
     "course_count": 32
   },
   {
-    "canonical_skill": "Mathematical Theory & Analysis",
+    "canonical_skill": "Statistical Tests",
     "aliases": [
-      "Mathematical Theory & Analysis"
+      "Statistical Tests"
     ],
     "related_skills": [
-      "Mathematics",
-      "Software Engineering & Programming",
       "Probability & Statistics",
-      "Python Programming",
+      "Statistical Analysis",
       "Data Analysis",
-      "Algorithms"
+      "Basic Descriptive Statistics",
+      "Probability Distribution",
+      "Regression"
     ],
     "course_count": 32
   },
@@ -902,17 +902,17 @@
     "course_count": 32
   },
   {
-    "canonical_skill": "Statistical Tests",
+    "canonical_skill": "Mathematical Theory & Analysis",
     "aliases": [
-      "Statistical Tests"
+      "Mathematical Theory & Analysis"
     ],
     "related_skills": [
+      "Mathematics",
       "Probability & Statistics",
-      "Statistical Analysis",
+      "Software Engineering & Programming",
+      "Python Programming",
       "Data Analysis",
-      "Basic Descriptive Statistics",
-      "Probability Distribution",
-      "Regression"
+      "Algorithms"
     ],
     "course_count": 32
   },
@@ -1028,11 +1028,11 @@
     ],
     "related_skills": [
       "Data Analysis",
-      "Software Engineering & Programming",
       "Statistical Programming",
+      "Software Engineering & Programming",
       "Data Visualization",
       "Probability & Statistics",
-      "Databases & SQL"
+      "Data Management"
     ],
     "course_count": 30
   },
@@ -1077,7 +1077,7 @@
       "Front-End Web Development",
       "React (web framework)",
       "Communication & Soft Skills",
-      "Computer Science"
+      "Software Architecture"
     ],
     "course_count": 29
   },
@@ -1181,8 +1181,8 @@
       "Cloud Computing",
       "Cloud Applications",
       "Leadership & Management",
-      "DevOps & CI/CD",
       "Kubernetes",
+      "DevOps & CI/CD",
       "Software Engineering & Programming"
     ],
     "course_count": 27
@@ -1195,9 +1195,9 @@
     "related_skills": [
       "Cloud Computing",
       "Cloud Applications",
+      "Leadership & Management",
       "DevOps & CI/CD",
       "Cloud Storage",
-      "Leadership & Management",
       "Google Cloud Platform (GCP)"
     ],
     "course_count": 27
@@ -1258,7 +1258,7 @@
       "Data Visualization",
       "Data Management",
       "Computer Graphics",
-      "Transform"
+      "Extract"
     ],
     "course_count": 26
   },
@@ -1286,8 +1286,8 @@
       "Finance",
       "Financial Analysis",
       "Investment Management",
-      "Financial Accounting",
       "Leadership & Management",
+      "Financial Accounting",
       "Accounting"
     ],
     "course_count": 26
@@ -1315,8 +1315,8 @@
     "related_skills": [
       "Software Engineering & Programming",
       "Software Engineering Tools",
-      "Cloud Computing",
       "Collaboration",
+      "Cloud Computing",
       "Software Architecture",
       "Cloud Applications"
     ],
@@ -1343,14 +1343,29 @@
       "Accounting"
     ],
     "related_skills": [
-      "Financial Accounting",
       "Finance",
+      "Financial Accounting",
       "Financial Analysis",
       "Leadership & Management",
       "Financial Management",
       "Business Analysis"
     ],
     "course_count": 25
+  },
+  {
+    "canonical_skill": "Database Administration",
+    "aliases": [
+      "Database Administration"
+    ],
+    "related_skills": [
+      "Data Management",
+      "Databases & SQL",
+      "Data Analysis",
+      "Database Theory",
+      "Database Application",
+      "Data Structures"
+    ],
+    "course_count": 24
   },
   {
     "canonical_skill": "Plot (Graphics)",
@@ -1361,24 +1376,9 @@
       "Data Analysis",
       "Data Visualization",
       "Data Management",
-      "Software Engineering & Programming",
       "Probability & Statistics",
+      "Software Engineering & Programming",
       "Databases & SQL"
-    ],
-    "course_count": 24
-  },
-  {
-    "canonical_skill": "Database Administration",
-    "aliases": [
-      "Database Administration"
-    ],
-    "related_skills": [
-      "Databases & SQL",
-      "Data Management",
-      "Data Analysis",
-      "Database Theory",
-      "Database Application",
-      "Data Structures"
     ],
     "course_count": 24
   },
@@ -1389,8 +1389,8 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Innovation",
       "Strategy",
+      "Innovation",
       "Strategy and Operations",
       "Finance",
       "Business Analysis"
@@ -1418,12 +1418,12 @@
       "Database Application"
     ],
     "related_skills": [
-      "Data Analysis",
       "Databases & SQL",
+      "Data Analysis",
       "Data Management",
       "Database Administration",
-      "Software Engineering & Programming",
-      "Data Structures"
+      "Python Programming",
+      "Software Engineering & Programming"
     ],
     "course_count": 23
   },
@@ -1434,8 +1434,8 @@
     ],
     "related_skills": [
       "Machine Learning",
-      "Algorithms",
       "Python Programming",
+      "Algorithms",
       "Human Learning",
       "Data Analysis",
       "Regression"
@@ -1480,8 +1480,8 @@
     "related_skills": [
       "Leadership & Management",
       "Software Engineering & Programming",
-      "Communication & Soft Skills",
       "Scrum (Software Development)",
+      "Communication & Soft Skills",
       "Project Management",
       "Collaboration"
     ],
@@ -1540,8 +1540,8 @@
     "related_skills": [
       "Probability & Statistics",
       "Statistical Analysis",
-      "Data Analysis",
       "Statistical Tests",
+      "Data Analysis",
       "Probability Distribution",
       "Basic Descriptive Statistics"
     ],
@@ -1602,7 +1602,7 @@
       "Python Programming",
       "Data Management",
       "Cloud Computing",
-      "Software Engineering & Programming",
+      "IBM Cloud",
       "Data Analysis"
     ],
     "course_count": 21
@@ -1675,10 +1675,10 @@
     "related_skills": [
       "Data Management",
       "Data Analysis",
-      "Cloud Computing",
       "Databases & SQL",
-      "Leadership & Management",
-      "Data Warehousing"
+      "Cloud Computing",
+      "Data Warehousing",
+      "Leadership & Management"
     ],
     "course_count": 21
   },
@@ -1688,8 +1688,8 @@
       "Google App Engine"
     ],
     "related_skills": [
-      "Cloud Computing",
       "Google Cloud Platform (GCP)",
+      "Cloud Computing",
       "Kubernetes",
       "Cloud Applications",
       "Cloud Storage",
@@ -1704,11 +1704,11 @@
     ],
     "related_skills": [
       "Databases & SQL",
+      "Data Management",
       "Data Analysis",
       "Data Structures",
-      "Data Management",
       "Database Administration",
-      "Database Application"
+      "Python Programming"
     ],
     "course_count": 20
   },
@@ -1735,8 +1735,8 @@
     "related_skills": [
       "Network Architecture",
       "Cybersecurity & Network Security",
-      "Leadership & Management",
       "Computer Networking",
+      "Leadership & Management",
       "Python Programming",
       "Machine Learning"
     ],
@@ -1765,8 +1765,8 @@
     "related_skills": [
       "Leadership & Management",
       "Strategy and Operations",
-      "Business Analysis",
       "Strategy",
+      "Business Analysis",
       "Decision Making",
       "Organizational Development"
     ],
@@ -1782,8 +1782,8 @@
       "FinTech",
       "Financial Analysis",
       "BlockChain",
-      "Regulations and Compliance",
-      "Leadership & Management"
+      "Leadership & Management",
+      "Regulations and Compliance"
     ],
     "course_count": 20
   },
@@ -1826,8 +1826,8 @@
       "Mathematics",
       "Linear Algebra",
       "Mathematical Theory & Analysis",
-      "Critical Thinking",
       "Calculus",
+      "Critical Thinking",
       "Problem Solving"
     ],
     "course_count": 19
@@ -1871,9 +1871,9 @@
       "Cloud Computing",
       "Leadership & Management",
       "Cloud Applications",
-      "Software Engineering & Programming",
+      "Python Programming",
       "Communication & Soft Skills",
-      "Python Programming"
+      "Software Engineering & Programming"
     ],
     "course_count": 18
   },
@@ -1885,10 +1885,10 @@
     "related_skills": [
       "Leadership & Management",
       "Continuous Integration",
-      "Cloud Computing",
       "Cloud Applications",
-      "Software Engineering & Programming",
-      "DevOps & CI/CD"
+      "DevOps & CI/CD",
+      "Cloud Computing",
+      "Software Engineering & Programming"
     ],
     "course_count": 18
   },
@@ -1918,7 +1918,7 @@
       "Communication & Soft Skills",
       "Business Analysis",
       "Strategy and Operations",
-      "Data Analysis"
+      "Decision Making"
     ],
     "course_count": 18
   },
@@ -1946,9 +1946,9 @@
       "Cybersecurity & Network Security",
       "Software Security",
       "Security Software",
-      "Cloud Computing",
       "Leadership & Management",
-      "Cyberattacks"
+      "Cloud Computing",
+      "Computer Security Incident Management"
     ],
     "course_count": 18
   },
@@ -1962,8 +1962,8 @@
       "Cloud Applications",
       "Google Cloud Platform (GCP)",
       "Google App Engine",
-      "Cloud Management",
-      "Kubernetes"
+      "Kubernetes",
+      "Leadership & Management"
     ],
     "course_count": 18
   },
@@ -1991,8 +1991,8 @@
       "Marketing",
       "Strategy",
       "Communication & Soft Skills",
-      "Marketing Management",
       "Market Analysis",
+      "Marketing Management",
       "Media Strategy & Planning"
     ],
     "course_count": 17
@@ -2004,8 +2004,8 @@
     ],
     "related_skills": [
       "Data Management",
-      "Data Analysis",
       "Databases & SQL",
+      "Data Analysis",
       "Data Model",
       "Data Structures",
       "Database Administration"
@@ -2020,10 +2020,10 @@
     "related_skills": [
       "Probability & Statistics",
       "Leadership & Management",
-      "Data Analysis",
       "Mathematics",
-      "Budget Management",
-      "Planning"
+      "Data Analysis",
+      "Planning",
+      "Budget Management"
     ],
     "course_count": 17
   },
@@ -2043,21 +2043,6 @@
     "course_count": 17
   },
   {
-    "canonical_skill": "Change Management",
-    "aliases": [
-      "Change Management"
-    ],
-    "related_skills": [
-      "Leadership & Management",
-      "Strategy and Operations",
-      "Organizational Development",
-      "Strategy",
-      "Communication & Soft Skills",
-      "Entrepreneurship"
-    ],
-    "course_count": 16
-  },
-  {
     "canonical_skill": "Scrum (Software Development)",
     "aliases": [
       "Scrum (Software Development)"
@@ -2073,13 +2058,28 @@
     "course_count": 16
   },
   {
+    "canonical_skill": "Change Management",
+    "aliases": [
+      "Change Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy and Operations",
+      "Organizational Development",
+      "Strategy",
+      "Communication & Soft Skills",
+      "Collaboration"
+    ],
+    "course_count": 16
+  },
+  {
     "canonical_skill": "Web Design",
     "aliases": [
       "Web Design"
     ],
     "related_skills": [
-      "Web Development",
       "Web Development Tools",
+      "Web Development",
       "User Experience",
       "Front-End Web Development",
       "Collaboration",
@@ -2118,21 +2118,6 @@
     "course_count": 16
   },
   {
-    "canonical_skill": "Software Testing",
-    "aliases": [
-      "Software Testing"
-    ],
-    "related_skills": [
-      "Software Engineering & Programming",
-      "Leadership & Management",
-      "Problem Solving",
-      "Cloud Computing",
-      "Programming Principles",
-      "Application Development"
-    ],
-    "course_count": 16
-  },
-  {
     "canonical_skill": "Mergers & Acquisitions",
     "aliases": [
       "Mergers & Acquisitions"
@@ -2141,9 +2126,24 @@
       "Leadership & Management",
       "Software Architecture",
       "Application Development",
-      "Software Engineering & Programming",
+      "Python Programming",
       "Software Engineering Tools",
-      "Python Programming"
+      "Collaboration"
+    ],
+    "course_count": 16
+  },
+  {
+    "canonical_skill": "Software Testing",
+    "aliases": [
+      "Software Testing"
+    ],
+    "related_skills": [
+      "Software Engineering & Programming",
+      "Leadership & Management",
+      "Problem Solving",
+      "Programming Principles",
+      "Application Development",
+      "DevOps & CI/CD"
     ],
     "course_count": 16
   },
@@ -2158,7 +2158,7 @@
       "React (web framework)",
       "Software Engineering & Programming",
       "Web Design",
-      "Computer Science"
+      "Application Development"
     ],
     "course_count": 16
   },
@@ -2173,7 +2173,7 @@
       "Algebra",
       "Linear Algebra",
       "Problem Solving",
-      "Regression"
+      "Python Programming"
     ],
     "course_count": 16
   },
@@ -2187,8 +2187,8 @@
       "Algebra",
       "Mathematical Theory & Analysis",
       "Python Programming",
-      "Regression",
-      "Software Engineering & Programming"
+      "Machine Learning",
+      "Regression"
     ],
     "course_count": 16
   },
@@ -2216,8 +2216,8 @@
       "Cloud Computing",
       "Cloud Applications",
       "Cloud Storage",
-      "Cloud Management",
       "DevOps & CI/CD",
+      "Cloud Management",
       "Other Cloud Platforms and Tools"
     ],
     "course_count": 16
@@ -2231,9 +2231,9 @@
       "Strategy",
       "Market Analysis",
       "Decision Making",
+      "Finance",
       "Marketing",
-      "Data Analysis",
-      "Finance"
+      "Strategy and Operations"
     ],
     "course_count": 16
   },
@@ -2244,26 +2244,11 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Planning",
       "Strategy and Operations",
+      "Planning",
       "Project Management",
       "Supply Chain Systems",
-      "Business Analysis"
-    ],
-    "course_count": 15
-  },
-  {
-    "canonical_skill": "Computer Vision",
-    "aliases": [
-      "Computer Vision"
-    ],
-    "related_skills": [
-      "Machine Learning",
-      "Artificial Neural Networks",
-      "Deep Learning & AI",
-      "Machine Learning Software",
-      "Human Learning",
-      "Python Programming"
+      "Business Process Management"
     ],
     "course_count": 15
   },
@@ -2276,9 +2261,24 @@
       "Cloud Computing",
       "Cloud Applications",
       "Cloud-Based Integration",
-      "Cloud Management",
       "Cloud Storage",
+      "Cloud Management",
       "Leadership & Management"
+    ],
+    "course_count": 15
+  },
+  {
+    "canonical_skill": "Computer Vision",
+    "aliases": [
+      "Computer Vision"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Artificial Neural Networks",
+      "Machine Learning Software",
+      "Deep Learning & AI",
+      "Human Learning",
+      "Python Programming"
     ],
     "course_count": 15
   },
@@ -2288,12 +2288,12 @@
       "Distributed Computing Architecture"
     ],
     "related_skills": [
-      "Cloud Computing",
       "Data Management",
+      "Cloud Computing",
       "Apache",
       "Big Data",
-      "Cybersecurity & Network Security",
-      "Databases & SQL"
+      "Databases & SQL",
+      "Leadership & Management"
     ],
     "course_count": 15
   },
@@ -2305,8 +2305,8 @@
     "related_skills": [
       "Writing",
       "Problem Solving",
-      "Strategy",
       "Leadership & Management",
+      "Strategy",
       "Communication & Soft Skills",
       "Critical Thinking"
     ],
@@ -2320,9 +2320,9 @@
     "related_skills": [
       "Communication & Soft Skills",
       "Leadership & Management",
+      "Data Management",
       "Business Analysis",
       "Data Analysis",
-      "Data Management",
       "Business Communication"
     ],
     "course_count": 15
@@ -2343,32 +2343,32 @@
     "course_count": 14
   },
   {
-    "canonical_skill": "Social Media",
-    "aliases": [
-      "Social Media"
-    ],
-    "related_skills": [
-      "Marketing",
-      "Digital Marketing",
-      "Media Strategy & Planning",
-      "Strategy",
-      "Market Analysis",
-      "Communication & Soft Skills"
-    ],
-    "course_count": 14
-  },
-  {
     "canonical_skill": "Media Strategy & Planning",
     "aliases": [
       "Media Strategy & Planning"
     ],
     "related_skills": [
       "Communication & Soft Skills",
-      "Marketing",
       "Strategy",
       "Market Analysis",
-      "Digital Marketing",
-      "Marketing Management"
+      "Marketing",
+      "Marketing Management",
+      "Digital Marketing"
+    ],
+    "course_count": 14
+  },
+  {
+    "canonical_skill": "Social Media",
+    "aliases": [
+      "Social Media"
+    ],
+    "related_skills": [
+      "Marketing",
+      "Strategy",
+      "Media Strategy & Planning",
+      "Communication & Soft Skills",
+      "Market Analysis",
+      "Digital Marketing"
     ],
     "course_count": 14
   },
@@ -2378,8 +2378,8 @@
       "Networking Hardware"
     ],
     "related_skills": [
-      "Cybersecurity & Network Security",
       "Computer Networking",
+      "Cybersecurity & Network Security",
       "Cloud Computing",
       "Network Architecture",
       "Leadership & Management",
@@ -2397,8 +2397,8 @@
       "Strategy and Operations",
       "Strategy",
       "Business Analysis",
-      "Entrepreneurship",
-      "Decision Making"
+      "Decision Making",
+      "Entrepreneurship"
     ],
     "course_count": 14
   },
@@ -2408,12 +2408,12 @@
       "Web Development Tools"
     ],
     "related_skills": [
-      "Web Development",
       "Web Design",
+      "Web Development",
       "HTML and CSS",
       "Front-End Web Development",
       "User Experience",
-      "React (web framework)"
+      "Algorithms"
     ],
     "course_count": 13
   },
@@ -2442,8 +2442,8 @@
       "Network Architecture",
       "Cybersecurity & Network Security",
       "Software Engineering & Programming",
-      "Network Model",
-      "Computer Architecture"
+      "Computer Architecture",
+      "Network Model"
     ],
     "course_count": 13
   },
@@ -2455,8 +2455,8 @@
     "related_skills": [
       "Web Development",
       "Front-End Web Development",
-      "Software Engineering & Programming",
       "Javascript",
+      "Software Engineering & Programming",
       "Computer Science",
       "Application Development"
     ],
@@ -2483,11 +2483,11 @@
       "Visual Design"
     ],
     "related_skills": [
-      "Data Analysis",
       "Visualization (Computer Graphics)",
-      "User Experience Design",
+      "Data Analysis",
       "Graphic Design",
       "User Experience",
+      "User Experience Design",
       "Communication & Soft Skills"
     ],
     "course_count": 13
@@ -2498,10 +2498,10 @@
       "General Accounting"
     ],
     "related_skills": [
-      "Financial Accounting",
-      "Finance",
-      "Financial Analysis",
       "Accounting",
+      "Finance",
+      "Financial Accounting",
+      "Financial Analysis",
       "Business Analysis",
       "Accounts Payable and Receivable"
     ],
@@ -2523,6 +2523,21 @@
     "course_count": 13
   },
   {
+    "canonical_skill": "User Research",
+    "aliases": [
+      "User Research"
+    ],
+    "related_skills": [
+      "User Experience",
+      "User Experience Design",
+      "Web Design",
+      "Collaboration",
+      "Planning",
+      "Product Design"
+    ],
+    "course_count": 12
+  },
+  {
     "canonical_skill": "Product Development",
     "aliases": [
       "Product Development"
@@ -2538,21 +2553,6 @@
     "course_count": 12
   },
   {
-    "canonical_skill": "User Research",
-    "aliases": [
-      "User Research"
-    ],
-    "related_skills": [
-      "User Experience",
-      "User Experience Design",
-      "Collaboration",
-      "Web Design",
-      "Planning",
-      "Human Computer Interaction"
-    ],
-    "course_count": 12
-  },
-  {
     "canonical_skill": "Product Design",
     "aliases": [
       "Product Design"
@@ -2560,10 +2560,10 @@
     "related_skills": [
       "User Experience",
       "Collaboration",
-      "Software Engineering & Programming",
       "Communication & Soft Skills",
-      "Human Computer Interaction",
-      "Web Design"
+      "Software Engineering & Programming",
+      "Web Design",
+      "Human Computer Interaction"
     ],
     "course_count": 12
   },
@@ -2589,11 +2589,11 @@
     ],
     "related_skills": [
       "Big Data",
-      "Cloud Computing",
       "Python Programming",
-      "Transform",
-      "Data Analysis",
-      "Databases & SQL"
+      "Cloud Computing",
+      "Extract",
+      "Data Management",
+      "Load"
     ],
     "course_count": 12
   },
@@ -2605,8 +2605,8 @@
     "related_skills": [
       "Strategy",
       "Leadership & Management",
-      "Marketing",
       "Market Analysis",
+      "Marketing",
       "Finance",
       "Strategy and Operations"
     ],
@@ -2619,11 +2619,26 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Entrepreneurship",
       "Strategy",
+      "Entrepreneurship",
       "Strategy and Operations",
       "Business Analysis",
       "Finance"
+    ],
+    "course_count": 12
+  },
+  {
+    "canonical_skill": "Human Resources",
+    "aliases": [
+      "Human Resources"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Strategy",
+      "Business Analysis",
+      "Strategy and Operations",
+      "People Analysis",
+      "People Management"
     ],
     "course_count": 12
   },
@@ -2637,23 +2652,8 @@
       "Marketing",
       "Strategy",
       "Digital Marketing",
-      "Market Analysis",
-      "Leadership & Management"
-    ],
-    "course_count": 12
-  },
-  {
-    "canonical_skill": "Human Resources",
-    "aliases": [
-      "Human Resources"
-    ],
-    "related_skills": [
       "Leadership & Management",
-      "Business Analysis",
-      "Strategy",
-      "Strategy and Operations",
-      "People Analysis",
-      "Organizational Development"
+      "Market Analysis"
     ],
     "course_count": 12
   },
@@ -2665,8 +2665,8 @@
     "related_skills": [
       "Machine Learning",
       "Data Analysis",
-      "Python Programming",
       "Machine Learning Software",
+      "Python Programming",
       "Exploratory Data Analysis",
       "Human Learning"
     ],
@@ -2693,12 +2693,12 @@
       "Graph Theory"
     ],
     "related_skills": [
-      "Problem Solving",
       "Mathematics",
       "Algorithms",
       "Software Engineering & Programming",
+      "Problem Solving",
       "Critical Thinking",
-      "Theoretical Computer Science"
+      "Computational Thinking"
     ],
     "course_count": 12
   },
@@ -2709,8 +2709,8 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Marketing",
       "Strategy",
+      "Marketing",
       "Communication & Soft Skills",
       "Strategy and Operations",
       "Customer Success"
@@ -2725,8 +2725,8 @@
     "related_skills": [
       "Data Visualization",
       "Data Analysis",
-      "Software Engineering & Programming",
       "Data Management",
+      "Software Engineering & Programming",
       "Communication & Soft Skills",
       "Business Analysis"
     ],
@@ -2756,8 +2756,8 @@
       "Finance",
       "Financial Accounting",
       "Financial Analysis",
-      "General Accounting",
       "Accounting",
+      "General Accounting",
       "Business Analysis"
     ],
     "course_count": 11
@@ -2778,32 +2778,17 @@
     "course_count": 11
   },
   {
-    "canonical_skill": "Budget Management",
-    "aliases": [
-      "Budget Management"
-    ],
-    "related_skills": [
-      "Leadership & Management",
-      "Entrepreneurship",
-      "Planning",
-      "Strategy and Operations",
-      "Finance",
-      "Project Management"
-    ],
-    "course_count": 10
-  },
-  {
     "canonical_skill": "Influencing",
     "aliases": [
       "Influencing"
     ],
     "related_skills": [
-      "Communication & Soft Skills",
       "Leadership & Management",
+      "Communication & Soft Skills",
       "Strategy and Operations",
       "Entrepreneurship",
       "Marketing",
-      "Organizational Development"
+      "Change Management"
     ],
     "course_count": 10
   },
@@ -2815,10 +2800,25 @@
     "related_skills": [
       "Communication & Soft Skills",
       "Leadership & Management",
-      "Planning",
       "Strategy and Operations",
-      "Organizational Development",
-      "Influencing"
+      "Planning",
+      "Influencing",
+      "Business Communication"
+    ],
+    "course_count": 10
+  },
+  {
+    "canonical_skill": "Budget Management",
+    "aliases": [
+      "Budget Management"
+    ],
+    "related_skills": [
+      "Leadership & Management",
+      "Entrepreneurship",
+      "Strategy and Operations",
+      "Planning",
+      "Finance",
+      "Project Management"
     ],
     "course_count": 10
   },
@@ -2830,10 +2830,10 @@
     "related_skills": [
       "Leadership & Management",
       "Strategy and Operations",
-      "Organizational Development",
       "Communication & Soft Skills",
+      "Organizational Development",
       "Strategy",
-      "Entrepreneurship"
+      "Change Management"
     ],
     "course_count": 10
   },
@@ -2843,12 +2843,12 @@
       "E-Commerce"
     ],
     "related_skills": [
-      "Marketing",
       "Strategy",
+      "Marketing",
       "Digital Marketing",
+      "Marketing Management",
       "Social Media",
-      "Data Analysis",
-      "Marketing Management"
+      "Data Analysis"
     ],
     "course_count": 10
   },
@@ -2858,12 +2858,12 @@
       "Technical Product Management"
     ],
     "related_skills": [
-      "Software Engineering & Programming",
       "Leadership & Management",
+      "Software Engineering & Programming",
       "Agile Software Development",
       "Communication & Soft Skills",
       "Software Architecture",
-      "Cloud Computing"
+      "Programming Principles"
     ],
     "course_count": 10
   },
@@ -2876,7 +2876,7 @@
       "Strategy",
       "Accounting",
       "Leadership & Management",
-      "Financial Accounting",
+      "Accounts Payable and Receivable",
       "Business Analysis",
       "Finance"
     ],
@@ -2905,9 +2905,9 @@
     "related_skills": [
       "Leadership & Management",
       "Risk Management",
+      "User Experience",
       "User Research",
       "User Experience Design",
-      "User Experience",
       "Collaboration"
     ],
     "course_count": 9
@@ -2923,7 +2923,7 @@
       "Cloud Applications",
       "Software Engineering & Programming",
       "DevOps & CI/CD",
-      "Linux & Systems"
+      "Python Programming"
     ],
     "course_count": 9
   },
@@ -2936,9 +2936,9 @@
       "Web Development",
       "Front-End Web Development",
       "Web Development Tools",
-      "Software Engineering & Programming",
       "Web Design",
-      "Javascript"
+      "Javascript",
+      "Software Engineering & Programming"
     ],
     "course_count": 9
   },
@@ -2950,9 +2950,9 @@
     "related_skills": [
       "Software Engineering & Programming",
       "Problem Solving",
-      "Web Development",
       "User Experience",
-      "Data Structures",
+      "Communication & Soft Skills",
+      "Web Development",
       "Human Computer Interaction"
     ],
     "course_count": 9
@@ -2965,10 +2965,10 @@
     "related_skills": [
       "Cybersecurity & Network Security",
       "Software Security",
-      "Cyberattacks",
       "Computer Security Incident Management",
-      "Security Software",
-      "Security Strategy"
+      "Cyberattacks",
+      "Security Strategy",
+      "Security Software"
     ],
     "course_count": 9
   },
@@ -2983,8 +2983,8 @@
       "Cloud Applications",
       "Cloud Storage",
       "Software Architecture",
-      "Data Analysis",
-      "Cloud Engineering"
+      "Data Management",
+      "Leadership & Management"
     ],
     "course_count": 9
   },
@@ -2999,7 +2999,7 @@
       "Decision Making",
       "Communication & Soft Skills",
       "Organizational Development",
-      "Planning"
+      "Strategy and Operations"
     ],
     "course_count": 9
   },
@@ -3009,12 +3009,12 @@
       "Experiment"
     ],
     "related_skills": [
-      "Data Analysis",
       "Probability & Statistics",
+      "Data Analysis",
       "Statistical Analysis",
-      "Probability Distribution",
       "Statistical Tests",
-      "Software Engineering & Programming"
+      "Probability Distribution",
+      "Statistical Programming"
     ],
     "course_count": 9
   },
@@ -3027,8 +3027,8 @@
       "Finance",
       "Financial Management",
       "Investment Management",
-      "Financial Analysis",
       "Innovation",
+      "Financial Analysis",
       "FinTech"
     ],
     "course_count": 9
@@ -3040,8 +3040,8 @@
     ],
     "related_skills": [
       "Cybersecurity & Network Security",
-      "Software Security",
       "Computer Networking",
+      "Software Security",
       "Cloud Computing",
       "Leadership & Management",
       "Mobile Security"
@@ -3054,12 +3054,12 @@
       "Advertising"
     ],
     "related_skills": [
-      "Marketing",
       "Media Strategy & Planning",
-      "Digital Marketing",
-      "Marketing Management",
+      "Marketing",
       "Communication & Soft Skills",
-      "Social Media"
+      "Marketing Management",
+      "Digital Marketing",
+      "Market Analysis"
     ],
     "course_count": 8
   },
@@ -3071,9 +3071,9 @@
     "related_skills": [
       "Mathematics",
       "Algebra",
-      "Linear Algebra",
-      "Mathematical Theory & Analysis",
       "Calculus",
+      "Mathematical Theory & Analysis",
+      "Linear Algebra",
       "Problem Solving"
     ],
     "course_count": 8
@@ -3085,11 +3085,11 @@
     ],
     "related_skills": [
       "Finance",
+      "Leadership & Management",
       "Financial Accounting",
       "Financial Analysis",
-      "Leadership & Management",
-      "Business Analysis",
-      "General Accounting"
+      "Accounts Payable and Receivable",
+      "Accounting"
     ],
     "course_count": 8
   },
@@ -3099,12 +3099,12 @@
       "Cost Accounting"
     ],
     "related_skills": [
-      "Financial Accounting",
-      "Finance",
-      "Financial Analysis",
       "Accounting",
-      "General Accounting",
-      "Accounts Payable and Receivable"
+      "Finance",
+      "Financial Accounting",
+      "Financial Analysis",
+      "Accounts Payable and Receivable",
+      "Leadership & Management"
     ],
     "course_count": 8
   },
@@ -3115,11 +3115,11 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Linux & Systems",
       "Cybersecurity & Network Security",
+      "Cyberattacks",
       "DevOps & CI/CD",
-      "Cloud Computing",
-      "Cyberattacks"
+      "Linux & Systems",
+      "Cloud Computing"
     ],
     "course_count": 8
   },
@@ -3133,8 +3133,8 @@
       "Computer Graphics",
       "Software Engineering & Programming",
       "Critical Thinking",
-      "Data Analysis",
-      "Communication & Soft Skills"
+      "Communication & Soft Skills",
+      "Data Analysis"
     ],
     "course_count": 8
   },
@@ -3144,9 +3144,9 @@
       "Behavioral Economics"
     ],
     "related_skills": [
+      "Risk Management",
       "Finance",
       "Financial Analysis",
-      "Risk Management",
       "Investment Management",
       "Decision Making",
       "Leadership & Management"
@@ -3161,8 +3161,8 @@
     "related_skills": [
       "Human Resources",
       "Leadership & Management",
-      "Performance Management",
       "Employee Relations",
+      "Performance Management",
       "Strategy",
       "Strategy and Operations"
     ],
@@ -3177,9 +3177,9 @@
       "Communication & Soft Skills",
       "Data Visualization",
       "Business Analysis",
-      "Data Analysis",
+      "Critical Thinking",
       "Probability & Statistics",
-      "Critical Thinking"
+      "Data Analysis"
     ],
     "course_count": 8
   },
@@ -3219,12 +3219,12 @@
       "Search Engine Optimization"
     ],
     "related_skills": [
-      "Marketing",
-      "Media Strategy & Planning",
       "Strategy",
-      "Digital Marketing",
+      "Media Strategy & Planning",
+      "Marketing",
       "Marketing Management",
-      "Social Media"
+      "Digital Marketing",
+      "Web Development Tools"
     ],
     "course_count": 7
   },
@@ -3234,12 +3234,12 @@
       "PostgreSQL"
     ],
     "related_skills": [
-      "Database Application",
-      "Data Analysis",
-      "Databases & SQL",
       "Data Management",
+      "Databases & SQL",
+      "Database Application",
       "Database Administration",
-      "Database Theory"
+      "Data Analysis",
+      "Data Warehousing"
     ],
     "course_count": 7
   },
@@ -3251,8 +3251,8 @@
     "related_skills": [
       "Leadership & Management",
       "Strategy and Operations",
-      "Marketing",
       "Strategy",
+      "Marketing",
       "Communication & Soft Skills",
       "Customer Relationship Management"
     ],
@@ -3266,10 +3266,10 @@
     "related_skills": [
       "Finance",
       "Financial Analysis",
-      "Financial Accounting",
       "Accounting",
-      "Business Analysis",
-      "Investment Management"
+      "Financial Accounting",
+      "Investment Management",
+      "Business Analysis"
     ],
     "course_count": 7
   },
@@ -3295,11 +3295,11 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Communication & Soft Skills",
       "People Management",
+      "Communication & Soft Skills",
       "Human Resources",
-      "Performance Management",
-      "Recruitment"
+      "Recruitment",
+      "Performance Management"
     ],
     "course_count": 7
   },
@@ -3311,10 +3311,10 @@
     "related_skills": [
       "Supply Chain and Logistics",
       "Leadership & Management",
+      "Strategy and Operations",
       "Inventory Management",
       "Data Analysis",
-      "Strategy and Operations",
-      "Warehouse Management"
+      "Business Process Management"
     ],
     "course_count": 7
   },
@@ -3328,8 +3328,8 @@
       "Probability & Statistics",
       "Data Analysis",
       "Problem Solving",
-      "Statistical Analysis",
-      "Computational Thinking"
+      "Python Programming",
+      "Correlation And Dependence"
     ],
     "course_count": 7
   },
@@ -3341,8 +3341,8 @@
     "related_skills": [
       "Machine Learning",
       "Human Learning",
-      "Algorithms",
       "Python Programming",
+      "Algorithms",
       "Deep Learning & AI",
       "Statistical Machine Learning"
     ],
@@ -3356,9 +3356,9 @@
     "related_skills": [
       "Leadership & Management",
       "Communication & Soft Skills",
-      "Cloud Computing",
-      "Networking Hardware",
       "Computer Networking",
+      "Networking Hardware",
+      "Cloud Computing",
       "Customer Success"
     ],
     "course_count": 6
@@ -3370,10 +3370,10 @@
     ],
     "related_skills": [
       "Software Architecture",
-      "Cloud Computing",
       "Cloud Applications",
+      "Kubernetes",
       "Application Development",
-      "Software Engineering & Programming",
+      "Leadership & Management",
       "DevOps & CI/CD"
     ],
     "course_count": 6
@@ -3384,27 +3384,12 @@
       "Dimensionality Reduction"
     ],
     "related_skills": [
-      "Machine Learning",
       "Python Programming",
-      "Regression",
+      "Machine Learning",
       "Algorithms",
+      "Regression",
       "Statistical Analysis",
       "Human Learning"
-    ],
-    "course_count": 6
-  },
-  {
-    "canonical_skill": "Generally Accepted Accounting Principles (GAAP)",
-    "aliases": [
-      "Generally Accepted Accounting Principles (GAAP)"
-    ],
-    "related_skills": [
-      "Financial Accounting",
-      "Finance",
-      "Financial Analysis",
-      "General Accounting",
-      "Accounting",
-      "Business Analysis"
     ],
     "course_count": 6
   },
@@ -3414,12 +3399,12 @@
       "Product Marketing"
     ],
     "related_skills": [
-      "Marketing",
       "Strategy",
       "Market Analysis",
+      "Marketing",
       "Leadership & Management",
-      "Digital Marketing",
-      "Product Strategy"
+      "Product Strategy",
+      "Strategy and Operations"
     ],
     "course_count": 6
   },
@@ -3430,11 +3415,26 @@
     ],
     "related_skills": [
       "Communication & Soft Skills",
-      "Marketing",
       "Brand Management",
-      "Digital Marketing",
       "Business Analysis",
-      "Customer Analysis"
+      "Leadership & Management",
+      "Customer Analysis",
+      "Market Analysis"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Generally Accepted Accounting Principles (GAAP)",
+    "aliases": [
+      "Generally Accepted Accounting Principles (GAAP)"
+    ],
+    "related_skills": [
+      "Accounting",
+      "Finance",
+      "Financial Accounting",
+      "Financial Analysis",
+      "General Accounting",
+      "Accounts Payable and Receivable"
     ],
     "course_count": 6
   },
@@ -3444,27 +3444,12 @@
       "Mobile Development"
     ],
     "related_skills": [
-      "Web Development",
-      "Software Engineering & Programming",
-      "Web Design",
-      "Product Design",
+      "Mobile Development Tools",
       "User Experience",
-      "Mobile Development Tools"
-    ],
-    "course_count": 6
-  },
-  {
-    "canonical_skill": "Training",
-    "aliases": [
-      "Training"
-    ],
-    "related_skills": [
-      "Machine Learning",
-      "Machine Learning Software",
-      "Regression",
-      "Human Learning",
-      "Deep Learning & AI",
-      "Data Analysis"
+      "Web Design",
+      "Web Development",
+      "Human Computer Interaction",
+      "Collaboration"
     ],
     "course_count": 6
   },
@@ -3480,6 +3465,21 @@
       "Business Transformation",
       "Cybersecurity & Network Security",
       "Regulations and Compliance"
+    ],
+    "course_count": 6
+  },
+  {
+    "canonical_skill": "Training",
+    "aliases": [
+      "Training"
+    ],
+    "related_skills": [
+      "Machine Learning",
+      "Machine Learning Software",
+      "Exploratory Data Analysis",
+      "Human Learning",
+      "Python Programming",
+      "Regression"
     ],
     "course_count": 6
   },
@@ -3504,12 +3504,12 @@
       "Warehouse Management"
     ],
     "related_skills": [
-      "Data Analysis",
       "Data Management",
       "Leadership & Management",
-      "Cloud Computing",
-      "Business Analysis",
-      "Data Architecture"
+      "Data Analysis",
+      "Data Warehousing",
+      "Data Architecture",
+      "Business Analysis"
     ],
     "course_count": 6
   },
@@ -3519,11 +3519,11 @@
       "People Development"
     ],
     "related_skills": [
-      "Leadership & Management",
       "People Analysis",
+      "Leadership & Management",
       "Communication & Soft Skills",
-      "Business Analysis",
       "Human Resources",
+      "Business Analysis",
       "Leadership Development"
     ],
     "course_count": 6
@@ -3550,11 +3550,11 @@
     ],
     "related_skills": [
       "Finance",
-      "FinTech",
       "BlockChain",
+      "FinTech",
       "Cryptography",
-      "Payments",
-      "Cybersecurity & Network Security"
+      "Cybersecurity & Network Security",
+      "Payments"
     ],
     "course_count": 6
   },
@@ -3564,12 +3564,12 @@
       "Persona Research"
     ],
     "related_skills": [
-      "Marketing",
-      "Digital Marketing",
       "Advertising",
-      "Media Strategy & Planning",
       "Web Design",
-      "Marketing Management"
+      "Media Strategy & Planning",
+      "Communication & Soft Skills",
+      "Marketing Management",
+      "Marketing"
     ],
     "course_count": 5
   },
@@ -3579,12 +3579,12 @@
       "Django (Web Framework)"
     ],
     "related_skills": [
-      "Web Development",
       "Application Development",
-      "Software Engineering & Programming",
       "Software Engineering Tools",
+      "Web Development",
       "Collaboration",
-      "Computer Science"
+      "Software Engineering & Programming",
+      "Data Management"
     ],
     "course_count": 5
   },
@@ -3595,11 +3595,11 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Entrepreneurship",
-      "Marketing",
-      "Business Analysis",
       "Strategy",
-      "Business Development"
+      "Business Analysis",
+      "Business Development",
+      "Entrepreneurship",
+      "Marketing"
     ],
     "course_count": 5
   },
@@ -3610,11 +3610,11 @@
     ],
     "related_skills": [
       "Cloud Computing",
-      "Cloud Applications",
-      "DevOps & CI/CD",
       "Operating Systems",
+      "Cloud Applications",
       "Leadership & Management",
-      "Software Engineering & Programming"
+      "DevOps & CI/CD",
+      "Communication & Soft Skills"
     ],
     "course_count": 5
   },
@@ -3626,10 +3626,10 @@
     "related_skills": [
       "Software Engineering & Programming",
       "Leadership & Management",
+      "Data Management",
       "Project Management",
       "Product Design",
-      "Data Management",
-      "Application Development"
+      "Agile Software Development"
     ],
     "course_count": 5
   },
@@ -3639,12 +3639,12 @@
       "Management Accounting"
     ],
     "related_skills": [
-      "Financial Accounting",
-      "Finance",
-      "Financial Analysis",
       "Accounting",
-      "General Accounting",
-      "Accounts Payable and Receivable"
+      "Finance",
+      "Financial Accounting",
+      "Financial Analysis",
+      "Accounts Payable and Receivable",
+      "General Accounting"
     ],
     "course_count": 5
   },
@@ -3669,12 +3669,12 @@
       "Human Resources Operations"
     ],
     "related_skills": [
-      "Business Analysis",
       "Human Resources",
+      "Business Analysis",
       "People Analysis",
       "Leadership & Management",
-      "Performance Management",
-      "People Management"
+      "People Management",
+      "Performance Management"
     ],
     "course_count": 5
   },
@@ -3684,12 +3684,12 @@
       "C++ Programming"
     ],
     "related_skills": [
-      "Critical Thinking",
       "Algorithms",
+      "Critical Thinking",
       "Software Engineering & Programming",
-      "Computer Programming Tools",
-      "Problem Solving",
-      "Theoretical Computer Science"
+      "Computational Thinking",
+      "Theoretical Computer Science",
+      "Computer Programming Tools"
     ],
     "course_count": 5
   },
@@ -3701,9 +3701,9 @@
     "related_skills": [
       "Leadership & Management",
       "Risk Management",
-      "Data Analysis",
-      "Human Computer Interaction",
       "Algorithms",
+      "Human Computer Interaction",
+      "Data Analysis",
       "Communication & Soft Skills"
     ],
     "course_count": 5
@@ -3714,12 +3714,12 @@
       "Java Programming"
     ],
     "related_skills": [
+      "Computational Thinking",
       "Computer Programming Tools",
+      "Data Management",
       "Critical Thinking",
       "Data Analysis",
-      "Problem Solving",
-      "Data Structures",
-      "Programming Principles"
+      "Software Engineering & Programming"
     ],
     "course_count": 5
   },
@@ -3729,12 +3729,12 @@
       "Matlab"
     ],
     "related_skills": [
-      "Data Analysis",
       "Mathematics",
       "Probability & Statistics",
-      "Problem Solving",
+      "Data Analysis",
+      "Algorithms",
       "Plot (Graphics)",
-      "Algorithms"
+      "Data Visualization"
     ],
     "course_count": 5
   },
@@ -3746,10 +3746,10 @@
     "related_skills": [
       "Problem Solving",
       "Data Analysis",
-      "Software Engineering & Programming",
-      "Big Data",
       "Data Management",
-      "Transform"
+      "Big Data",
+      "Software Engineering & Programming",
+      "Exploratory Data Analysis"
     ],
     "course_count": 4
   },
@@ -3763,8 +3763,8 @@
       "Finance",
       "Supply Chain and Logistics",
       "Project Management",
-      "Entrepreneurship",
-      "Budget Management"
+      "Communication & Soft Skills",
+      "Entrepreneurship"
     ],
     "course_count": 4
   },
@@ -3775,11 +3775,11 @@
     ],
     "related_skills": [
       "Software Architecture",
-      "Cloud Computing",
-      "Web Development",
       "Application Development",
-      "Software Engineering & Programming",
-      "DevOps & CI/CD"
+      "DevOps & CI/CD",
+      "Software Engineering Tools",
+      "Web Development",
+      "Collaboration"
     ],
     "course_count": 4
   },
@@ -3789,12 +3789,12 @@
       "Data Engineering"
     ],
     "related_skills": [
+      "Extract",
+      "Data Warehousing",
+      "Data Management",
       "Data Science",
-      "Transform",
-      "Cybersecurity & Network Security",
-      "Big Data",
-      "Databases & SQL",
-      "Load"
+      "Load",
+      "Databases & SQL"
     ],
     "course_count": 4
   },
@@ -3804,12 +3804,12 @@
       "Mobile Development Tools"
     ],
     "related_skills": [
-      "Web Development",
-      "Software Engineering & Programming",
       "Mobile Development",
+      "Web Development",
       "Javascript",
-      "React (web framework)",
-      "Application Development"
+      "Software Engineering & Programming",
+      "Data Management",
+      "User Experience"
     ],
     "course_count": 4
   },
@@ -3819,11 +3819,11 @@
       "Benefits"
     ],
     "related_skills": [
-      "Performance Management",
+      "Employee Relations",
       "Compensation",
       "Recruitment",
-      "Employee Relations",
-      "Mergers & Acquisitions",
+      "Performance Management",
+      "Risk Management",
       "Training"
     ],
     "course_count": 4
@@ -3836,10 +3836,10 @@
     "related_skills": [
       "Algorithms",
       "Software Engineering & Programming",
+      "Computational Thinking",
+      "Theoretical Computer Science",
       "Computer Programming Tools",
-      "Critical Thinking",
-      "Problem Solving",
-      "Theoretical Computer Science"
+      "C++ Programming"
     ],
     "course_count": 4
   },
@@ -3850,9 +3850,9 @@
     ],
     "related_skills": [
       "Leadership & Management",
+      "Decision Making",
       "Critical Thinking",
       "Influencing",
-      "Decision Making",
       "Adaptability",
       "Innovation"
     ],
@@ -3865,11 +3865,11 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Customer Relationship Management",
       "Sales Systems",
+      "Customer Relationship Management",
       "Sales",
-      "Databases & SQL",
-      "Business Analysis"
+      "Business Analysis",
+      "B2B Sales"
     ],
     "course_count": 4
   },
@@ -3881,9 +3881,9 @@
     "related_skills": [
       "Mathematics",
       "Mathematical Theory & Analysis",
-      "Problem Solving",
       "Theoretical Computer Science",
-      "Graph Theory",
+      "Problem Solving",
+      "Computational Thinking",
       "Algorithms"
     ],
     "course_count": 4
@@ -3894,12 +3894,12 @@
       "Spatial Analysis"
     ],
     "related_skills": [
-      "Data Visualization",
-      "Data Analysis",
-      "Spatial Data Analysis",
       "Data Management",
-      "Software Engineering & Programming",
-      "Mathematical Theory & Analysis"
+      "Data Visualization",
+      "Spatial Data Analysis",
+      "Data Analysis",
+      "Mathematical Theory & Analysis",
+      "Software Engineering & Programming"
     ],
     "course_count": 4
   },
@@ -3909,12 +3909,12 @@
       "Talent Management"
     ],
     "related_skills": [
-      "Marketing",
-      "Business Analysis",
       "Human Resources",
-      "People Analysis",
       "Strategy",
-      "Leadership & Management"
+      "Business Analysis",
+      "People Analysis",
+      "Leadership & Management",
+      "People Management"
     ],
     "course_count": 3
   },
@@ -3940,11 +3940,11 @@
     ],
     "related_skills": [
       "Performance Management",
-      "Benefits",
+      "Employee Relations",
       "Risk Management",
       "Recruitment",
-      "Employee Relations",
-      "Business Analysis"
+      "Benefits",
+      "Strategy"
     ],
     "course_count": 3
   },
@@ -3955,11 +3955,11 @@
     ],
     "related_skills": [
       "Graph Theory",
-      "Linear Algebra",
-      "Mathematics",
       "Algebra",
+      "Mathematics",
       "Mathematical Theory & Analysis",
-      "Computer Graphic Techniques"
+      "Linear Algebra",
+      "Visualization (Computer Graphics)"
     ],
     "course_count": 3
   },
@@ -3969,27 +3969,12 @@
       "Cloud Load Balancing"
     ],
     "related_skills": [
-      "Cloud Computing",
       "Software Architecture",
-      "Cloud Storage",
-      "DevOps & CI/CD",
+      "Cloud Computing",
+      "Google Cloud Platform (GCP)",
       "Computer Architecture",
-      "Google Cloud Platform (GCP)"
-    ],
-    "course_count": 3
-  },
-  {
-    "canonical_skill": "Transportation Operations Management",
-    "aliases": [
-      "Transportation Operations Management"
-    ],
-    "related_skills": [
-      "Inventory Management",
-      "Warehouse Management",
-      "Planning",
-      "Leadership & Management",
-      "Strategy and Operations",
-      "Supply Chain Systems"
+      "DevOps & CI/CD",
+      "Cloud Storage"
     ],
     "course_count": 3
   },
@@ -4000,10 +3985,25 @@
     ],
     "related_skills": [
       "Leadership & Management",
-      "Inventory Management",
       "Warehouse Management",
+      "Continuous Delivery",
       "Shipping and Receiving",
-      "Probability & Statistics",
+      "Store Management",
+      "Supply Chain Systems"
+    ],
+    "course_count": 3
+  },
+  {
+    "canonical_skill": "Transportation Operations Management",
+    "aliases": [
+      "Transportation Operations Management"
+    ],
+    "related_skills": [
+      "Warehouse Management",
+      "Leadership & Management",
+      "Supply Chain Systems",
+      "Supply Chain and Logistics",
+      "Strategy and Operations",
       "Planning"
     ],
     "course_count": 3
@@ -4016,10 +4016,10 @@
     "related_skills": [
       "Finance",
       "Financial Analysis",
+      "Financial Accounting",
       "Taxes",
       "Accounting",
-      "Financial Accounting",
-      "Mergers & Acquisitions"
+      "Market Analysis"
     ],
     "course_count": 3
   },
@@ -4029,12 +4029,12 @@
       "Sales Systems"
     ],
     "related_skills": [
+      "Leadership & Management",
+      "Salesforce",
       "Customer Relationship Management",
       "Sales",
-      "Salesforce",
-      "Leadership & Management",
-      "Databases & SQL",
-      "Business Analysis"
+      "Business Analysis",
+      "B2B Sales"
     ],
     "course_count": 3
   },
@@ -4044,12 +4044,12 @@
       "Biostatistics"
     ],
     "related_skills": [
-      "Statistical Analysis",
-      "Data Analysis",
-      "Probability & Statistics",
-      "R Programming",
       "Statistical Tests",
-      "Statistical Programming"
+      "Correlation And Dependence",
+      "Statistical Analysis",
+      "Statistical Programming",
+      "Probability & Statistics",
+      "R Programming"
     ],
     "course_count": 3
   },
@@ -4061,8 +4061,8 @@
     "related_skills": [
       "Leadership & Management",
       "Procurement",
-      "Supply Chain Systems",
       "Supply Chain and Logistics",
+      "Supply Chain Systems",
       "Negotiation",
       "Customer Relationship Management"
     ],
@@ -4074,12 +4074,12 @@
       "Bayesian Statistics"
     ],
     "related_skills": [
-      "Data Analysis",
-      "Statistical Programming",
       "Probability Distribution",
+      "Statistical Programming",
       "Probability & Statistics",
-      "Regression",
-      "Statistical Tests"
+      "Data Analysis",
+      "Estimation",
+      "Mathematics"
     ],
     "course_count": 3
   },
@@ -4089,12 +4089,12 @@
       "Spatial Data Analysis"
     ],
     "related_skills": [
-      "Data Visualization",
-      "Data Analysis",
       "Spatial Analysis",
       "Data Management",
+      "Data Visualization",
+      "Data Analysis",
       "Statistical Analysis",
-      "Databases & SQL"
+      "Data Visualization Software"
     ],
     "course_count": 3
   },
@@ -4105,11 +4105,11 @@
     ],
     "related_skills": [
       "Computer Programming Tools",
-      "Regression",
-      "Data Science",
+      "Exploratory Data Analysis",
+      "Extract",
+      "Data Management",
       "Database Theory",
-      "Database Application",
-      "Programming Principles"
+      "Data Mining"
     ],
     "course_count": 2
   },
@@ -4120,11 +4120,11 @@
     ],
     "related_skills": [
       "Microsoft Excel",
-      "Data Analysis",
       "Data Management",
       "Data Model",
       "Data Visualization",
-      "Databases & SQL"
+      "Data Analysis",
+      "Extract"
     ],
     "course_count": 2
   },
@@ -4134,12 +4134,12 @@
       "Back-End Web Development"
     ],
     "related_skills": [
-      "Algorithms",
       "Communication & Soft Skills",
-      "React (web framework)",
-      "Problem Solving",
-      "Computer Science",
-      "Database Theory"
+      "Algorithms",
+      "HTML and CSS",
+      "Data Warehousing",
+      "Database Theory",
+      "Problem Solving"
     ],
     "course_count": 2
   },
@@ -4149,12 +4149,12 @@
       "iOS Development"
     ],
     "related_skills": [
-      "Web Development",
-      "Software Engineering & Programming",
       "Mobile Development",
       "Mobile Development Tools",
+      "Web Development",
       "Javascript",
-      "React (web framework)"
+      "Software Engineering & Programming",
+      "Software Architecture"
     ],
     "course_count": 2
   },
@@ -4164,12 +4164,12 @@
       "Swift Programming"
     ],
     "related_skills": [
-      "React (web framework)",
-      "Problem Solving",
-      "Computer Science",
+      "Mobile Development",
       "Software Architecture",
-      "Web Development",
-      "Algorithms"
+      "Data Management",
+      "Mobile Development Tools",
+      "Problem Solving",
+      "User Experience"
     ],
     "course_count": 2
   },
@@ -4179,11 +4179,11 @@
       "SAS (Software)"
     ],
     "related_skills": [
-      "Training",
-      "Systems Design",
       "Cybersecurity & Network Security",
-      "Process Analysis",
-      "Network Architecture",
+      "Systems Design",
+      "Decision Making",
+      "Operating Systems",
+      "Training",
       "Regulations and Compliance"
     ],
     "course_count": 2
@@ -4194,12 +4194,12 @@
       "Billing & Invoicing"
     ],
     "related_skills": [
-      "Cloud Management",
+      "Computer Architecture",
       "Google App Engine",
-      "Cloud Computing",
       "Cloud Applications",
-      "Software Engineering & Programming",
-      "Other Cloud Platforms and Tools"
+      "Kubernetes",
+      "Other Cloud Platforms and Tools",
+      "Leadership & Management"
     ],
     "course_count": 2
   },
@@ -4209,11 +4209,11 @@
       "Cross Platform Development"
     ],
     "related_skills": [
-      "Cloud Management",
+      "Computer Architecture",
       "Google App Engine",
-      "Cloud Computing",
       "Cloud Applications",
-      "Software Engineering & Programming",
+      "Kubernetes",
+      "Billing & Invoicing",
       "Other Cloud Platforms and Tools"
     ],
     "course_count": 2
@@ -4224,12 +4224,12 @@
       "Operations Research"
     ],
     "related_skills": [
+      "Strategy",
+      "Business Analysis",
+      "Leadership & Management",
       "Forecasting",
       "Statistical Analysis",
-      "Business Analysis",
-      "Data Analysis",
-      "Probability & Statistics",
-      "Operations Management"
+      "Spreadsheet Software"
     ],
     "course_count": 2
   },
@@ -4240,11 +4240,11 @@
     ],
     "related_skills": [
       "Strategy",
-      "Communication & Soft Skills",
       "Leadership & Management",
-      "Project Management",
-      "Organizational Development",
-      "Media Strategy & Planning"
+      "Communication & Soft Skills",
+      "Scrum (Software Development)",
+      "Product Development",
+      "Agile Software Development"
     ],
     "course_count": 2
   },
@@ -4254,12 +4254,12 @@
       "Business Research"
     ],
     "related_skills": [
-      "Statistical Analysis",
+      "Data Management",
       "Data Visualization",
+      "Process Analysis",
       "Business Analysis",
-      "Data Analysis",
-      "Planning",
-      "Data Management"
+      "Leadership & Management",
+      "Statistical Analysis"
     ],
     "course_count": 2
   },
@@ -4269,12 +4269,12 @@
       "Shipping and Receiving"
     ],
     "related_skills": [
-      "Inventory Management",
       "Warehouse Management",
-      "Planning",
-      "Transportation Operations Management",
       "Leadership & Management",
-      "Store Management"
+      "Continuous Delivery",
+      "Material Handling",
+      "Store Management",
+      "Supply Chain Systems"
     ],
     "course_count": 2
   },
@@ -4284,12 +4284,12 @@
       "Store Management"
     ],
     "related_skills": [
-      "Inventory Management",
       "Warehouse Management",
+      "Leadership & Management",
+      "Continuous Delivery",
       "Shipping and Receiving",
-      "Planning",
-      "Transportation Operations Management",
-      "Leadership & Management"
+      "Material Handling",
+      "Supply Chain Systems"
     ],
     "course_count": 2
   },
@@ -4299,12 +4299,12 @@
       "Knitr"
     ],
     "related_skills": [
-      "Problem Solving",
-      "Programming Principles",
-      "Statistical Analysis",
-      "Data Visualization",
-      "Software Engineering & Programming",
-      "Computational Thinking"
+      "Exploratory Data Analysis",
+      "Extract",
+      "Data Management",
+      "Data Mining",
+      "Computer Graphics",
+      "Load"
     ],
     "course_count": 2
   },
@@ -4314,12 +4314,12 @@
       "B2B Sales"
     ],
     "related_skills": [
-      "Databases & SQL",
-      "Marketing",
-      "Customer Relationship Management",
       "Sales Systems",
-      "Operations Management",
-      "Sales"
+      "Databases & SQL",
+      "Leadership & Management",
+      "Customer Success",
+      "Salesforce",
+      "Customer Relationship Management"
     ],
     "course_count": 2
   },
@@ -4329,11 +4329,11 @@
       "Securities Sales"
     ],
     "related_skills": [
-      "Finance",
-      "Securities Trading",
-      "Probability & Statistics",
       "Risk Management",
+      "Finance",
       "Leadership & Management",
+      "Probability & Statistics",
+      "Securities Trading",
       "Investment Management"
     ],
     "course_count": 2
@@ -4344,12 +4344,12 @@
       "Retail Sales"
     ],
     "related_skills": [
-      "Strategy",
       "Leadership & Management",
-      "Marketing",
-      "Brand Management",
-      "Communication & Soft Skills",
-      "Marketing Management"
+      "Strategy",
+      "E-Commerce",
+      "Digital Marketing",
+      "Retail Store Operations",
+      "Communication & Soft Skills"
     ],
     "course_count": 2
   },
@@ -4360,11 +4360,11 @@
     ],
     "related_skills": [
       "Data Analysis",
-      "Regression",
-      "Biostatistics",
-      "Critical Thinking",
-      "Statistical Tests",
-      "Statistical Programming"
+      "Correlation And Dependence",
+      "Probability Distribution",
+      "Exploratory Data Analysis",
+      "Statistical Programming",
+      "Basic Descriptive Statistics"
     ],
     "course_count": 2
   },
@@ -4374,12 +4374,12 @@
       "Game Theory"
     ],
     "related_skills": [
+      "Strategy",
       "Probability Distribution",
       "Probability & Statistics",
-      "Strategy",
-      "Problem Solving",
-      "Algorithms",
-      "Mathematical Theory & Analysis"
+      "Experiment",
+      "Combinatorics",
+      "Problem Solving"
     ],
     "course_count": 2
   },
@@ -4390,11 +4390,11 @@
     ],
     "related_skills": [
       "Web Development",
-      "Computer Vision",
-      "Software Engineering & Programming",
       "Mobile Development",
-      "Deep Learning & AI",
-      "Transform"
+      "Extract",
+      "Mobile Development Tools",
+      "Load",
+      "Visualization (Computer Graphics)"
     ],
     "course_count": 2
   },
@@ -4406,9 +4406,9 @@
     "related_skills": [
       "Regression",
       "Probability & Statistics",
-      "Marketing",
-      "Behavioral Economics",
-      "Statistical Analysis",
+      "Exploratory Data Analysis",
+      "Statistical Tests",
+      "Strategy",
       "Regulations and Compliance"
     ],
     "course_count": 2
@@ -4419,12 +4419,12 @@
       "Scientific Visualization"
     ],
     "related_skills": [
-      "Critical Thinking",
       "Human Learning",
-      "Data Analysis",
-      "Market Analysis",
-      "Social Media",
-      "Survey Creation"
+      "Critical Thinking",
+      "Estimation",
+      "Survey Creation",
+      "Data Management",
+      "People Analysis"
     ],
     "course_count": 2
   },
@@ -4435,11 +4435,11 @@
     ],
     "related_skills": [
       "Databases & SQL",
-      "Data Analysis",
       "Data Management",
       "Leadership & Management",
-      "Data Warehousing",
-      "Planning"
+      "Data Analysis",
+      "Database Administration",
+      "Data Warehousing"
     ],
     "course_count": 2
   },
@@ -4449,11 +4449,11 @@
       "Geovisualization"
     ],
     "related_skills": [
-      "Databases & SQL",
-      "Data Analysis",
-      "Spatial Analysis",
       "Data Visualization Software",
+      "Spatial Analysis",
+      "Databases & SQL",
       "Data Management",
+      "Data Visualization",
       "Spatial Data Analysis"
     ],
     "course_count": 2
@@ -4464,12 +4464,12 @@
       "Underwriting"
     ],
     "related_skills": [
-      "Entrepreneurship",
+      "Strategy",
+      "Decision Making",
       "FinTech",
       "Finance",
       "Innovation",
-      "Strategy",
-      "Decision Making"
+      "Entrepreneurship"
     ],
     "course_count": 2
   },
@@ -4479,12 +4479,12 @@
       "Semantic Web"
     ],
     "related_skills": [
-      "React (web framework)",
-      "Problem Solving",
-      "Back-End Web Development",
-      "Computer Science",
+      "HTML and CSS",
+      "Data Warehousing",
       "Database Theory",
-      "Cloud Computing"
+      "Back-End Web Development",
+      "Problem Solving",
+      "Kubernetes"
     ],
     "course_count": 1
   },
@@ -4494,12 +4494,12 @@
       "Accounting Software"
     ],
     "related_skills": [
-      "Business Analysis",
-      "Data Analysis",
-      "Finance",
-      "Financial Analysis",
       "Cost Accounting",
-      "Inventory Management"
+      "Business Analysis",
+      "Finance",
+      "Cash Management",
+      "Financial Analysis",
+      "Financial Accounting"
     ],
     "course_count": 1
   },
@@ -4509,12 +4509,12 @@
       "Android Development"
     ],
     "related_skills": [
-      "React (web framework)",
-      "Problem Solving",
-      "Computer Science",
+      "Mobile Development",
       "Software Architecture",
-      "Web Development",
-      "Programming Principles"
+      "Data Management",
+      "Mobile Development Tools",
+      "Other Programming Languages",
+      "Problem Solving"
     ],
     "course_count": 1
   },
@@ -4524,12 +4524,12 @@
       "Marketing Psychology"
     ],
     "related_skills": [
-      "Marketing",
-      "User Research",
-      "Social Media",
+      "Influencing",
+      "Strategy",
       "Brand Management",
-      "Web Development",
-      "Digital Marketing"
+      "User Experience",
+      "Search Engine Optimization",
+      "User Experience Design"
     ],
     "course_count": 1
   },
@@ -4547,12 +4547,12 @@
       "Insurance Sales"
     ],
     "related_skills": [
-      "Problem Solving",
-      "Behavioral Economics",
       "Compensation",
-      "Research and Design",
-      "Financial Accounting",
-      "Business Analysis"
+      "Business Process Management",
+      "Strategy",
+      "Accounts Payable and Receivable",
+      "Accounting",
+      "Financial Management"
     ],
     "course_count": 1
   },
@@ -4563,11 +4563,11 @@
     ],
     "related_skills": [
       "Retail Sales",
-      "Marketing",
-      "Brand Management",
-      "Communication & Soft Skills",
-      "Marketing Management",
-      "Digital Marketing"
+      "E-Commerce",
+      "Leadership & Management",
+      "Digital Marketing",
+      "Strategy",
+      "Communication & Soft Skills"
     ],
     "course_count": 1
   },
@@ -4577,12 +4577,12 @@
       "Markov Model"
     ],
     "related_skills": [
-      "Regression",
-      "Data Analysis",
+      "Estimation",
       "Bayesian Statistics",
+      "Probability Distribution",
       "Statistical Programming",
-      "Statistical Tests",
-      "Probability Distribution"
+      "Mathematics",
+      "Forecasting"
     ],
     "course_count": 1
   },
@@ -4592,12 +4592,12 @@
       "Hardware Design"
     ],
     "related_skills": [
+      "Computer Architecture",
       "Computer Programming Tools",
-      "Critical Thinking",
-      "Problem Solving",
-      "Systems Design",
       "Theoretical Computer Science",
-      "Computer Architecture"
+      "Systems Design",
+      "Computational Logic",
+      "Critical Thinking"
     ],
     "course_count": 1
   },
@@ -4607,12 +4607,12 @@
       "Journalism"
     ],
     "related_skills": [
-      "Marketing",
-      "Brand Management",
-      "Social Media",
       "Graphic Design",
+      "Strategy",
       "Advertising",
-      "Media Strategy & Planning"
+      "Brand Management",
+      "User Experience",
+      "Creativity"
     ],
     "course_count": 1
   },
@@ -4622,12 +4622,12 @@
       "Combinatorics"
     ],
     "related_skills": [
+      "Experiment",
+      "Strategy",
       "Problem Solving",
-      "Algorithms",
-      "Mathematical Theory & Analysis",
-      "Software Engineering & Programming",
-      "Computational Thinking",
-      "Mathematics"
+      "Visualization (Computer Graphics)",
+      "Probability Distribution",
+      "Creativity"
     ],
     "course_count": 1
   },
@@ -4645,12 +4645,12 @@
       "Public Relations"
     ],
     "related_skills": [
-      "Entrepreneurship",
-      "Marketing",
-      "Social Media",
+      "Product Marketing",
+      "Influencing",
+      "Strategy",
+      "Advertising",
       "Brand Management",
-      "Digital Marketing",
-      "Advertising"
+      "Business Analysis"
     ],
     "course_count": 1
   },
@@ -4660,12 +4660,12 @@
       "Survey Creation"
     ],
     "related_skills": [
-      "Critical Thinking",
-      "Data Analysis",
-      "Market Analysis",
-      "Scientific Visualization",
-      "Social Media",
-      "Big Data"
+      "Estimation",
+      "Data Management",
+      "People Analysis",
+      "Decision Making",
+      "Human Learning",
+      "Social Media"
     ],
     "course_count": 1
   },
@@ -4675,11 +4675,11 @@
       "Minitab"
     ],
     "related_skills": [
+      "Correlation And Dependence",
       "Statistical Visualization",
-      "Data Analysis",
+      "Basic Descriptive Statistics",
       "Statistical Tests",
       "Probability & Statistics",
-      "Basic Descriptive Statistics",
       "Data Visualization"
     ],
     "course_count": 1
@@ -4690,12 +4690,12 @@
       "Other Web Frameworks"
     ],
     "related_skills": [
-      "Regression",
-      "Data Analysis",
-      "Python Programming",
+      "Exploratory Data Analysis",
       "Statistical Programming",
+      "Algorithms",
       "Statistical Machine Learning",
-      "Machine Learning"
+      "Regression",
+      "Python Programming"
     ],
     "course_count": 1
   },
@@ -4705,27 +4705,12 @@
       "GIS Software"
     ],
     "related_skills": [
-      "Databases & SQL",
-      "Mergers & Acquisitions",
-      "Data Analysis",
-      "Spatial Analysis",
       "Data Visualization Software",
-      "ArcGIS"
-    ],
-    "course_count": 1
-  },
-  {
-    "canonical_skill": "ArcGIS",
-    "aliases": [
-      "ArcGIS"
-    ],
-    "related_skills": [
-      "Databases & SQL",
-      "Mergers & Acquisitions",
-      "Data Analysis",
       "Spatial Analysis",
-      "Data Visualization Software",
-      "GIS Software"
+      "Databases & SQL",
+      "Data Management",
+      "Geostatistics",
+      "Data Analysis Software"
     ],
     "course_count": 1
   },
@@ -4735,27 +4720,27 @@
       "Geostatistics"
     ],
     "related_skills": [
-      "Databases & SQL",
-      "Mergers & Acquisitions",
-      "Data Analysis",
-      "Spatial Analysis",
       "Data Visualization Software",
-      "GIS Software"
+      "Spatial Analysis",
+      "Databases & SQL",
+      "GIS Software",
+      "Data Management",
+      "Data Analysis Software"
     ],
     "course_count": 1
   },
   {
-    "canonical_skill": "Virtual Reality",
+    "canonical_skill": "ArcGIS",
     "aliases": [
-      "Virtual Reality"
+      "ArcGIS"
     ],
     "related_skills": [
-      "Critical Thinking",
-      "Computer Graphic Techniques",
-      "Scientific Visualization",
-      "Interactive Design",
-      "Visual Design",
-      "Human Learning"
+      "Data Visualization Software",
+      "Spatial Analysis",
+      "Databases & SQL",
+      "GIS Software",
+      "Data Management",
+      "Geostatistics"
     ],
     "course_count": 1
   },
@@ -4765,11 +4750,26 @@
       "Graphics Software"
     ],
     "related_skills": [
-      "Critical Thinking",
-      "Computer Graphic Techniques",
-      "Scientific Visualization",
-      "Interactive Design",
-      "Visual Design",
+      "Visualization (Computer Graphics)",
+      "User Experience",
+      "Graphic Design",
+      "User Experience Design",
+      "Human Learning",
+      "Interactive Design"
+    ],
+    "course_count": 1
+  },
+  {
+    "canonical_skill": "Virtual Reality",
+    "aliases": [
+      "Virtual Reality"
+    ],
+    "related_skills": [
+      "Visualization (Computer Graphics)",
+      "User Experience",
+      "Graphic Design",
+      "Graphics Software",
+      "User Experience Design",
       "Human Learning"
     ],
     "course_count": 1
@@ -4780,12 +4780,12 @@
       "Jira (Software)"
     ],
     "related_skills": [
+      "Scrum (Software Development)",
       "Product Development",
-      "Project Management",
+      "Agile Software Development",
       "Technical Product Management",
-      "Planning",
-      "Product Management",
-      "Scrum (Software Development)"
+      "Leadership & Management",
+      "Product Management"
     ],
     "course_count": 1
   }
