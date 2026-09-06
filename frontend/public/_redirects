@@ -1,2 +1,3 @@
-/api/*  https://cognizant-1-tp39.onrender.com/api/:splat  200!
-/*      /index.html                                     200
+/api/*   https://cognizant-1-tp39.onrender.com/api/:splat  200!
+/auth/*  https://cognizant-1-tp39.onrender.com/api/auth/:splat  200!
+/*       /index.html                                            200

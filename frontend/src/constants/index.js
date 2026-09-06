@@ -7,7 +7,13 @@ import {
   Briefcase
 } from 'lucide-react';
 
-export const API_BASE = import.meta.env.VITE_API_BASE_URL || "/api";
+let rawBase = (import.meta.env.VITE_API_BASE_URL || "/api").trim();
+rawBase = rawBase.replace(/\/+$/, '');
+if (rawBase !== '/api' && !rawBase.endsWith('/api')) {
+  rawBase += '/api';
+}
+export const API_BASE = rawBase;
+
 
 export const PRESET_SKILLS = [
   "Python Programming",

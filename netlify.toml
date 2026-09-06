@@ -10,6 +10,12 @@
   force = true
 
 [[redirects]]
+  from = "/auth/*"
+  to = "https://cognizant-1-tp39.onrender.com/api/auth/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

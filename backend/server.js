@@ -19,6 +19,11 @@ app.use('/api', recommendRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/profile', profileRoutes);
 
+app.use('/', datasetRoutes);
+app.use('/', recommendRoutes);
+app.use('/auth', authRoutes);
+app.use('/profile', profileRoutes);
+
 
 const PORT = process.env.PORT || 5001;
 
