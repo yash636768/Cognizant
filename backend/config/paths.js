@@ -13,6 +13,8 @@ const EMB_PATH = path.join(MODELS_DIR, 'embeddings', 'course_embeddings.npy');
 const FAISS_PATH = path.join(MODELS_DIR, 'vector_index', 'course_faiss.index');
 const TAXONOMY_PATH = path.join(DATA_DIR, 'skill_taxonomy.json');
 const EVAL_PATH = path.join(MODELS_DIR, 'evaluation', 'eval_report.json');
+const ML_RECOMMENDER_PATH = path.join(BASE_DIR, 'ml', 'hybrid_recommender.py');
+const PYTHON_PATH = process.env.PYTHON_PATH || path.join(BASE_DIR, '.venv', 'bin', 'python');
 
 if (!fs.existsSync(USER_PROFILES_DIR)) {
   fs.mkdirSync(USER_PROFILES_DIR, { recursive: true });
@@ -32,5 +34,7 @@ module.exports = {
   EMB_PATH,
   FAISS_PATH,
   TAXONOMY_PATH,
-  EVAL_PATH
+  EVAL_PATH,
+  ML_RECOMMENDER_PATH,
+  PYTHON_PATH
 };

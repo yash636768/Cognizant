@@ -225,6 +225,7 @@ export default function App() {
             duration={duration}
             courseType={courseType}
             userQuery={userQuery}
+            handleRemoveSkill={handleRemoveSkill}
             navigateToAssessment={navigateToAssessment}
             handleLogout={handleLogout}
             setPage={setPage}

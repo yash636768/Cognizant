@@ -57,18 +57,37 @@ class HybridRecommender:
                 import faiss
                 self.faiss_index = faiss.read_index(faiss_path)
             except Exception as e:
-                print(f"FAISS index load notice: {e}")
+                print(f"FAISS index load notice: {e}", file=sys.stderr)
                 self.faiss_index = None
+
+        # Load the encoder once when the worker starts, not once per request.
+        self.embedding_model = None
+        try:
+            from sentence_transformers import SentenceTransformer
+            self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        except Exception as e:
+            print(f"SentenceTransformer load notice: {e}", file=sys.stderr)
 
     def _compute_semantic_similarity(self, query_str):
         if not query_str.strip():
             return np.ones(len(self.df), dtype=np.float32) * 0.5
             
         try:
-            from sentence_transformers import SentenceTransformer
-            model = SentenceTransformer('all-MiniLM-L6-v2')
-            q_vec = model.encode([query_str], normalize_embeddings=True)[0]
-            sims = np.dot(self.embeddings, q_vec)
+            if self.embedding_model is None:
+                raise RuntimeError("SentenceTransformer model is not available")
+            q_vec = self.embedding_model.encode([query_str], normalize_embeddings=True)[0]
+            q_vec = np.asarray(q_vec, dtype=np.float32).reshape(1, -1)
+
+            if self.faiss_index is not None:
+                # The index stores normalized vectors, so inner product is cosine similarity.
+                distances, indices = self.faiss_index.search(q_vec, len(self.df))
+                sims = np.zeros(len(self.df), dtype=np.float32)
+                valid = indices[0] >= 0
+                sims[indices[0][valid]] = distances[0][valid]
+            else:
+                # Keep cosine semantics when FAISS is unavailable but embeddings are present.
+                sims = np.dot(self.embeddings, q_vec[0])
+
             # Clip between 0 and 1
             return np.clip(sims, 0.0, 1.0)
         except Exception:
@@ -203,14 +222,8 @@ class HybridRecommender:
         scores.sort(key=lambda x: x["final_score"], reverse=True)
         return scores[:top_k]
 
-if __name__ == "__main__":
-    request = json.loads(sys.stdin.read())
-    recommender = HybridRecommender(
-        request["metadata_path"],
-        request.get("embeddings_path"),
-        request.get("faiss_path")
-    )
-    print(json.dumps(recommender.recommend(
+def recommend_from_request(recommender, request):
+    return recommender.recommend(
         current_skills=request.get("current_skills", []),
         target_career_missing_skills=request.get("target_career_missing_skills", []),
         user_query=request.get("user_query", ""),
@@ -219,4 +232,32 @@ if __name__ == "__main__":
         preferred_type=request.get("preferred_type", "Any"),
         custom_weights=request.get("custom_weights"),
         top_k=request.get("top_k", 10)
-    )))
+    )
+
+
+if __name__ == "__main__":
+    if "--worker" in sys.argv:
+        init_request = json.loads(sys.stdin.readline())
+        recommender = HybridRecommender(
+            init_request["metadata_path"],
+            init_request.get("embeddings_path"),
+            init_request.get("faiss_path")
+        )
+        print(json.dumps({"ready": True}), flush=True)
+        for line in sys.stdin:
+            if not line.strip():
+                continue
+            try:
+                request = json.loads(line)
+                result = recommend_from_request(recommender, request)
+                print(json.dumps({"result": result}), flush=True)
+            except Exception as error:
+                print(json.dumps({"error": str(error)}), flush=True)
+    else:
+        request = json.loads(sys.stdin.read())
+        recommender = HybridRecommender(
+            request["metadata_path"],
+            request.get("embeddings_path"),
+            request.get("faiss_path")
+        )
+        print(json.dumps(recommend_from_request(recommender, request)))

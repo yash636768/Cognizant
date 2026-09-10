@@ -11,7 +11,8 @@ import {
   ArrowRight,
   CheckCircle,
   AlertCircle,
-  Check
+  Check,
+  X
 } from 'lucide-react';
 
 export default function ProfilePage({
@@ -23,6 +24,7 @@ export default function ProfilePage({
   duration,
   courseType,
   userQuery,
+  handleRemoveSkill,
   navigateToAssessment,
   handleLogout,
   setPage
@@ -155,6 +157,14 @@ export default function ProfilePage({
                 currentSkills.map((skill) => (
                   <span className="tag tag-brand" key={skill}>
                     {skill}
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveSkill(skill)}
+                      className="tag-remove"
+                      aria-label={`Remove ${skill}`}
+                    >
+                      <X size={12} />
+                    </button>
                   </span>
                 ))
               ) : (

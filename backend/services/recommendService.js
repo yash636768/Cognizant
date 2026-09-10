@@ -5,7 +5,9 @@ const {
   META_PATH,
   EMB_PATH,
   FAISS_PATH,
-  TAXONOMY_PATH
+  TAXONOMY_PATH,
+  ML_RECOMMENDER_PATH,
+  PYTHON_PATH
 } = require('../config/paths');
 
 const careerModel = new CareerModel(TAXONOMY_PATH);
@@ -16,14 +18,16 @@ function getRecommender() {
     recommender = new HybridRecommender(
       META_PATH,
       EMB_PATH,
-      FAISS_PATH
+      FAISS_PATH,
+      PYTHON_PATH,
+      ML_RECOMMENDER_PATH
     );
   }
 
   return recommender;
 }
 
-function generateRecommendations(data) {
+async function generateRecommendations(data) {
   const recEngine = getRecommender();
 
   if (!recEngine) {
@@ -74,7 +78,7 @@ function generateRecommendations(data) {
   }
 
   /* Hybrid Recommendation */
-  const recs = recEngine.recommend({
+  const recs = await recEngine.recommend({
     current_skills: currentSkills,
     target_career_missing_skills: targetMissingSkills,
     user_query:
@@ -90,6 +94,7 @@ function generateRecommendations(data) {
   return {
     dataset_grounding:
       'Powered by Hackathon Dataset (coursera_course_dataset_v3.csv)',
+    ml_engine: 'SentenceTransformer embeddings + FAISS cosine similarity',
     career_candidates: careerEvals,
     selected_career: selectedCareerProfile,
     target_missing_skills: targetMissingSkills,
